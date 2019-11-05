@@ -131,8 +131,9 @@ STATICFILES_DIRS = [
 ]
 
 FIXTURE_DIRS = (
-   '/path/to/myapp/fixtures/',
+    os.path.join(BASE_DIR, "fixtures"),
 )
+
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
