@@ -1,0 +1,35 @@
+
+p{
+    text-align: right;
+    top:20px;
+    font-size: 20px;
+}
+
+
+button#logout-bth{
+    position: absolute;
+    font-size: 20px;
+    left: 97.5%;
+    top:30px;
+}
+
+button{
+    position: relative;
+    border: none;
+    display: inline;
+    left: 50%;
+    top: 450px;
+    transform: translateX(-50%);
+}
+
+
+
+button img{
+    width: 50px;
+}
+
+
+button:hover{
+    background-color:whitesmoke;
+}
+
