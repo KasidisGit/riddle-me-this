@@ -1,0 +1,19 @@
+{% load socialaccount %}
+{% providers_media_js %}
+{% load static %}
+
+<link rel="stylesheet" type="text/css" href='{% static "/css/style.css" %}'>
+<head>
+    <title>Login Page</title>
+</head>
+
+<body>
+    <p>User: {{user}}</p>
+    {% if user.is_authenticated %}
+    <h1 style="text-align: center;">ON GAME PAGE</h1>
+    <button id='logout-bth'><a href="{% url 'logout' %}">logout</a></button>
+    {% else %}
+    <button><a href='{% provider_login_url "google" %}'><img src="{% static "/img/google icon.png" %}" alt="google-login"></a></button>
+    <button><a href="{% provider_login_url "facebook" method="js_sdk" %}" ><img src="{% static "/img/facebook icon.png" %}" alt="facebook-login"></a></button>
+    {% endif %}
+</body>
