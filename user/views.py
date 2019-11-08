@@ -3,4 +3,5 @@ from django.views import generic
 from django.utils import timezone
 
 def IndexView(request):
-    return render(request,"index.html")
+    return render(request,"main-menu.html")
+
