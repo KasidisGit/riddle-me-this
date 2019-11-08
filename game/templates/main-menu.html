@@ -9,6 +9,7 @@
 
 <body>
     <p>User: {{user}}</p>
+    <p>{{ question.answer }}</p>
     {% if user.is_authenticated %}
     <h1 style="text-align: center;">ON GAME PAGE</h1>
     <button id='logout-bth'><a href="{% url 'logout' %}">logout</a></button>
