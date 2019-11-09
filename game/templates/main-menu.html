@@ -12,6 +12,7 @@
     <p>{{ question.answer }}</p>
     {% if user.is_authenticated %}
     <h1 style="text-align: center;">ON GAME PAGE</h1>
+    <a href="{% url 'game:hard' %}">to stage</a>
     <button id='logout-bth'><a href="{% url 'logout' %}">logout</a></button>
     {% else %}
     <button><a href='{% provider_login_url "google" %}'><img src="{% static "/img/google icon.png" %}" alt="google-login"></a></button>
