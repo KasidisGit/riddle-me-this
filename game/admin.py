@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import HardQuestion, MediumQuestion, EasyQuestion
+from .models import *
 
 admin.site.register(HardQuestion)
 admin.site.register(MediumQuestion)
