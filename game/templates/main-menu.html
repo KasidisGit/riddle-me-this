@@ -1,20 +1,51 @@
+<html></html>
 {% load socialaccount %}
 {% providers_media_js %}
 {% load static %}
-
-<link rel="stylesheet" type="text/css" href='{% static "/css/style.css" %}'>
 <head>
-    <title>Login Page</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>Main Menu</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href='{% static "/css/style.css" %}'>
 </head>
-
-<body>
-    <p>User: {{user}}</p>
-    <p>{{ question.answer }}</p>
+<body class="header_area">
+    <div class="main_title">
+        <h2>Riddle Me This</h2>
+        <h1>Riddle Me This</h1>
+        <a class="video-play-button">
+            <span>?</span>
+        </a>
+    </div>
+    <div class="navbar">
+        <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item submenu">
+                <a href="#" class="primary_btn">Play</a>
+                    <ul class="dropdown-menu">
+                        <li class="nav-item"><a class="nav-link">Easy</a>
+                        <li class="nav-item"><a class="nav-link">Medium</a>
+                        <li class="nav-item"><a class="nav-link">Hard</a>
+                    </ul>
+            </li>
+            <br></br>
+            <li style="margin-top:60px" class="nav-item"><a href="#" class="primary_btn">How to Play</a></li>
+            <br></br>
+            <li class="nav-item"><a href="#" class="primary_btn">Scoreboard</a></li>
+        </ul>
+    </div>
     {% if user.is_authenticated %}
-    <h1 style="text-align: center;">ON GAME PAGE</h1>
-    <button id='logout-bth'><a href="{% url 'logout' %}">logout</a></button>
+        <button id='logout-bth'><a href="{% url 'logout' %}">logout</a></button>
     {% else %}
-    <button><a href='{% provider_login_url "google" %}'><img src="{% static "/img/google icon.png" %}" alt="google-login"></a></button>
-    <button><a href="{% provider_login_url "facebook" method="js_sdk" %}" ><img src="{% static "/img/facebook icon.png" %}" alt="facebook-login"></a></button>
+        <div class="google">
+            <div class="g_btn">
+                <a class="gradient_btn" href="{% provider_login_url "google" %}"><span>Google</span></a>
+            </div>
+        </div>
+        <div class="facebook">
+            <div class="f_btn">
+                <a class="gradient_btn" href="{% provider_login_url "facebook" method="js_sdk" %}"><span>Facebook</span></a>
+            </div>
+        </div>
     {% endif %}
 </body>
+</html>
