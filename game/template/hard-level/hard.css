@@ -1,5 +1,5 @@
 body {
-    background: url('bg-easy-level1.jpg') no-repeat center fixed; 
+    background: url('school-season1.jpg') no-repeat center fixed;
     background-size: cover;
 }
 h1 {
@@ -16,10 +16,10 @@ h2 {
 }
 
 .button-left {
-    background-color: #08979d; /* Green */
+    background-color: #303F9F; /* Green */
     border: none;
     border-radius: 12px;
-    color: #4d0101;
+    color: #FFB300;
     padding: 20px 40px;
     text-align: center;
     font-family: Georgia;
@@ -35,16 +35,16 @@ h2 {
 }
 
 .button-left:hover {
-    background-color: honeydew;
-    border: 2px solid #08979d;
-    color: #4d0101;
+    background-color: #f0fff0;
+    border: 2px solid #303F9F;
+    color: #FFB300;
 }
   
 .button-right {
-    background-color: #e9ba4e;
+    background-color: #CDDC39;
     border: none;
     border-radius: 12px;
-    color: #4d0101;
+    color: #3E2723;
     padding: 20px 40px;
     text-align: center;
     text-decoration: none;
@@ -60,20 +60,21 @@ h2 {
 
 .button-right:hover {
     background-color: honeydew;
-    border: 2px solid #e9ba4e;
-    color: #4d0101;
+    border: 2px solid #CDDC39;
+    color: #3E2723;
 }
 
-img.img1 {
-    margin-top: 40px;
-    margin-left: 320px;
-    display: inline;
+img {
+    margin: 100px auto;
+    width: 200px;
+    height: 150px;
+    display: block;
 }
   
-img.img2 {
+/* img.img2 {
     margin-top: 40px;
     margin-left: 100px;
-}
+} */
   
 h1 {
     color: darkblue;
@@ -93,4 +94,3 @@ h1 {
     height: 40px;
     width: 200px;
 }
-
