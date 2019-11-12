@@ -1,6 +1,6 @@
 body {
     /* background-image: url('https://i.pinimg.com/564x/cb/a4/a3/cba4a34415ff440733c4f05211ecb063.jpg'); */
-    background-image: url("bg-easy-level.jpg");
+    background-image: url("bg-easy-level1.jpg");
 }
 h1 {
     color: darkblue;
@@ -9,11 +9,18 @@ h1 {
     text-align: center;
 }
 
+h2 {
+    color: indigo;
+    text-align: center;
+    display: inline;
+}
+
 .button-left {
-    background-color: #4CAF50; /* Green */
+    background-color: #08979d; /* Green */
     border: none;
-    color: white;
-    /* position: relative; */
+    
+    
+    color: #4d0101;
     padding: 20px 40px;
     text-align: center;
     font-family: Georgia;
@@ -21,29 +28,43 @@ h1 {
     display: inline-block;
     font-size: 17px;
     margin-left: 30px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
     float: left;
     cursor: pointer;
     width: 6rem;
 }
+
+.button-left:hover {
+    background-color: honeydew;
+    border: 2px solid #08979d;
+    color: #4d0101;
+}
   
 .button-right {
-    background-color: ;
-    radius
+    background-color: #e9ba4e;
     border: none;
-    color: whitesmoke;
-    /* position: relative; */
-    /* padding: 20px 40px; */
+    border-radius: 12px;
+    color: #4d0101;
+    padding: 20px 40px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 20px;
     margin-right: 30px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
     float: right;
     cursor: pointer;
-    width: 2px;
-    height: 1px;
+    width: 6rem;
 }
-  
+
+.button-right:hover {
+    background-color: honeydew;
+    border: 2px solid #e9ba4e;
+    color: #4d0101;
+}
+
 img.img1 {
     margin-top: 40px;
     margin-left: 320px;
@@ -62,15 +83,15 @@ h1 {
 
 .input-box {
     width: 100%;
-    margin-top: 100px;
+    margin-top: 50px;
     text-align: center;
+    display: block;
 }
 
 .input-box input[type="fullword"]
 {
-    font-size: 1.5rem;
-    height: 50px;
+    font-size: 1rem;
+    height: 40px;
     width: 200px;
-    ;
 }
 
