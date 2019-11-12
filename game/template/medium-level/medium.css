@@ -1,5 +1,5 @@
 body {
-    background-image: url("bg-easy-level1.jpg");
+    background-image: url("picture-medium.jpg");
 }
 h1 {
     color: darkblue;
@@ -15,10 +15,10 @@ h2 {
 }
 
 .button-left {
-    background-color: #08979d; /* Green */
+    background-color: #82E0AA; /* Green */
     border: none;
     border-radius: 12px;
-    color: #4d0101;
+    color: #154360;
     padding: 20px 40px;
     text-align: center;
     font-family: Georgia;
@@ -35,15 +35,15 @@ h2 {
 
 .button-left:hover {
     background-color: honeydew;
-    border: 2px solid #08979d;
-    color: #4d0101;
+    border: 2px solid #82E0AA;
+    color: #154360;
 }
   
 .button-right {
-    background-color: #e9ba4e;
+    background-color: LIGHTSALMON;
     border: none;
     border-radius: 12px;
-    color: #4d0101;
+    color: #8A4B08;
     padding: 20px 40px;
     text-align: center;
     text-decoration: none;
@@ -59,8 +59,8 @@ h2 {
 
 .button-right:hover {
     background-color: honeydew;
-    border: 2px solid #e9ba4e;
-    color: #4d0101;
+    border: 2px solid LIGHTSALMON;
+    color: #8A4B08;
 }
 
 img.img1 {
@@ -92,4 +92,3 @@ h1 {
     height: 40px;
     width: 200px;
 }
-
