@@ -139,5 +139,5 @@ SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
-MEDIA_ROOT = os.path.join(BASE_DIR,"game/static/")
-MEDIA_URL = "/img/"
+MEDIA_ROOT = os.path.join(BASE_DIR,"game/static")
+MEDIA_URL = "/"

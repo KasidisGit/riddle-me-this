@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import generic
 from django.utils import timezone
-from .models import Question
+from .models import HardQuestion
 
 def IndexView(request):
     # q = Question.objects.get(pk=1)
@@ -9,10 +9,10 @@ def IndexView(request):
 
 def LevelStage(request):
     return render(request,"stage.html",{
-        "all_question":Question.objects.all()
+        "all_question":HardQuestion.objects.all()
     })
 
 def QuestionDetail(request,question_id):
     return render(request,"hard_question.html",{
-        "question":Question.objects.get(pk=question_id)
+        "question":HardQuestion.objects.get(pk=question_id)
     })
