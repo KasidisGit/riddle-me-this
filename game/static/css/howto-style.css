@@ -1,0 +1,291 @@
+/* =================================
+***** [Core Stylesheet - v1.0] *****
+================================= */
+
+/* ----------------------------------------------
+:: Template Name: Fancy - Creative Agency Template
+:: Template Author: Colorlib
+:: Template Author URI: https://colorlib.com
+:: Version: v1.0.0
+:: Last Updated: 12-08-2017
+---------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Poppins:300,400,500,600,700');
+
+/* ---------------------------------------------------- */
+/*----------------------------------------------------*/
+/* Medium Layout: 1280px */
+/* Tablet Layout: 768px */
+/* Mobile Layout: 320px */
+/* Wide Mobile Layout: 480px */
+/*---------------------------------------------------- */
+/*---------------------------------------------------- */
+body {
+  line-height: 24px;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  color: #777777; }
+
+  ul,
+  li {
+      margin: 0;
+      padding: 0;
+  }
+  
+  body {
+      font-family: 'Poppins', sans-serif;
+      position: relative;
+      z-index: auto;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      color: #232d37;
+      line-height: 1.25;
+  }
+  
+  p {
+      font-family: 'Poppins', sans-serif;
+      color: #51545f;
+      font-size: 14px;
+      line-height: 2;
+      font-weight: 400;
+  }
+  
+  img {
+      max-width: 100%;
+      height: auto;
+  }
+  
+  a,
+  a:hover,
+  a:focus,
+  a:active {
+      font-family: 'Poppins', sans-serif;
+      text-decoration: none;
+      -webkit-transition-duration: 600ms;
+      transition-duration: 600ms;
+      outline: none;
+  }
+  
+  li {
+      list-style: none;
+  }  
+
+/* Start How-to-Play css
+============================================================================================ */
+.top-area {
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.main-title {
+  text-align: center;
+}
+.main-title h2 {
+  font-size: 100px;
+  color: #3fcaff;
+  opacity: 0.1;
+  margin: 0;
+  line-height: 60px;}
+.main-title h1 {
+  font-size: 80px;
+  color: #000000;
+  margin-top: -50px;}
+
+.bg-gray {
+  background-color: #f7f7f7;
+}
+
+.text > h2 {
+  font-size: 38px;
+  margin-bottom: 25px;
+}
+
+.text2 > h2 {
+  text-align: center;
+  font-size: 38px;
+  margin-bottom: 20px;
+}
+
+.text2 > h3 {
+  text-align: center;
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.text > p {
+  line-height: 1.8
+}
+
+.text > p:last-of-type {
+  margin-bottom: 35px;
+}
+
+.fancy-btn {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 44px;
+  padding: 0 15px;
+  width: 160px;
+  height: 46px;
+  border-left: 2px solid #7450fe;
+  border-right: 2px solid #21d397;
+  box-sizing: border-box;
+  background-position: 0 0, 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 2px;
+  background-image: -webkit-linear-gradient(left, #7450fe 0%, #21d397 100%), -webkit-linear-gradient(left, #7450fe 0%, #21d397 100%);
+  background-image: linear-gradient(to right, #7450fe 0%, #21d397 100%), linear-gradient(to right, #7450fe 0%, #21d397 100%);
+  -webkit-transition-duration: 1000ms;
+  transition-duration: 1000ms;
+  position: relative;
+  z-index: 1;
+}
+
+.fancy-btn:after {
+  color: #fff;
+  -webkit-transition-duration: 500ms;
+  transition-duration: 500ms;
+  background: #7450fe;
+  background: -webkit-linear-gradient(to right, #7450fe, #21d397);
+  background: -webkit-linear-gradient(left, #7450fe, #21d397);
+  background: linear-gradient(to right, #7450fe, #21d397);
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  border-radius: 2px;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"
+}
+
+.fancy-btn:hover:after,
+.fancy-btn.fancy-active:after {
+  opacity: 1;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)"
+}
+
+.fancy-btn.fancy-dark {
+  color: #232d37;
+}
+
+.fancy-btn:hover,
+.fancy-btn.fancy-dark:hover {
+  color: #fff;
+}
+
+.stat-area {
+  position: relative;
+  z-index: 2;
+}
+
+.section-padding-100 {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.section-heading {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 55px;
+}
+
+.section-heading h2 {
+  margin-bottom: 15px;
+  font-size: 38px;
+}
+
+.section-heading.heading-white h2,
+.section-heading.heading-white p {
+  color: #fff;
+}
+
+.section-padding-200 {
+  padding-top: 200px;
+  padding-bottom: 200px;
+}
+
+.single_progress_bar {
+  margin-bottom: 35px;
+}
+
+.single_progress_bar:last-child {
+  margin-bottom: 60px;
+}
+
+.single_progress_bar h6 {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.barfiller {
+  background: #e5e5e5;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  height: 8px;
+  position: relative;
+  width: 100%;
+}
+
+.barfiller .fill {
+  display: block;
+  position: relative;
+  height: 100%;
+  background: #7450fe;
+  background: -webkit-linear-gradient(to right, #7450fe, #21d397);
+  background: -webkit-linear-gradient(left, #7450fe, #21d397);
+  background: linear-gradient(to right, #7450fe, #21d397);
+  z-index: 1;
+}
+
+.barfiller .tipWrap {
+  display: none;
+}
+
+.barfiller .tip {
+  margin-top: -22px;
+  font-size: 14px;
+  color: #232d37;
+  left: 0px;
+  position: absolute;
+  z-index: 2;
+  background: transparent;
+  font-weight: 600;
+}
+
+.barfiller .tip:after {
+  display: none;
+}
+
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background: -webkit-linear-gradient(to right, #7450fe, #21d397);
+  background: -webkit-linear-gradient(left, #7450fe, #21d397);
+}
+
+/* End How-to-Play Area css
+============================================================================================ */

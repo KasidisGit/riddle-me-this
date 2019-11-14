@@ -3,5 +3,6 @@ from . import views
 
 app_name = 'game'
 urlpatterns = [
-    path('', views.IndexView, name='index'),
+    path('', views.MenuView, name='menu'),
+    path('how-to-play.html', views.HowtoView, name='htp'),
 ]

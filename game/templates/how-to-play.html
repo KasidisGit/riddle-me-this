@@ -1,0 +1,163 @@
+<html>
+{% load socialaccount %}
+{% providers_media_js %}
+{% load static %}
+<head>
+	<meta charset="utf-8">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>How to Play</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href='{% static "/css/animate.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "/css/howto-style.css" %}'>
+</head>
+<body>
+    <section class="top-area bg-gray">
+        <div class="main-title">
+            <h2>How to Play</h2>
+            <h1>How to Play</h1>
+        </div>
+        <div class="container">
+                <div class="col-12 col-lg-6">
+                    <div class="text">
+                        <h2>Riddle Me This</h2>
+                        <p>how to play1</p>
+                        <p>how to play2</p>
+                        <a href="{% url 'game:menu' %}" class="btn fancy-btn fancy-dark">Main Menu</a>
+                    </div>
+                </div>
+        </div>
+	</section>
+    <section class="stat-area section-padding-100">
+        <div class="container mySlides">
+            <div class="row">
+                <div class="col-md-6 col-lg-6">
+                    <div class="text2">
+                        <img src="static/introduction-img/1strawberry.png">
+                        <h3 class="wow fadeInUp" data-wow-delay="0.5s">Straw + berry = Strawberry</h3>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-5 ml-auto">
+                    <div class="section-heading">
+                        <h2>Game Statistics</h2>
+                        <p>Our game are divided into 3 modes. We measure our success by the results we drive for our clients.</p>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="0.5s">
+                        <h6>Difficulty</h6>
+                        <div id="bar1" class="barfiller">
+                            <span class="fill" data-percentage="15"></span>
+                        </div>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="0.8s">
+                        <h6>Creativity</h6>
+                        <div id="bar2" class="barfiller">
+                            <span class="fill" data-percentage="25"></span>
+                        </div>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="1.1s">
+                        <h6>Novelty of Words</h6>
+                        <div id="bar3" class="barfiller">
+                            <span class="fill" data-percentage="30"></span>
+                        </div>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="1.4s">
+                        <h6>Uprightness of Pictures</h6>
+                        <div id="bar4" class="barfiller">
+                            <span class="fill" data-percentage="85"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mySlides">
+            <div class="row">
+                <div class="col-md-6 col-lg-6">
+                    <div class="text2">
+                        <img src="static/introduction-img/2peacock.png">
+                        <h3 class="wow fadeInUp" data-wow-delay="0.5s">Pea + C(l)ock = Peacock</h3>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-5 ml-auto">
+                    <div class="section-heading">
+                        <h2>Game Statistics</h2>
+                        <p>Our game are divided into 3 modes. We measure our success by the results we drive for our clients.</p>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="0.5s">
+                        <h6>Difficulty</h6>
+                        <div id="bar5" class="barfiller">
+                            <span class="fill" data-percentage="50"></span>
+                        </div>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="0.8s">
+                        <h6>Creativity</h6>
+                        <div id="bar6" class="barfiller">
+                            <span class="fill" data-percentage="60"></span>
+                        </div>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="1.1s">
+                        <h6>Novelty of Words</h6>
+                        <div id="bar7" class="barfiller">
+                            <span class="fill" data-percentage="40"></span>
+                        </div>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="1.4s">
+                        <h6>Uprightness of Pictures</h6>
+                        <div id="bar8" class="barfiller">
+                            <span class="fill" data-percentage="60"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mySlides">
+            <div class="row">
+                <div class="col-md-6 col-lg-6">
+                    <div class="text2">
+                        <img src="static/introduction-img/3surface.png">
+                        <h3 class="wow fadeInUp" data-wow-delay="0.5s">Ace is Surfing = Surface</h3>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-5 ml-auto">
+                    <div class="section-heading">
+                        <h2>Game Statistics</h2>
+                        <p>Our game are divided into 3 modes. We measure our success by the results we drive for our clients.</p>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="0.5s">
+                        <h6>Difficulty</h6>
+                        <div id="bar9" class="barfiller">
+                            <span class="fill" data-percentage="90"></span>
+                        </div>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="0.8s">
+                        <h6>Creativity</h6>
+                        <div id="bar10" class="barfiller">
+                            <span class="fill" data-percentage="100"></span>
+                        </div>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="1.1s">
+                        <h6>Novelty of Words</h6>
+                        <div id="bar11" class="barfiller">
+                            <span class="fill" data-percentage="35"></span>
+                        </div>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="1.4s">
+                        <h6>Uprightness of Pictures</h6>
+                        <div id="bar12" class="barfiller">
+                            <span class="fill" data-percentage="15"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+    <script src="static/howto-js/jquery-2.2.4.min.js"></script>
+    <script src="static/howto-js/plugins.js"></script>
+    <script src="static/howto-js/active.js"></script>
+</body>
+</html>

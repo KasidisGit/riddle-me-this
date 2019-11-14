@@ -266,7 +266,7 @@ img {
 
 .header_area {
   z-index: 1;
-  background: url(../img/home.jpg) no-repeat center center;
+  background: url(../introduction-img/home.jpg) no-repeat center center;
   background-size: cover; }
   .header_area .navbar-brand {
     margin-right: 30px; }

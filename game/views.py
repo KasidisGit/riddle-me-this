@@ -3,7 +3,8 @@ from django.views import generic
 from django.utils import timezone
 from .models import Question
 
-def IndexView(request):
-    # q = Question.objects.get(pk=1)
-
+def MenuView(request):
     return render(request,"main-menu.html")
+
+def HowtoView(request):
+    return render(request,"how-to-play.html")

@@ -1,4 +1,4 @@
-<html></html>
+<html>
 {% load socialaccount %}
 {% providers_media_js %}
 {% load static %}
@@ -7,7 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Main Menu</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href='{% static "/css/style.css" %}'>
+	<link rel="stylesheet" type="text/css" href='{% static "/css/menu-style.css" %}'>
 </head>
 <body class="header_area">
     <div class="main_title">
@@ -28,7 +28,7 @@
                     </ul>
             </li>
             <br></br>
-            <li style="margin-top:60px" class="nav-item"><a href="#" class="primary_btn">How to Play</a></li>
+            <li style="margin-top:60px" class="nav-item"><a href="{% url 'game:htp' %}" class="primary_btn">How to Play</a></li>
             <br></br>
             <li class="nav-item"><a href="#" class="primary_btn">Scoreboard</a></li>
         </ul>
