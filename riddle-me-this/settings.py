@@ -132,9 +132,8 @@ STATICFILES_DIRS = [
 ]
 
 FIXTURE_DIRS = (
-    os.path.join(BASE_DIR, "fixtures"),
+    os.path.join(BASE_DIR, "riddle-me-this/fixtures"),
 )
-
 SITE_ID = 1
 
 LOGIN_REDIRECT_URL = '/'
