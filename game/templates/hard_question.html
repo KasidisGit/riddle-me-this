@@ -1,2 +1,22 @@
-<img src='{{question.image.url}}'>
+<img src='{{question.image.url}}' id="img">
 {{question.answer}}
+{{question_length}}
+{% for i in n %}
+<input type="text" id="inputs" maxlength="1" size="3" onkeypress=test() />
+{% endfor %}
+<script src="https://code.jquery.com/jquery-3.4.1.js" ></script>
+<script>
+
+function test(){
+var allInputs = $( ":input" );
+var next = $(this).next(document.getElementById('inputs'))
+if ( document.getElementById('inputs').value.length == 1){
+    document.getElementById('inputs').blur()
+    console.log(next)
+    console.log($(this))
+    console.log(allInputs)
+} else {
+    next.focus()
+}
+}
+</script>

@@ -13,6 +13,10 @@ def LevelStage(request):
     })
 
 def QuestionDetail(request,question_id):
+    Question = HardQuestion.objects.get(pk=question_id)
     return render(request,"hard_question.html",{
-        "question":HardQuestion.objects.get(pk=question_id)
+        "question": Question,
+        'n' : range(len(Question.answer))
     })
+
+
