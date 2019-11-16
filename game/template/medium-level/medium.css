@@ -35,9 +35,9 @@ h1 {
 }
 
 img {
-    margin-top: 80px;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 40px auto;
+    /* margin-left: auto;
+    margin-right: auto; */
     display: block;
 }
   
