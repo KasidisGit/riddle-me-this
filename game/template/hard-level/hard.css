@@ -10,12 +10,6 @@ h1 {
     margin-right: 150px;
 }
 
-h2 {
-    color: indigo;
-    text-align: center;
-    display: inline;
-}
-
 .button-left {
     background-color: #303F9F; /* Green */
     border: none;
@@ -40,33 +34,9 @@ h2 {
     border: 2px solid #303F9F;
     color: #FFB300;
 }
-  
-/* .button-right {
-    background-color: #CDDC39;
-    border: none;
-    border-radius: 12px;
-    color: #3E2723;
-    padding: 20px 40px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 20px;
-    margin-right: 30px;
-    -webkit-transition-duration: 0.4s; Safari
-    transition-duration: 0.4s;
-    float: right;
-    cursor: pointer;
-    width: 6rem;
-} */
-
-/* .button-right:hover {
-    background-color: honeydew;
-    border: 2px solid #CDDC39;
-    color: #3E2723;
-}  */
 
 img {
-    margin: 80px auto;
+    margin: 50px auto;
     display: block;
 }
 
