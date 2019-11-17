@@ -191,8 +191,8 @@ body {
 }
 
 .section-padding-100 {
-  padding-top: 80px;
-  padding-bottom: 80px;
+  padding-top: 70px;
+  padding-bottom: 50px;
 }
 
 .section-heading {
@@ -284,5 +284,29 @@ body {
   background: -webkit-linear-gradient(left, #7450fe, #21d397);
 }
 
+.row-p {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -25px;
+  margin-left: -25px;
+}
+
+.table-center {
+  display: block;
+  margin-top: 85px;
+  margin-left: 30px;
+  margin-right: auto;
+}
+
+.table-text {
+  text-align: center;
+}
+
+.button-padding {
+  padding-top: 30px;
+  text-align: center;
+}
 /* End How-to-Play Area css
 ============================================================================================ */
