@@ -19,4 +19,4 @@ It is an online educational game that tests knowledge and creativity of a player
 * [Task Board](https://trello.com/b/y8vxcJPa/riddle-me-this)
 * [Code Review](https://docs.google.com/document/d/1QnH53fsqkTB0lhTCFExOkOOEtXv0lpKw0SpMnZ8ifWo/edit)
 * Design Documents
-* Sreen Flow Diagram
+* Screen Flow Diagram
