@@ -90,6 +90,7 @@
   }
 },
 {
+<<<<<<< HEAD
   "model": "sessions.session",
   "pk": "6y8pvhrsi3ajbtqg73kyefeomdbikzpu",
   "fields": {
@@ -146,6 +147,8 @@
   }
 },
 {
+=======
+>>>>>>> 3bc2c39668e96b37c1388c86767af6f2a3e33083
   "model": "sites.site",
   "pk": 1,
   "fields": {
@@ -659,6 +662,7 @@
     "token_secret": "",
     "expires_at": "2019-11-18T09:06:55.367Z"
   }
+<<<<<<< HEAD
 },
 {
   "model": "admin.logentry",
@@ -1426,5 +1430,7 @@
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
+=======
+>>>>>>> 3bc2c39668e96b37c1388c86767af6f2a3e33083
 }
 ]
