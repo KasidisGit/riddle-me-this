@@ -11,15 +11,28 @@
     <a href= "____________"  class="button-left">Main menu</a>
     <h1>DAVINCI GAME</h1>
 
-  <hr>
+    <hr>
 
-  <img src="1rainbow.png" alt="rainbow" height="350" width="480">
-  <div class="input-box">
-    <input type="fullword" placeholder="text here">
-    <button class="button-hint">Hint</button>
-    <form>
-      <INPUT TYPE="button" class="button-submit" VALUE="SUBMIT" onClick="parent.location='medium-level1.html'">
-    </form>
-  </div>
+    <img src="1rainbow.png" alt="rainbow" height="270" width="410">
+    <div class="input-box">
+      <span><input type="fullword" placeholder="text here"></span>
+      <p id="correct"></p>
+      <span><button class="button-hint">Hint</button></span>
+    </div>
+    <div>
+      <form>
+          <INPUT TYPE="button" class="button-submit" onclick="myFunction()" VALUE="SUBMIT" /*onClick="parent.location='medium-level1.html'"*/>
+      </form>
+    </div>
+
+    <script>
+    function myFunction() { 
+      document.getElementById("correct").innerHTML = "You are correct!";
+      document.getElementById("correct").style.textAlign = "center";
+      document.getElementById("correct").style.color = "Brown";
+      document.getElementById("correct").style.fontFamily = "Arial Rounded MT";
+      document.getElementById("correct").style.fontSize = "larger";
+    }
+    </script>
   </body>
 </html>

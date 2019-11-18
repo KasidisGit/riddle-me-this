@@ -43,8 +43,8 @@ img {
 .input-box {
     width: 100%;
     margin-top: 50px;
+    margin-right: 100px;
     text-align: center;
-    display: block;
 }
 
 .input-box input[type="fullword"]
@@ -55,12 +55,12 @@ img {
 }
 
 .button-hint {
-    display: inline-block;
+    /* display: inline; */
     padding: 15px 25px;
-    margin-left: 20px;
+    float: right;
+    margin-right: 100px;
     font-size: 20px;
     cursor: pointer;
-    text-align: center;
     text-decoration: none;
     outline: none; 
     color: #fff;
@@ -68,6 +68,7 @@ img {
     border: none;
     border-radius: 15px;
     box-shadow: 0 9px #999;
+    
 }
 
 .button-hint:hover {background-color: #3e8e41}
@@ -83,15 +84,21 @@ img {
     border: none;
     color: white;
     padding: 16px 32px;
-    text-align: center;
     font-size: 16px;
-    margin: 20px 2px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
     opacity: 0.6;
     transition: 0.3s;
-    display: inline-block;
+    display: block;
     text-decoration: none;
     cursor: pointer;
 }
 
 .button-submit:hover {opacity: 1}
 
+p {
+    display: inline;
+    margin-left: 10px;
+}
