@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$150000$fjCtvdEzTwNG$lauosWPr+daQZHUKaoBr9lJOsT7nRj+lF3KQAM+7oPk=",
-    "last_login": "2019-11-11T08:44:24.041Z",
+    "last_login": "2019-11-18T17:18:17.734Z",
     "is_superuser": true,
     "username": "pong",
     "first_name": "",
@@ -40,7 +40,7 @@
   "pk": 3,
   "fields": {
     "password": "!lslbfD00wD8IiI1kD9E9vRfylMz79beyDWeHs5bM",
-    "last_login": "2019-11-09T11:54:30.025Z",
+    "last_login": "2019-10-31T02:45:40.928Z",
     "is_superuser": false,
     "username": "pong4",
     "first_name": "Pong",
@@ -57,21 +57,101 @@
   "model": "auth.user",
   "pk": 4,
   "fields": {
-    "password": "!Avh9X9GFmI8wp3eqxVaQ3DsaXrWNqQjqePY2e6QD",
-    "last_login": "2019-11-11T07:53:41.637Z",
+    "password": "!mFtWH2Cr8MtOWz6JSMuhP7lY3Hl2BZRyenF35bj1",
+    "last_login": "2019-11-18T08:06:56.588Z",
     "is_superuser": false,
-    "username": "kasidis",
-    "first_name": "Kasidis",
-    "last_name": "LUANGWUTIWONG",
+    "username": "sukrita",
+    "first_name": "Sukrita",
+    "last_name": "KITTIPITAYAKORN",
     "email": "",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2019-11-09T11:12:43.509Z",
+    "date_joined": "2019-11-11T09:02:14.087Z",
     "groups": [],
     "user_permissions": []
   }
 },
 {
+<<<<<<< HEAD
+=======
+  "model": "auth.user",
+  "pk": 5,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$EPmlp7tv3T9K$brwZRl5TJpj/9haQsZoBzkdvw548ig4zMIDINtI/ywA=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "Sukrita",
+    "first_name": "",
+    "last_name": "",
+    "email": "sukrita.ki@ku.th",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2019-11-18T17:22:05.894Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+<<<<<<< HEAD
+  "model": "sessions.session",
+  "pk": "6y8pvhrsi3ajbtqg73kyefeomdbikzpu",
+  "fields": {
+    "session_data": "YzlmNTdmNWMyYzVkYjc1M2UxYjI2MzIxMzQyMDhjNTRjMmNhMmJkNjp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI5MmM0YTk0MWM0YjM5YzI4OTllZmNjNDc0Y2QxMWIxMWViNjIxNDQ1In0=",
+    "expire_date": "2019-11-13T17:56:30.884Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "gsnanhee8ce4km65miy96ge5bkon2kgp",
+  "fields": {
+    "session_data": "ODVkYzI1NTkxMDFhZjdlYmI1ZjVjYzgwMmQ3MjEyMjk3ZGRhNDQ2ODp7Il9hdXRoX3VzZXJfaWQiOiI0IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI2OTJkNDkwN2E5MjNiOThhY2NlZjlhOWRmNzg0YTJjMjFhNzU2YjM5In0=",
+    "expire_date": "2019-11-25T09:06:17.882Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "j74thmxlgkiw1kof8akst12qxdetbekq",
+  "fields": {
+    "session_data": "YzlmNTdmNWMyYzVkYjc1M2UxYjI2MzIxMzQyMDhjNTRjMmNhMmJkNjp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI5MmM0YTk0MWM0YjM5YzI4OTllZmNjNDc0Y2QxMWIxMWViNjIxNDQ1In0=",
+    "expire_date": "2019-11-13T17:36:44.802Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "q2erggzf55k9yz4how31kcjbjnlb7l86",
+  "fields": {
+    "session_data": "NGE1YmRjOTk4Mzg5YzZkYTdjZGMxOGY3MjQzYmFlNzRjM2RhOGNjYTp7InNvY2lhbGFjY291bnRfc3RhdGUiOlt7InByb2Nlc3MiOiJsb2dpbiIsInNjb3BlIjoiIiwiYXV0aF9wYXJhbXMiOiIifSwiZ05aS1ppemUzZ1JuIl19",
+    "expire_date": "2019-11-14T02:46:28.879Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "sgp1olqnhsgzsz4n7t1ypvrek3c4oagb",
+  "fields": {
+    "session_data": "YzlmNTdmNWMyYzVkYjc1M2UxYjI2MzIxMzQyMDhjNTRjMmNhMmJkNjp7Il9hdXRoX3VzZXJfaWQiOiIyIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI5MmM0YTk0MWM0YjM5YzI4OTllZmNjNDc0Y2QxMWIxMWViNjIxNDQ1In0=",
+    "expire_date": "2019-11-13T17:56:27.452Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "suy1lxx3j3yugpm1zg9g29eiosdg2hl3",
+  "fields": {
+    "session_data": "ZTRjOWIyYTg1Mjc3NDJkZjAwNDQ0Yzg2YTE4MGM4NjljMjc1MjQ5YTp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIxY2RmMDRmOGIyNTUzNDNiM2YyNDhmYmIyOGUwZWM1Yzc2ZjMwYjExIn0=",
+    "expire_date": "2019-12-02T17:18:17.738Z"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "tw8evmdhxk4ix730x8pb2hyvms4mxxo7",
+  "fields": {
+    "session_data": "Njc1ZDE5NzA3ZTAxZDNiMjMxNzgzMTE5NzIxMTJjY2VhNjg0YzU3Mzp7Il9hdXRoX3VzZXJfaWQiOiIzIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIyMGNhMzViOTQ3NjBmZGI4MzIxMDgzZDQ1YTliNTU0ZWI0YWE3M2FiIn0=",
+    "expire_date": "2019-11-14T02:43:31.865Z"
+  }
+},
+{
+=======
+>>>>>>> 3bc2c39668e96b37c1388c86767af6f2a3e33083
+>>>>>>> 899ba422fea2e0f77c622556472609ffc692cb85
   "model": "sites.site",
   "pk": 1,
   "fields": {
@@ -208,6 +288,286 @@
   }
 },
 {
+  "model": "game.mediumquestion",
+  "pk": 1,
+  "fields": {
+    "image": "img/1-friday.png",
+    "answer": "friday"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 2,
+  "fields": {
+    "image": "img/2-lovesick.png",
+    "answer": "lovesick"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 3,
+  "fields": {
+    "image": "img/3-combat.png",
+    "answer": "combat"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 4,
+  "fields": {
+    "image": "img/4-billion.png",
+    "answer": "billion"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 5,
+  "fields": {
+    "image": "img/5-software.png",
+    "answer": "software"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 6,
+  "fields": {
+    "image": "img/6-bargain.png",
+    "answer": "bargain"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 7,
+  "fields": {
+    "image": "img/7-firefly.png",
+    "answer": "firefly"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 8,
+  "fields": {
+    "image": "img/8-office.png",
+    "answer": "office"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 9,
+  "fields": {
+    "image": "img/9-pipet.png",
+    "answer": "pipet"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 10,
+  "fields": {
+    "image": "img/10-password.png",
+    "answer": "password"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 11,
+  "fields": {
+    "image": "img/11-babysit.png",
+    "answer": "babysit"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 12,
+  "fields": {
+    "image": "img/12-begin.png",
+    "answer": "begin"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 13,
+  "fields": {
+    "image": "img/13-waterfall.png",
+    "answer": "waterfall"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 14,
+  "fields": {
+    "image": "img/14-peasant.png",
+    "answer": "peasant"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 15,
+  "fields": {
+    "image": "img/15-nightmare.png",
+    "answer": "nightmare"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 16,
+  "fields": {
+    "image": "img/16-secondhand.png",
+    "answer": "secondhand"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 17,
+  "fields": {
+    "image": "img/17-asleep.png",
+    "answer": "asleep"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 18,
+  "fields": {
+    "image": "img/18-cocktail.png",
+    "answer": "cocktail"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 19,
+  "fields": {
+    "image": "img/19-hijack.png",
+    "answer": "hijack"
+  }
+},
+{
+  "model": "game.mediumquestion",
+  "pk": 20,
+  "fields": {
+    "image": "img/20-romantic.png",
+    "answer": "romantic"
+  }
+},
+{
+  "model": "game.easyquestion",
+  "pk": 1,
+  "fields": {
+    "image": "img/1rainbow.png",
+    "answer": "rainbow"
+  }
+},
+{
+  "model": "game.easyquestion",
+  "pk": 2,
+  "fields": {
+    "image": "img/2background.png",
+    "answer": "background"
+  }
+},
+{
+  "model": "game.easyquestion",
+  "pk": 3,
+  "fields": {
+    "image": "img/3butterfly.png",
+    "answer": "butterfly"
+  }
+},
+{
+  "model": "game.easyquestion",
+  "pk": 4,
+  "fields": {
+    "image": "img/4cowboy.png",
+    "answer": "cowboy"
+  }
+},
+{
+  "model": "game.easyquestion",
+  "pk": 5,
+  "fields": {
+    "image": "img/5facebook.png",
+    "answer": "facebook"
+  }
+},
+{
+  "model": "game.easyquestion",
+  "pk": 6,
+  "fields": {
+    "image": "img/6firefox.png",
+    "answer": "firefox"
+  }
+},
+{
+  "model": "game.easyquestion",
+  "pk": 7,
+  "fields": {
+    "image": "img/7football.png",
+    "answer": "football"
+  }
+},
+{
+  "model": "game.easyquestion",
+  "pk": 8,
+  "fields": {
+    "image": "img/8hotdog.png",
+    "answer": "hotdog"
+  }
+},
+{
+  "model": "game.easyquestion",
+  "pk": 9,
+  "fields": {
+    "image": "img/9mountain.png",
+    "answer": "mountain"
+  }
+},
+{
+  "model": "game.easyquestion",
+  "pk": 10,
+  "fields": {
+    "image": "img/10carpet.png",
+    "answer": "carpet"
+  }
+},
+{
+  "model": "game.easyquestion",
+  "pk": 11,
+  "fields": {
+    "image": "img/11notebook.png",
+    "answer": "notebook"
+  }
+},
+{
+  "model": "game.easyquestion",
+  "pk": 12,
+  "fields": {
+    "image": "img/12pancake.png",
+    "answer": "pancake"
+  }
+},
+{
+  "model": "game.easyquestion",
+  "pk": 13,
+  "fields": {
+    "image": "img/13pillow.png",
+    "answer": "pillow"
+  }
+},
+{
+  "model": "game.easyquestion",
+  "pk": 14,
+  "fields": {
+    "image": "img/14wallpaper.png",
+    "answer": "wallpaper"
+  }
+},
+{
+  "model": "game.easyquestion",
+  "pk": 15,
+  "fields": {
+    "image": "img/15watermelon.png",
+    "answer": "watermelon"
+  }
+},
+{
   "model": "socialaccount.socialapp",
   "pk": 1,
   "fields": {
@@ -256,7 +616,7 @@
     "user": 3,
     "provider": "google",
     "uid": "114210225312402469931",
-    "last_login": "2019-11-09T11:54:30.010Z",
+    "last_login": "2019-10-31T02:45:40.914Z",
     "date_joined": "2019-10-30T17:36:24.115Z",
     "extra_data": "{\"id\": \"114210225312402469931\", \"name\": \"Pong Kasidis\", \"given_name\": \"Pong\", \"family_name\": \"Kasidis\", \"picture\": \"https://lh3.googleusercontent.com/a-/AAuE7mAr6arU0czsEBSS4-Lx_inFtisYOOY2ZXF0UJLZ\", \"locale\": \"th\"}"
   }
@@ -267,10 +627,10 @@
   "fields": {
     "user": 4,
     "provider": "google",
-    "uid": "103039445084350750946",
-    "last_login": "2019-11-11T07:53:41.620Z",
-    "date_joined": "2019-11-09T11:12:43.520Z",
-    "extra_data": "{\"id\": \"103039445084350750946\", \"name\": \"Kasidis LUANGWUTIWONG\", \"given_name\": \"Kasidis\", \"family_name\": \"LUANGWUTIWONG\", \"picture\": \"https://lh3.googleusercontent.com/a-/AAuE7mA6duI6jRpGuXa4Za8PTeIfLjbsGEWbHCrqzSWd\", \"locale\": \"en\"}"
+    "uid": "105898172479522085785",
+    "last_login": "2019-11-18T08:06:56.576Z",
+    "date_joined": "2019-11-11T09:02:14.097Z",
+    "extra_data": "{\"id\": \"105898172479522085785\", \"name\": \"Sukrita KITTIPITAYAKORN\", \"given_name\": \"Sukrita\", \"family_name\": \"KITTIPITAYAKORN\", \"picture\": \"https://lh3.googleusercontent.com/a-/AAuE7mCD76gd-xS-tnGVeI2H_4yxptDoQm8vAEwKa0fU\", \"locale\": \"en\"}"
   }
 },
 {
@@ -290,9 +650,9 @@
   "fields": {
     "app": 2,
     "account": 2,
-    "token": "ya29.Il-wB4seycRdgGzbj1kX9xGWd9Gee9YQLLS44ajs81fo_taU-0oFpB74W1SMXCKVq06eoqd2TRQ1ZtCgV-ntYAHDQH8KJr1Dgy9_42zjwDkyvP8CI8zXEnZsF0lhtYObuQ",
+    "token": "ya29.Il-pB1ymlNoxl_i0h2w6gY4DOglDe3fP_3rMRQhlgxzojSc5pZDvgIb2KSArU8FQ9r7-pCcrjboGag2bhvoJUCTlnVMWaLki_gBik7OfMILluLT6ZmmnTE3UVpRhSRvnJg",
     "token_secret": "",
-    "expires_at": "2019-11-09T12:54:29.828Z"
+    "expires_at": "2019-10-31T03:45:40.720Z"
   }
 },
 {
@@ -301,9 +661,782 @@
   "fields": {
     "app": 2,
     "account": 3,
-    "token": "ya29.ImCwB6C0mo8EiB61mVSSxa_DYD9ChuxyD3Gx2mOA6uV9grUUKhIFPiSWs3K4NbHiMmJabQHi91yVAjHPAn0GLxcrEOHdFUjUSqQ_7CrsPQOKyRvCWr1vufk1X7OzGFpLVhE",
+    "token": "ya29.ImCxB2nTnB1X6IEYyHfdmxwSkr3F4KqKGSzavQCV3hzg_4M9-j4CT3h_w981N8AcNAVljFvEGrWTErux1kCJnDD6CFZQCJyU2x1JVwFXZ1Y_CVeUMinewQk0hnTtj8udsGo",
     "token_secret": "",
-    "expires_at": "2019-11-11T08:53:40.227Z"
+    "expires_at": "2019-11-18T09:06:55.367Z"
   }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2019-10-30T14:55:06.184Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "1",
+    "object_repr": "Facebook-login",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2019-10-30T14:56:35.586Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "localhost:8000/",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"domain\", \"name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2019-10-30T15:46:15.583Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "http://localhost:8000/",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"domain\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2019-10-30T15:52:20.383Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "1",
+    "object_repr": "localhost:8000/",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"domain\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2019-10-30T15:58:21.579Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "2",
+    "object_repr": "facebook_pong",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"username\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2019-10-30T15:59:23.129Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "2",
+    "object_repr": "facebook_pong",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"is_active\", \"is_superuser\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2019-10-30T15:59:36.143Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "2",
+    "object_repr": "facebook_pong",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"is_active\", \"is_staff\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2019-10-30T15:59:45.837Z",
+    "user": 1,
+    "content_type": 4,
+    "object_id": "1",
+    "object_repr": "pong",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2019-10-30T16:15:30.230Z",
+    "user": 2,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Google-login",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2019-10-30T17:54:50.977Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "http://127.0.0.1:8000/",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2019-10-30T17:55:06.065Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "127.0.0.1:8000/",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"domain\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2019-10-30T17:55:22.828Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "1",
+    "object_repr": "Facebook-login",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"sites\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2019-10-30T17:55:28.047Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Google-login",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"sites\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2019-10-30T17:57:14.033Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "http://127.0.0.1:8000/",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"domain\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2019-10-30T17:59:19.925Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "127.0.0.1:8000/",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2019-10-30T17:59:26.237Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "127.0.0.1:8000",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"domain\", \"name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2019-10-30T17:59:40.358Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "1",
+    "object_repr": "Facebook-login",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"sites\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2019-10-30T17:59:46.963Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Google-login",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"sites\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2019-10-30T18:03:10.572Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "127.0.0.1:8000/",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"domain\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2019-10-30T18:03:20.088Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "2",
+    "object_repr": "http://127.0.0.1:8000/",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2019-10-30T18:03:24.393Z",
+    "user": 1,
+    "content_type": 7,
+    "object_id": "3",
+    "object_repr": "127.0.0.1:8000/",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2019-10-30T18:04:07.891Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "1",
+    "object_repr": "Facebook-login",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2019-10-30T18:04:11.754Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "2",
+    "object_repr": "Google-login",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2019-10-30T18:05:34.383Z",
+    "user": 1,
+    "content_type": 14,
+    "object_id": "1",
+    "object_repr": "Facebook-login",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2019-11-18T17:30:06.045Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "1",
+    "object_repr": "rainbow",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2019-11-18T17:30:23.002Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "2",
+    "object_repr": "background",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2019-11-18T17:30:43.314Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "3",
+    "object_repr": "butterfly",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2019-11-18T17:30:56.799Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "4",
+    "object_repr": "cowboy",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2019-11-18T17:31:07.467Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "5",
+    "object_repr": "facebook",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2019-11-18T17:31:19.301Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "6",
+    "object_repr": "firefox",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2019-11-18T17:31:30.127Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "7",
+    "object_repr": "football",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2019-11-18T17:31:39.183Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "8",
+    "object_repr": "hotdog",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2019-11-18T17:31:50.789Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "9",
+    "object_repr": "mountain",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2019-11-18T17:32:00.537Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "10",
+    "object_repr": "carpet",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2019-11-18T17:32:15.288Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "11",
+    "object_repr": "notebook",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2019-11-18T17:32:29.585Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "12",
+    "object_repr": "pancake",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2019-11-18T17:32:38.455Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "13",
+    "object_repr": "pillow",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2019-11-18T17:32:48.638Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "14",
+    "object_repr": "wallpaper",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2019-11-18T17:33:01.841Z",
+    "user": 1,
+    "content_type": 8,
+    "object_id": "15",
+    "object_repr": "watermelon",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2019-11-18T17:34:25.884Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "1",
+    "object_repr": "friday",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2019-11-18T17:34:36.466Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "2",
+    "object_repr": "lovesick",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2019-11-18T17:34:46.013Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "3",
+    "object_repr": "combat",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2019-11-18T17:34:59.183Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "4",
+    "object_repr": "billion",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2019-11-18T17:35:09.794Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "5",
+    "object_repr": "software",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2019-11-18T17:35:21.650Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "6",
+    "object_repr": "bargain",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 46,
+  "fields": {
+    "action_time": "2019-11-18T17:35:40.449Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "7",
+    "object_repr": "firefly",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 47,
+  "fields": {
+    "action_time": "2019-11-18T17:35:58.736Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "8",
+    "object_repr": "office",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 48,
+  "fields": {
+    "action_time": "2019-11-18T17:36:08.432Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "9",
+    "object_repr": "pipet",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 49,
+  "fields": {
+    "action_time": "2019-11-18T17:36:22.851Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "10",
+    "object_repr": "password",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 50,
+  "fields": {
+    "action_time": "2019-11-18T17:36:35.876Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "11",
+    "object_repr": "babysit",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 51,
+  "fields": {
+    "action_time": "2019-11-18T17:36:46.663Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "12",
+    "object_repr": "begin",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 52,
+  "fields": {
+    "action_time": "2019-11-18T17:37:03.202Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "13",
+    "object_repr": "waterfall",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 53,
+  "fields": {
+    "action_time": "2019-11-18T17:37:18.209Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "14",
+    "object_repr": "peasant",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 54,
+  "fields": {
+    "action_time": "2019-11-18T17:37:39.856Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "15",
+    "object_repr": "nightmare",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 55,
+  "fields": {
+    "action_time": "2019-11-18T17:37:56.032Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "16",
+    "object_repr": "secondhand",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 56,
+  "fields": {
+    "action_time": "2019-11-18T17:38:07.579Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "17",
+    "object_repr": "asleep",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 57,
+  "fields": {
+    "action_time": "2019-11-18T17:38:21.060Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "18",
+    "object_repr": "cocktail",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 58,
+  "fields": {
+    "action_time": "2019-11-18T17:38:33.120Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "19",
+    "object_repr": "hijack",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 59,
+  "fields": {
+    "action_time": "2019-11-18T17:38:43.925Z",
+    "user": 1,
+    "content_type": 10,
+    "object_id": "20",
+    "object_repr": "romantic",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+=======
+>>>>>>> 3bc2c39668e96b37c1388c86767af6f2a3e33083
+>>>>>>> 899ba422fea2e0f77c622556472609ffc692cb85
 }
 ]
