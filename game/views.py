@@ -5,5 +5,4 @@ from .models import *
 
 def IndexView(request):
     # q = Question.objects.get(pk=1)
-
     return render(request,"main-menu.html")
