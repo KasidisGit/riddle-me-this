@@ -14,14 +14,7 @@ Author E-mail: naimlasker@gmail.com
 =====================================================================*/
 
 @import url("https://fonts.googleapis.com/css?family=Rajdhani:600,700|Roboto:400,500,500i");
-/*---------------------------------------------------- */
-/*----------------------------------------------------*/
-/* Medium Layout: 1280px */
-/* Tablet Layout: 768px */
-/* Mobile Layout: 320px */
-/* Wide Mobile Layout: 480px */
-/*---------------------------------------------------- */
-/*----------------------------------------------------*/
+
 body {
   line-height: 24px;
   font-size: 14px;
@@ -51,8 +44,6 @@ button:focus {
 img {
   max-width: 100%; }
 
-/* Main Title Area css
-============================================================================================ */
 .main_title {
   text-align: center;
   margin-bottom: 80px; }
@@ -68,11 +59,6 @@ img {
     color: #effeff;
     margin-top: -50px;}
 
-/* End Main Title Area css
-============================================================================================ */
-
-/* Start Gradient Area css
-============================================================================================ */
 .gradient-bg, .video-play-button:before, .video-play-button:after, .recent_update_inner .nav.nav-tabs li a.active, .recent_update_inner .nav.nav-tabs li a:hover {
   background: -webkit-linear-gradient(90deg, #3fcaff 0%, #a4ffb0 100%);
   background: -moz-linear-gradient(90deg, #3fcaff 0%, #a4ffb0 100%);
@@ -93,14 +79,12 @@ img {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent; }
 
-/* End Gradient Area css
-============================================================================================ */
 .gradient_btn {
   display: inline-block;
   color: #fff;
   letter-spacing: 1px;
   font-family: "Roboto", sans-serif;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 500;
   line-height: 46px;
   outline: none !important;
@@ -108,7 +92,7 @@ img {
   cursor: pointer;
   text-transform: uppercase;
   border: double 2px transparent;
-  border-radius: 10px;
+  border-radius: 15px;
   background-image: linear-gradient(#342b7e, #3b328b), radial-gradient(circle at top left, #3fcaff, #a4ffb0);
   background-image: -webkit-linear-gradient(#342b7e, #3b328b), -webkit-radial-gradient(circle at top left, #3fcaff, #a4ffb0);
   background-image: -moz-linear-gradient(#342b7e, #3b328b), -moz-radial-gradient(circle at top left, #3fcaff, #a4ffb0);
@@ -117,7 +101,7 @@ img {
   background-origin: border-box;
   background-clip: content-box, border-box; }
   .gradient_btn span {
-    padding: 0 60px; }
+    padding: 0 40px; }
   .gradient_btn:hover {
     color: #22195e;
     box-shadow: 0px 10px 30px rgba(130, 82, 250, 0.2); }
@@ -151,8 +135,6 @@ img {
     background-position: right center;
     color: #22195e; }
 
-/* Start Video Play css
-============================================================================================ */
 .video-play-button {
   margin-top: 50px;
   position: relative;
@@ -260,9 +242,6 @@ img {
     transform: translate(-50%, -50%) translateZ(0) scale(1.5);
     opacity: 0.1; } }
 
-/* End Video Play css
-============================================================================================ */
-
 .header_area {
   z-index: 1;
   background: url(../introduction-img/home.jpg) no-repeat center center;
@@ -295,13 +274,17 @@ img {
         color: #3fcaff; }
       .header_area .navbar .nav .nav-item.submenu {
         margin-top: 12px;
-        margin-left: 652px;
-        position: absolute; }
+        display: inline-block;
+        width: 135px;
+        height: 45px;
+        /* margin-inline-start: 555px; */
+        text-align: center;
+        position: relative; }
         .header_area .navbar .nav .nav-item.submenu ul {
           border: none;
           padding: 0px;
           margin-top: 10px;
-          margin-left: -32px;
+          margin-left: -33px;
           border-radius: 0px;
           box-shadow: none;
           background: #fff; }
@@ -363,55 +346,48 @@ img {
           margin-top: 0px; }
       .header_area .navbar .nav .nav-item:last-child {
         margin-right: 0px; }
-  .header_area.navbar_fixed .main_menu {
-    position: fixed;
-    width: 100%;
-    top: -70px;
-    left: 0;
-    right: 0;
-    background: #2c2172;
-    transform: translateY(70px);
-    transition: transform 500ms ease, background 500ms ease;
-    -webkit-transition: transform 500ms ease, background 500ms ease;
-    box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.1); }
-    .header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link {
-      line-height: 70px; }
-  @media (min-width: 992px) {
-    .header_area.white_menu .navbar .navbar-brand img {
-      display: none; }
-      .header_area.white_menu .navbar .navbar-brand img + img {
-        display: inline-block; } }
-  @media (max-width: 991px) {
-    .header_area.white_menu .navbar .navbar-brand img {
-      display: inline-block; }
-      .header_area.white_menu .navbar .navbar-brand img + img {
-        display: none; } }
-  .header_area.white_menu .navbar .nav .nav-item .nav-link {
-    color: #fff; }
-  .header_area.white_menu.navbar_fixed .main_menu .navbar .navbar-brand img {
-    display: inline-block; }
-    .header_area.white_menu.navbar_fixed .main_menu .navbar .navbar-brand img + img {
-      display: none; }
-  .header_area.white_menu.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link {
-    line-height: 70px;
-    color: #222222; }
-  .header_area .navbar-right .primary_btn {
-    min-width: 135px;
-    font-size: 20px;
-    text-transform: uppercase;
-    border-radius: 50px;
-    line-height: 45px; }
+ 
+.header_area .navbar-right .primary_btn {
+  min-width: 135px;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  line-height: 45px; }
 
-/* End Header css
-============================================================================================ */
-
-/* Start Login css
-============================================================================================ */
+.google {
+  background: transparent;
+  display: inline-block;
+  position: relative;}
+  .google .g_btn {
+    padding-bottom: 10px; }
+    .google .g_btn .gradient_btn {
+      position: relative; }
+      .google .g_btn .gradient_btn span {
+        position: relative;
+        z-index: 2; }
+      .google .g_btn .gradient_btn:after {
+        content: "";
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0;
+        bottom: 0; }
+  .google.active .g_btn .gradient_btn, .google:hover .g_btn .gradient_btn {
+    color: #22195e;
+    box-shadow: 0px 10px 30px rgba(130, 82, 250, 0.2);
+    border: 2px solid transparent; }
+    .google.active .g_btn .gradient_btn:after, .google:hover .g_btn .gradient_btn:after {
+      border-radius: 5px;
+      background: -webkit-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+      background: -moz-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+      background: -o-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+      background: linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%); }
+  
 .facebook {
   background: transparent;
-  position: fixed;
-  bottom: 40px;
-  left: 54%; }
+  display: inline-block;
+  position: relative;
+  margin-left: 50px;}
   .facebook .f_btn {
     padding-bottom: 10px; }
     .facebook .f_btn .gradient_btn {
@@ -437,59 +413,30 @@ img {
       background: -o-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
       background: linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%); }
 
-.google {
-  background: transparent;
-  position: fixed;
-  bottom: 40px;
-  left: 33%;}
-  .google .g_btn {
-    padding-bottom: 10px; }
-    .google .g_btn .gradient_btn {
+  .guest {
+    background: transparent;
+    display: inline-block;
+    position: relative;
+    margin-left: 50px;}
+  .guest .gu_btn {
+    padding-bottom: 10px;
+    color: #fff; }
+    .guest .gu_btn .gradient_btn {
       position: relative; }
-      .google .g_btn .gradient_btn span {
+      .guest .gu_btn .gradient_btn span {
         position: relative;
         z-index: 2; }
-      .google .g_btn .gradient_btn:after {
+      .guest .gu_btn .gradient_btn:after {
         content: "";
         position: absolute;
         top: 0px;
         left: 0px;
         right: 0;
         bottom: 0; }
-  .google.active .g_btn .gradient_btn, .google:hover .g_btn .gradient_btn {
+  .guest.active .gu_btn .gradient_btn, .google:hover .gu_btn .gradient_btn {
     color: #22195e;
     box-shadow: 0px 10px 30px rgba(130, 82, 250, 0.2);
     border: 2px solid transparent; }
-    .google.active .g_btn .gradient_btn:after, .google:hover .g_btn .gradient_btn:after {
-      border-radius: 5px;
-      background: -webkit-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
-      background: -moz-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
-      background: -o-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
-      background: linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%); }
-
-  .guest {
-    background: transparent;
-    position: fixed;
-    bottom: 40px;
-    left: 70%;}
-    .guest .gu_btn {
-      padding-bottom: 10px; }
-      .guest .gu_btn .gradient_btn {
-        position: relative; }
-        .guest .gu_btn .gradient_btn span {
-          position: relative;
-          z-index: 2; }
-        .guest .gu_btn .gradient_btn:after {
-          content: "";
-          position: absolute;
-          top: 0px;
-          left: 0px;
-          right: 0;
-          bottom: 0; }
-    .guest.active .gu_btn .gradient_btn, .google:hover .gu_btn .gradient_btn {
-      color: #22195e;
-      box-shadow: 0px 10px 30px rgba(130, 82, 250, 0.2);
-      border: 2px solid transparent; }
     .guest.active .gu_btn .gradient_btn:after, .guest:hover .gu_btn .gradient_btn:after {
       border-radius: 5px;
       background: -webkit-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
@@ -497,5 +444,6 @@ img {
       background: -o-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
       background: linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%); }
 
-/* End Login css
-============================================================================================ */
+.double-nav .breadcrumb-dn {
+  color: #fff;
+}

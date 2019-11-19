@@ -6,7 +6,8 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<title>Main Menu</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href='{% static "/css/menu-style.css" %}'>
 </head>
 <body class="header_area">
@@ -19,38 +20,46 @@
     </div>
     <div class="navbar">
         <ul class="nav navbar-nav navbar-right">
-            <li class="nav-item submenu">
-                <a class="primary_btn">Play</a>
-                    <ul href="#" class="dropdown-menu">
-                        <li class="nav-item"><a href="{% url 'game:easy' %}" class="nav-link">Easy</a>
-                        <li class="nav-item"><a href="{% url 'game:medium' %}" class="nav-link">Medium</a>
-                        <li class="nav-item"><a href="{% url 'game:hard' %}" class="nav-link">Hard</a>
-                    </ul>
-            </li>
+            <div style="text-align: center;">
+                <li class="nav-item submenu">
+                    <a class="primary_btn">Play</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item"><a href="{% url 'game:easy' %}" class="nav-link">Easy</a>
+                            <li class="nav-item"><a href="{% url 'game:medium' %}" class="nav-link">Medium</a>
+                            <li class="nav-item"><a href="{% url 'game:hard' %}" class="nav-link">Hard</a>
+                        </ul>
+                </li>
+            </div>
             <br></br>
-            <li style="margin-top:60px" class="nav-item"><a href="{% url 'game:htp' %}" class="primary_btn">How to Play</a></li>
+            <li class="nav-item"><a href="{% url 'game:htp' %}" class="primary_btn">How to Play</a></li>
             <br></br>
             <li class="nav-item"><a href="#" class="primary_btn">Scoreboard</a></li>
         </ul>
     </div>
     {% if user.is_authenticated %}
-    <button id='logout-bth'><a href="{% url 'logout' %}">logout</a></button>
+        <div class="google">
+            <div class="g_btn">
+                <a id='logout-bth' class="gradient_btn" href="{% url 'logout' %}"><span>Logout</span></a>
+            </div>
+        </div>
     {% else %}
-    <div class="google">
-        <div class="g_btn">
-            <a class="gradient_btn" href="{% provider_login_url "google" %}"><span>Google</span></a>
+        <div class="footer">
+            <div class="google">
+                <div class="g_btn">
+                    <a class="gradient_btn" href="{% provider_login_url "google" %}"><span><i class="fa fa-google-plus-circle"></i>  Google</span></a>
+                </div>
+            </div>
+            <div class="facebook ">
+                <div class="f_btn">
+                    <a class="gradient_btn" href="{% provider_login_url "facebook" method="js_sdk" %}"><span><i class="fa fa-facebook-square"></i>  Facebook</span></a>
+                </div>
+            </div>
+            <div class="guest">
+                <div class="gu_btn">
+                    <a class="gradient_btn" id="btn-guest"><span><i class="fa fa-user-circle"></i>  Guest</span></a>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="facebook">
-        <div class="f_btn">
-            <a class="gradient_btn" href="{% provider_login_url "facebook" method="js_sdk" %}"><span>Facebook</span></a>
-        </div>
-    </div>
-    <div class="guest">
-        <div class="gu_btn">
-            <a class="gradient_btn" id="btn-guest"><span>Guest</span></a>
-        </div>
-    </div>
     {% endif %}
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
