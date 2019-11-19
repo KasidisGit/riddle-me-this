@@ -106,6 +106,33 @@ img {
     color: #22195e;
     box-shadow: 0px 10px 30px rgba(130, 82, 250, 0.2); }
 
+.log_btn {
+  display: inline-block;
+  color: #fff;
+  letter-spacing: 1px;
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 20px;
+  outline: none !important;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: double 2px transparent;
+  border-radius: 15px;
+  background-image: linear-gradient(#342b7e, #3b328b), radial-gradient(circle at top left, #3fcaff, #a4ffb0);
+  background-image: -webkit-linear-gradient(#342b7e, #3b328b), -webkit-radial-gradient(circle at top left, #3fcaff, #a4ffb0);
+  background-image: -moz-linear-gradient(#342b7e, #3b328b), -moz-radial-gradient(circle at top left, #3fcaff, #a4ffb0);
+  background-image: -ms-linear-gradient(#342b7e, #3b328b), -ms-radial-gradient(circle at top left, #3fcaff, #a4ffb0);
+  background-image: -o-linear-gradient(#342b7e, #3b328b), -o-radial-gradient(circle at top left, #3fcaff, #a4ffb0);
+  background-origin: border-box;
+  background-clip: content-box, border-box; }
+  .log_btn span {
+    padding: 0 10px; }
+  .log_btn:hover {
+    color: #22195e;
+    box-shadow: 0px 10px 30px rgba(130, 82, 250, 0.2); }
+
 .primary_btn {
   display: inline-block;
   background: -webkit-linear-gradient(to right, #3fcaff 0%, #a4ffb0 51%, #3fcaff 100%);
@@ -377,7 +404,7 @@ img {
     box-shadow: 0px 10px 30px rgba(130, 82, 250, 0.2);
     border: 2px solid transparent; }
     .google.active .g_btn .gradient_btn:after, .google:hover .g_btn .gradient_btn:after {
-      border-radius: 5px;
+      border-radius: 10px;
       background: -webkit-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
       background: -moz-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
       background: -o-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
@@ -407,43 +434,123 @@ img {
     box-shadow: 0px 10px 30px rgba(130, 82, 250, 0.2);
     border: 2px solid transparent; }
     .facebook.active .f_btn .gradient_btn:after, .facebook:hover .f_btn .gradient_btn:after {
-      border-radius: 5px;
+      border-radius: 10px;
       background: -webkit-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
       background: -moz-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
       background: -o-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
       background: linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%); }
 
-  .guest {
-    background: transparent;
-    display: inline-block;
-    position: relative;
-    margin-left: 50px;}
-  .guest .gu_btn {
-    padding-bottom: 10px;
-    color: #fff; }
-    .guest .gu_btn .gradient_btn {
-      position: relative; }
-      .guest .gu_btn .gradient_btn span {
-        position: relative;
-        z-index: 2; }
-      .guest .gu_btn .gradient_btn:after {
-        content: "";
-        position: absolute;
-        top: 0px;
-        left: 0px;
-        right: 0;
-        bottom: 0; }
-  .guest.active .gu_btn .gradient_btn, .google:hover .gu_btn .gradient_btn {
-    color: #22195e;
-    box-shadow: 0px 10px 30px rgba(130, 82, 250, 0.2);
-    border: 2px solid transparent; }
-    .guest.active .gu_btn .gradient_btn:after, .guest:hover .gu_btn .gradient_btn:after {
-      border-radius: 5px;
-      background: -webkit-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
-      background: -moz-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
-      background: -o-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
-      background: linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%); }
+.guest {
+  background: transparent;
+  display: inline-block;
+  position: relative;
+  margin-left: 50px;}
+.guest .gu_btn {
+  padding-bottom: 10px;
+  color: #fff; }
+  .guest .gu_btn .gradient_btn {
+    position: relative; }
+    .guest .gu_btn .gradient_btn span {
+      position: relative;
+      z-index: 2; }
+    .guest .gu_btn .gradient_btn:after {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0;
+      bottom: 0; }
+.guest.active .gu_btn .gradient_btn, .guest:hover .gu_btn .gradient_btn {
+  color: #22195e;
+  box-shadow: 0px 10px 30px rgba(130, 82, 250, 0.2);
+  border: 2px solid transparent; }
+  .guest.active .gu_btn .gradient_btn:after, .guest:hover .gu_btn .gradient_btn:after {
+    border-radius: 10px;
+    background: -webkit-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+    background: -moz-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+    background: -o-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+    background: linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%); }
 
-.double-nav .breadcrumb-dn {
-  color: #fff;
+.log {
+  background: transparent;
+  display: inline-block;
+  position: relative;
+  margin-left: 175px;}
+.log .l_btn {
+  padding-bottom: 10px;
+  color: #fff; }
+  .log .l_btn .log_btn {
+    position: relative; }
+    .log .l_btn .log_btn span {
+      position: relative;
+      z-index: 2; }
+    .log .l_btn .log_btn:after {
+      content: "";
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      right: 0;
+      bottom: 0; }
+.log.active .l_btn .log_btn, .log:hover .l_btn .log_btn {
+  color: #22195e;
+  box-shadow: 0px 10px 30px rgba(130, 82, 250, 0.2);
+  border: 2px solid transparent; }
+  .log.active .l_btn .log_btn:after, .log:hover .l_btn .log_btn:after {
+    border-radius: 10px;
+    background: -webkit-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+    background: -moz-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+    background: -o-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+    background: linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%); }
+
+.footer {
+  margin-top: 200px;
+  text-align: center;
+}
+  .footer h3 {
+    font-size: 30px;
+    color: #effeff;}
+
+.sidenav {
+  height: 15%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 25px;
+  right: 0;
+  background-color: rgb(112, 112, 112, 0.5);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 30px;
+}
+
+.sidetext {
+  padding: 8px 8px 8px 32px;
+  font-size: 20px;
+  position: relative;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #3fcaff;
+}
+
+.sidenav .closebtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: #a4ffb0;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.side_bar {
+  font-size:35px;
+  cursor:pointer;
+  position: absolute;
+  top: 35px;
+  right: 10px;
+  color: #a4ffb0;
 }

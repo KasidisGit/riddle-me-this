@@ -12,14 +12,6 @@
 
 @import url('https://fonts.googleapis.com/css?family=Playfair+Display|Poppins:300,400,500,600,700');
 
-/* ---------------------------------------------------- */
-/*----------------------------------------------------*/
-/* Medium Layout: 1280px */
-/* Tablet Layout: 768px */
-/* Mobile Layout: 320px */
-/* Wide Mobile Layout: 480px */
-/*---------------------------------------------------- */
-/*---------------------------------------------------- */
 body {
   line-height: 24px;
   font-size: 14px;
@@ -36,7 +28,6 @@ body {
   body {
       font-family: 'Poppins', sans-serif;
       position: relative;
-      z-index: auto;
   }
   
   h1,
@@ -79,8 +70,6 @@ body {
       list-style: none;
   }  
 
-/* Start How-to-Play css
-============================================================================================ */
 .top-area {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -308,5 +297,3 @@ body {
   padding-top: 30px;
   text-align: center;
 }
-/* End How-to-Play Area css
-============================================================================================ */
