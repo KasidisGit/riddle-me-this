@@ -1,13 +1,10 @@
 from django import forms
-from .models import User
+from .models import NameUser
 
 
 class UserForm(forms.ModelForm):
     class Meta:
-        model = User
+        model = NameUser
         fields = [
-            'name'
+            'name',
         ]
-
-class CustomUserForm(forms.Form):
-    name = forms.CharField()
