@@ -20,11 +20,11 @@
     <div class="navbar">
         <ul class="nav navbar-nav navbar-right">
             <li class="nav-item submenu">
-                <a href="#" class="primary_btn">Play</a>
-                    <ul class="dropdown-menu">
-                        <li class="nav-item"><a class="nav-link">Easy</a>
-                        <li class="nav-item"><a class="nav-link">Medium</a>
-                        <li class="nav-item"><a class="nav-link">Hard</a>
+                <a class="primary_btn">Play</a>
+                    <ul href="#" class="dropdown-menu">
+                        <li class="nav-item"><a href="{% url 'game:easy' %}" class="nav-link">Easy</a>
+                        <li class="nav-item"><a href="{% url 'game:medium' %}" class="nav-link">Medium</a>
+                        <li class="nav-item"><a href="{% url 'game:hard' %}" class="nav-link">Hard</a>
                     </ul>
             </li>
             <br></br>
