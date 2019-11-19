@@ -9,5 +9,5 @@ class UserForm(forms.ModelForm):
             'name'
         ]
 
-# class CustomUserForm(forms.Form):
-#     name = forms.CharField(max_length=254, null=True, blank=True, default=True)
+class CustomUserForm(forms.Form):
+    name = forms.CharField()

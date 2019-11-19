@@ -1,11 +1,13 @@
-from .forms import UserForm
+from .forms import UserForm,CustomUserForm
 from .models import User
 from django.shortcuts import render
 
 def forms_view(request):
-    form = UserForm(request.POST or None)
-    if form.is_valid():
-        form.save()
+    form = CustomUserForm()
+    if request.method == 'POST':
+        form = CustomUserForm(request.POST)
+        if form.is_valid:
+            User.objects.c
     context = {
         'form':form
     }
