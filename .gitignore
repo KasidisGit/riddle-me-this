@@ -104,5 +104,3 @@ venv.bak/
 .mypy_cache/
 .vscode
 game/.DS_Store
-user/migrations/__init__.py
-user/migrations/0001_initial.py
