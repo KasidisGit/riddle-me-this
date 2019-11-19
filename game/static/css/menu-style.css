@@ -468,5 +468,35 @@ img {
       background: -o-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
       background: linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%); }
 
+  .guest {
+    background: transparent;
+    position: fixed;
+    bottom: 40px;
+    left: 70%;}
+    .guest .gu_btn {
+      padding-bottom: 10px; }
+      .guest .gu_btn .gradient_btn {
+        position: relative; }
+        .guest .gu_btn .gradient_btn span {
+          position: relative;
+          z-index: 2; }
+        .guest .gu_btn .gradient_btn:after {
+          content: "";
+          position: absolute;
+          top: 0px;
+          left: 0px;
+          right: 0;
+          bottom: 0; }
+    .guest.active .gu_btn .gradient_btn, .google:hover .gu_btn .gradient_btn {
+      color: #22195e;
+      box-shadow: 0px 10px 30px rgba(130, 82, 250, 0.2);
+      border: 2px solid transparent; }
+    .guest.active .gu_btn .gradient_btn:after, .guest:hover .gu_btn .gradient_btn:after {
+      border-radius: 5px;
+      background: -webkit-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+      background: -moz-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+      background: -o-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
+      background: linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%); }
+
 /* End Login css
 ============================================================================================ */

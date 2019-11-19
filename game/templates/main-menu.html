@@ -34,18 +34,29 @@
         </ul>
     </div>
     {% if user.is_authenticated %}
-        <button id='logout-bth'><a href="{% url 'logout' %}">logout</a></button>
+    <button id='logout-bth'><a href="{% url 'logout' %}">logout</a></button>
     {% else %}
-        <div class="google">
-            <div class="g_btn">
-                <a class="gradient_btn" href="{% provider_login_url "google" %}"><span>Google</span></a>
-            </div>
+    <div class="google">
+        <div class="g_btn">
+            <a class="gradient_btn" href="{% provider_login_url "google" %}"><span>Google</span></a>
         </div>
-        <div class="facebook">
-            <div class="f_btn">
-                <a class="gradient_btn" href="{% provider_login_url "facebook" method="js_sdk" %}"><span>Facebook</span></a>
-            </div>
+    </div>
+    <div class="facebook">
+        <div class="f_btn">
+            <a class="gradient_btn" href="{% provider_login_url "facebook" method="js_sdk" %}"><span>Facebook</span></a>
         </div>
+    </div>
+    <div class="guest">
+        <div class="gu_btn">
+            <a class="gradient_btn" id="btn-guest"><span>Guest</span></a>
+        </div>
+    </div>
     {% endif %}
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+    $('#btn-guest').click(function(){
+        console.log("{{user}}")
+    })
+    </script>
 </body>
 </html>
