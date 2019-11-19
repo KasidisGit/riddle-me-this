@@ -43,8 +43,9 @@ class QuestionModelTests(TestCase):
 #     def test_equal_max_length(self):
 #         pass
 
-#     def test_more_than_max_length(self):
-#         pass
+    def test_more_than_max_length(self):
+        hard_test = HardQuestion.objects.all()
+        self.assertnotEqual(len(hard_test), 300)
 
     @classmethod
     def tearDownClass(cls):
