@@ -1,0 +1,108 @@
+body {
+    background: url('bg-easy-level1.jpg') no-repeat center fixed; 
+    background-size: cover;
+}
+h1 {
+    color: darkblue;
+    font-family: 'castellar';
+    font-size: 40px;
+    text-align: center;
+    margin-right: 200px;
+}
+
+.textright {
+    text-align: right;
+}
+
+.button-left {
+    background-color: #08979d; /* Green */
+    border: none;
+    border-radius: 12px;
+    color: #4d0101;
+    padding: 20px 40px;
+    text-align: center;
+    font-family: Georgia;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    margin-left: 30px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    float: left;
+    cursor: pointer;
+    width: 6rem;
+}
+
+.button-left:hover {
+    background-color: honeydew;
+    border: 2px solid #08979d;
+    color: #4d0101;
+}
+
+img {
+    margin: 50px auto;
+    display: block;
+}
+
+.input-box {
+    width: 100%;
+    margin-top: 50px;
+    margin-right: 100px;
+    text-align: center;
+}
+
+.input-box input[type="fullword"]
+{
+    font-size: 1rem;
+    height: 40px;
+    width: 200px;
+}
+
+.button-hint {
+    /* display: inline; */
+    padding: 15px 25px;
+    float: right;
+    margin-right: 100px;
+    font-size: 20px;
+    cursor: pointer;
+    text-decoration: none;
+    outline: none; 
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+    
+}
+
+.button-hint:hover {background-color: #3e8e41}
+
+.button-hint:active {
+    background-color: #3e8e41;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+}
+
+.button-submit {
+    background-color: #f4511e;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    font-size: 16px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button-submit:hover {opacity: 1}
+
+p {
+    display: inline;
+    margin-left: 10px;
+}

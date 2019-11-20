@@ -4,4 +4,3 @@ from .models import *
 admin.site.register(HardQuestion)
 admin.site.register(MediumQuestion)
 admin.site.register(EasyQuestion)
-

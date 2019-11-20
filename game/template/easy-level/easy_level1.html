@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DAVINCI GAME</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="easy.css">
+  </head>
+
+  <body>
+    <div>
+    <span><a href= "____________"  class="button-left">Main menu</a></span>
+    <span><h1>DAVINCI GAME</h1></span>
+    <span class="textright"><h3 id="num">10</h3></span>
+    </div>
+
+    <hr>
+
+    <img src="1rainbow.png" alt="rainbow" height="270" width="410" id="img">
+    <div class="input-box">
+      <span><input type="fullword" placeholder="text here"></span>
+      <p id="correct"></p>
+      <span><button class="button-hint" onclick="hintonClick()">Hint</button></span>
+    </div>
+    <div>
+      <form>
+          <INPUT TYPE="button" class="button-submit" onclick="myFunction()" VALUE="SUBMIT" /*onClick="parent.location='medium-level1.html'"*/>
+      </form>
+    </div>
+
+    <script>
+    
+    function myFunction() { 
+      document.getElementById("correct").innerHTML = "You are correct!";
+      document.getElementById("correct").style.textAlign = "center";
+      document.getElementById("correct").style.color = "Brown";
+      document.getElementById("correct").style.fontFamily = "Arial Rounded MT";
+      document.getElementById("correct").style.fontSize = "larger";
+    }
+
+    var scoreText = document.getElementById("num")
+    var score = Number(scoreText.innerText)
+    
+    function hintonClick(){
+      if (score >= 2) {
+        score -= 2;
+        scoreText.innerText =  String(score)
+      }
+    }
+    
+    </script>
+  </body>
+</html>

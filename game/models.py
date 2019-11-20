@@ -1,5 +1,4 @@
 from django.db import models
-
 class HardQuestion(models.Model):
     image = models.FileField(upload_to='img/hard', blank=False)
     answer = models.CharField(max_length=200)
