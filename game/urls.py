@@ -4,6 +4,7 @@ from . import views
 app_name = 'game'
 urlpatterns = [
     path('', views.IndexView, name='index'),
+    path('how-to-play', views.HowtoView, name='htp'),
     path('hard', views.HardStage, name='hard'),
     path('hard/<int:question_id>', views.HardPicture, name='h-picture'),
     path('medium', views.MediumStage, name='medium'),

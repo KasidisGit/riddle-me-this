@@ -7,6 +7,9 @@ def IndexView(request):
     # q = Question.objects.get(pk=1)
     return render(request,"main-menu.html")
 
+def HowtoView(request):
+    return render(request,"how-to-play.html")
+
 def HardStage(request):
     return render(request,"hard-stage.html",{
         "all_question": HardQuestion.objects.all(),
