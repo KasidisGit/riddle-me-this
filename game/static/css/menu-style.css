@@ -71,14 +71,6 @@ img {
   background: -o-linear-gradient(90deg, #3fcaff 0%, #a4ffb0 100%);
   background: linear-gradient(90deg, #3fcaff 0%, #a4ffb0 100%); }
 
-.gradient-color {
-  background: -webkit-linear-gradient(90deg, #3fcaff 0%, #a4ffb0 100%);
-  background: -moz-linear-gradient(90deg, #3fcaff 0%, #a4ffb0 100%);
-  background: -o-linear-gradient(90deg, #3fcaff 0%, #a4ffb0 100%);
-  background: linear-gradient(90deg, #3fcaff 0%, #a4ffb0 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; }
-
 .gradient_btn {
   display: inline-block;
   color: #fff;
