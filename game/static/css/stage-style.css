@@ -1,0 +1,126 @@
+.body-stage-easy{
+    margin: 0;
+    padding: 0;
+    font-family: 'Luckiest Guy', cursive;
+    background-image: url("/static/introduction-img/background.jpg");
+    background-repeat: no-repeat;
+    background-size: 1500px;
+}
+
+.header{
+    margin: 30px;
+}
+
+.body-stage-medium{
+    margin-bottom: 20px;
+    margin-top: 20px;
+    margin: 0;
+    padding: 0;
+    font-family: 'Luckiest Guy', cursive;
+    background-image: url("/game/static/introduction-img/background_easy1.jpg");
+    background-repeat: no-repeat;
+    background-size: 1500px;
+}
+
+.body-stage-hard{
+    margin: 0;
+    padding: 0;
+    font-family: 'Luckiest Guy', cursive;
+    background-image: url("/game/static/introduction-img/background_hard.jpg");
+    background-repeat: no-repeat;
+    background-size: 1500px;
+}
+
+.container {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.stage{
+    width: 100%;
+    height: fit-content;
+    background: (0, 0, 0);
+    font-size: 60px;
+    color: #ffffff;
+    letter-spacing: 10px
+}
+
+.level{
+    width: 100%;
+    height:fit-content;
+    background: (0, 0, 0);
+    font-size: 20px;
+}
+
+.button-sub-level button {
+    font-size: 25px;
+    font-family: 'Luckiest Guy', cursive;
+    padding: 35px;
+    background-color: #ffffff; color: black;
+    border-radius: 50px;
+    color: black;
+}
+
+.back-to-mainmemu button{
+    width: auto;
+    height:auto;
+    background: (0, 0, 0);
+    font-size: 25px;
+    font-family: 'Luckiest Guy', cursive;
+    padding: 30px;
+    background-color: #ffffff; color: black;
+    border-radius: 30px;
+    color: #BD8937;
+    margin-top: 50px;
+
+}
+
+.btn {
+    font-size: 25px;
+    font-family: 'Mitr', sans-serif;
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    width: 250px;
+    cursor: pointer;
+}
+
+.btn-three {
+    color: #FFF;
+    transition: all 0.5s;
+    position: relative;
+}
+.btn-three::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-color: rgba(255,255,255,0.1);
+    transition: all 0.3s;
+}
+.btn-three:hover::before {
+    opacity: 0 ;
+    transform: scale(0.5,0.5);
+}
+.btn-three::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: all 0.3s;
+    border: 1px solid rgba(255,255,255,0.5);
+    transform: scale(1.2,1.2);
+}
+.btn-three:hover::after {
+    opacity: 1;
+    transform: scale(1,1);
+}
