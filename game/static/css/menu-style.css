@@ -17,8 +17,8 @@ Author E-mail: naimlasker@gmail.com
 
 body {
   line-height: 24px;
-  font-size: 14px;
-  font-family: "Roboto", sans-serif;
+  font-size: 20px;
+  font-family: "Rajdhani", sans-serif;
   font-weight: 500; }
 
 h1,
@@ -49,7 +49,7 @@ img {
   margin-bottom: 80px; }
   .main_title h2 {
     font-size: 120px;
-    color: #3fcaff;
+    color: #6cfff8;
     opacity: 0.1;
     margin: 0;
     line-height: 60px;
@@ -75,7 +75,7 @@ img {
   display: inline-block;
   color: #fff;
   letter-spacing: 1px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Rajdhani", sans-serif;
   font-size: 14px;
   font-weight: 500;
   line-height: 46px;
@@ -102,8 +102,8 @@ img {
   display: inline-block;
   color: #fff;
   letter-spacing: 1px;
-  font-family: "Roboto", sans-serif;
-  font-size: 10px;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 12px;
   font-weight: 500;
   line-height: 20px;
   outline: none !important;
@@ -136,13 +136,13 @@ img {
   padding: 0px 35px;
   color: #222222;
   letter-spacing: 1px;
-  font-family: "Roboto", sans-serif;
-  font-size: 12px;
+  font-family: "Rajdhani", sans-serif;
+  font-size: 14px;
   font-weight: 500;
   line-height: 50px;
   border-radius: 5px;
   outline: none !important;
-  box-shadow: 0px 10px 30px rgba(163, 255, 177, 0.2);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4);
   text-align: center;
   cursor: pointer;
   -webkit-transition: all 0.4s ease 0s;
@@ -176,7 +176,8 @@ img {
     display: block;
     width: 170px;
     height: 170px;
-    border-radius: 50%; }
+    border-radius: 50%;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3); }
   .video-play-button:before {
     z-index: 0;
     -webkit-animation: pulse-border 2000ms ease-out infinite;
@@ -192,8 +193,10 @@ img {
   .video-play-button span {
     display: inline-block;
     position: relative;
-    font-size: 115px;
+    font-size: 117px;
     color: #fbff10;
+    text-shadow: 3px 2px rgba(255, 0, 0, 0.8);
+    font-weight: bold;
     text-align: center;
     left: -20px;
     z-index: 3;}
@@ -280,9 +283,9 @@ img {
     width: 100%; }
     .header_area .navbar .nav .nav-item {
       text-align: center;
-      font-size: 50px;}
+      font-size: 20px;}
       .header_area .navbar .nav .nav-item .nav-link {
-        font: 500 13px/100px "Roboto", sans-serif;
+        font-family: "Rajdhani", sans-serif;
         text-transform: uppercase;
         color: #fff;
         padding: 0px;
@@ -368,7 +371,7 @@ img {
  
 .header_area .navbar-right .primary_btn {
   min-width: 135px;
-  font-size: 20px;
+  font-size: 25px;
   text-transform: uppercase;
   border-radius: 50px;
   line-height: 45px; }
@@ -528,9 +531,9 @@ img {
 
 .sidenav .closebtn {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 30px;
+  top: 8px;
+  right: 8px;
+  font-size: 25px;
   color: #a4ffb0;
 }
 
@@ -546,6 +549,7 @@ img {
   top: 35px;
   right: 10px;
   color: #a4ffb0;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
 }
   .side_bar:hover {
     color: #3fcaff;

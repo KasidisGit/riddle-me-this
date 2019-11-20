@@ -10,14 +10,15 @@
 :: Last Updated: 12-08-2017
 ---------------------------------------------- */
 
-@import url('https://fonts.googleapis.com/css?family=Playfair+Display|Poppins:300,400,500,600,700');
+@import url('https://fonts.googleapis.com/css?family=Calistoga|Signika+Negative:300,400,600,700&display=swap');
 
 body {
   line-height: 24px;
-  font-size: 14px;
-  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  font-family: 'Signika Negative', sans-serif;
   font-weight: 500;
-  color: #777777; }
+  color: #777777;
+  position: relative; }
 
   ul,
   li {
@@ -26,7 +27,7 @@ body {
   }
   
   body {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Signika Negative', sans-serif;
       position: relative;
   }
   
@@ -36,18 +37,17 @@ body {
   h4,
   h5,
   h6 {
-      font-family: 'Poppins', sans-serif;
       font-weight: 500;
       color: #232d37;
       line-height: 1.25;
   }
   
   p {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Signika Negative', sans-serif;
       color: #51545f;
-      font-size: 14px;
+      font-size: 18px;
       line-height: 2;
-      font-weight: 400;
+      font-weight: 300;
   }
   
   img {
@@ -59,7 +59,7 @@ body {
   a:hover,
   a:focus,
   a:active {
-      font-family: 'Poppins', sans-serif;
+      font-family: 'Signika Negative', sans-serif;
       text-decoration: none;
       -webkit-transition-duration: 600ms;
       transition-duration: 600ms;
@@ -76,6 +76,7 @@ body {
 }
 
 .main-title {
+  font-family: 'Calistoga', cursive;
   text-align: center;
 }
 .main-title h2 {
@@ -100,7 +101,7 @@ body {
 }
 
 .text > p {
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.8
 }
 
@@ -118,7 +119,7 @@ body {
 
 .fancy-btn {
   color: #fff;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 600;
   text-transform: uppercase;
   line-height: 44px;
@@ -187,7 +188,7 @@ body {
 .section-heading {
   position: relative;
   z-index: 1;
-  margin-bottom: 55px;
+  margin-bottom: 40px;
 }
 
 .section-heading h2 {
@@ -196,7 +197,7 @@ body {
 }
 
 .section-heading p {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .section-padding-200 {
@@ -213,7 +214,7 @@ body {
 }
 
 .single_progress_bar h6 {
-  font-size: 14px;
+  font-size: 18px;
   margin-bottom: 5px;
 }
 
@@ -284,7 +285,7 @@ body {
 
 .table-center {
   display: block;
-  margin-top: 85px;
+  margin-top: 120px;
   margin-left: 30px;
   margin-right: auto;
 }
@@ -296,4 +297,10 @@ body {
 .button-padding {
   padding-top: 30px;
   text-align: center;
+}
+
+.tablepress {
+  text-align: center;
+  table-layout: fixed;
+  width: 100px;
 }
