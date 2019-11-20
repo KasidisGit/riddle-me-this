@@ -26,7 +26,8 @@ def HardPicture(request,question_id):
     Question = HardQuestion.objects.get(pk=question_id)
     return render(request,"hard-question.html",{
         "question": Question,
-        'n' : range(len(Question.answer))
+        'n' : range(len(Question.answer)),
+        "collect_score": HardQuestion.objects.get(id=1).collect_score
     })
 
 def MediumPicture(request,question_id):
