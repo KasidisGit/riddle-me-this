@@ -517,7 +517,7 @@ img {
   z-index: 1;
   top: 25px;
   right: 0;
-  background-color: rgb(112, 112, 112, 0.5);
+  background: linear-gradient(to right, rgba(63, 202, 255, 0.3) 0%, rgba(164, 255, 176, 0.3) 100%);
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 30px;
@@ -546,6 +546,7 @@ img {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }
+
 .side_bar {
   font-size:35px;
   cursor:pointer;
@@ -554,3 +555,8 @@ img {
   right: 10px;
   color: #a4ffb0;
 }
+  .side_bar:hover {
+    color: #3fcaff;
+  }
+  
+
