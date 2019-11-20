@@ -1,11 +1,19 @@
-from django.shortcuts import render
-from django.views import generic
+from django.shortcuts import render,redirect
 from django.utils import timezone
+from user.forms import UserForm
+from user.models import User
 from .models import *
 
 def IndexView(request):
-    # q = Question.objects.get(pk=1)
-    return render(request,"main-menu.html")
+    form = UserForm()
+    if request.method == "POST":
+        form = UserForm(request.POST)
+        player = User.objects.get(email= request.user)
+        player.name = request.POST.get('name')
+        player.save()
+        form = UserForm()
+        return redirect("game:index")
+    return render(request,"main-menu.html",{"form":form})
 
 def HardStage(request):
     return render(request,"hard-stage.html",{

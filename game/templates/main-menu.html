@@ -8,12 +8,19 @@
 </head>
 
 <body>
-    <p>User: {{user}}</p>
-    <p>{{ question.answer }}</p>
+    {% if user.is_authenticated %}
+    <p>User: {{user.name}}</p>
+    <p>Email: {{user}}</p>
+    <form method="POST"> {% csrf_token %}
+        {{form.as_p}}
+    </form>
+    {% else %}
+    <p>User: Guest</p>
+    {% endif %}
     {% if user.is_authenticated %}
     <h1 style="text-align: center;">ON GAME PAGE</h1>
     <a href="{% url 'game:hard' %}">to stage</a>
-    <button id='logout-bth'><a href="{% url 'logout' %}">logout</a></button>
+    <button id="logout-bth"><a href="{% url 'logout' %}">logout</a></button>
     {% else %}
     <button id='btn-guest'>Guest</button>
     <button><a href='{% provider_login_url "google" %}'><img src="{% static "/img/google icon.png" %}" alt="google-login"></a></button>

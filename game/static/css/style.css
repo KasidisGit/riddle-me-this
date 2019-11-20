@@ -10,7 +10,7 @@ button#logout-bth{
     position: absolute;
     font-size: 20px;
     left: 97.5%;
-    top:30px;
+    top:50%;
 }
 
 button{
