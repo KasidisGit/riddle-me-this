@@ -8,24 +8,19 @@
   </head>
 
   <body>
-    <a href= "____________"  class="button-left">Main menu</a>
-    <h1>DAVINCI GAME</h1>
+    <div>
+    <span><a href= "____________"  class="button-left">Main menu</a></span>
+    <span><h1>DAVINCI GAME</h1></span>
+    <span class="textright"><h3 id="num">10</h3></span>
+    </div>
 
     <hr>
 
     <img src="1rainbow.png" alt="rainbow" height="270" width="410" id="img">
     <div class="input-box">
-      <!-- <span><input type="fullword" placeholder="text here"></span> -->
-      {{question.answer}}
-      {{question_length}}
-      <form style="display: inline-block">
-        {% for i in n %}
-          <input type="text" id="inputs" maxlength="1" size="3" />
-        {% endfor %}
-      </form>
-      <script src="https://code.jquery.com/jquery-3.4.1.js" ></script>
+      <span><input type="fullword" placeholder="text here"></span>
       <p id="correct"></p>
-      <span><button class="button-hint">Hint</button></span>
+      <span><button class="button-hint" onclick="hintonClick()">Hint</button></span>
     </div>
     <div>
       <form>
@@ -34,46 +29,25 @@
     </div>
 
     <script>
+    
     function myFunction() { 
       document.getElementById("correct").innerHTML = "You are correct!";
       document.getElementById("correct").style.textAlign = "center";
       document.getElementById("correct").style.color = "Brown";
       document.getElementById("correct").style.fontFamily = "Arial Rounded MT";
       document.getElementById("correct").style.fontSize = "larger";
+    }
+
+    var scoreText = document.getElementById("num")
+    var score = Number(scoreText.innerText)
     
-    $(document).ready(function(){
-    $( "input" ).keypress(function(){
-    if ($(this).val.length == 1){
-      $(this).next().focus()
-    }else{
-      $(this).blur()
+    function hintonClick(){
+      if (score >= 2) {
+        score -= 2;
+        scoreText.innerText =  String(score)
+      }
     }
-})
-})
-    }
+    
     </script>
   </body>
 </html>
-
-<!-- <img src='{{question.image.url}}' id="img"> -->
-<!-- {{question.answer}}
-{{question_length}}
-<form style="display: inline-block">
-{% for i in n %}
-<input type="text" id="inputs" maxlength="1" size="3" />
-{% endfor %}
-</form>
-<script src="https://code.jquery.com/jquery-3.4.1.js" ></script>
-<script>
-
-$(document).ready(function(){
-    $( "input" ).keypress(function(){
-    if ($(this).val.length == 1){
-        $(this).next().focus()
-    }else{
-        $(this).blur()
-    }
-})
-})
-
-</script> -->
