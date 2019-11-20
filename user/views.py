@@ -13,7 +13,7 @@ class UserView(TemplateView):
     def post(self, request):
         form = UserForm(request.POST)
         if form.is_valid():
-            u = User.objects.get(email = request.user)
+            u = User.objects.get(email = request.user)        
             u.name = request.POST.get('name')
             u.save()
             form = UserForm()

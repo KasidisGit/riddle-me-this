@@ -2,6 +2,7 @@ from django.contrib.auth.models import AbstractBaseUser,    BaseUserManager, Per
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
+import datetime
 
 
 class UserManager(BaseUserManager):
@@ -35,7 +36,7 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
 
-    email = models.EmailField(max_length=254, unique=True)
+    email = models.EmailField(max_length=254, unique=True, default='guest')
     name = models.CharField(max_length=254, null=True, blank=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
@@ -52,6 +53,11 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def get_absolute_url(self):
         return "/users/%i/" % (self.pk)
+
+    def was_published_recently(self):
+        now = timezone.now()
+        return now - datetime.timedelta(days=1) <= self.date_joined <= now
+
     
 class NameUser(models.Model):
     name = models.CharField(max_length=20)
