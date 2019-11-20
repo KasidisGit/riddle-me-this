@@ -15,6 +15,9 @@ def IndexView(request):
         return redirect("game:index")
     return render(request,"main-menu.html",{"form":form})
 
+def HowtoView(request):
+    return render(request,"how-to-play.html")
+
 def HardStage(request):
     return render(request,"hard-stage.html",{
         "all_question": HardQuestion.objects.all(),
