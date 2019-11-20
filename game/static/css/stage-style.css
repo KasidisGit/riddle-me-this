@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Luckiest Guy', cursive;
-    background-image: url("/static/introduction-img/background.jpg");
+    background-image: url("/static/introduction-img/background-easy.jpg");
     background-repeat: no-repeat;
     background-size: 1500px;
 }
@@ -17,7 +17,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Luckiest Guy', cursive;
-    background-image: url("/game/static/introduction-img/background_easy1.jpg");
+    background-image: url("/static/introduction-img/background-medium.jpg");
     background-repeat: no-repeat;
     background-size: 1500px;
 }
@@ -26,7 +26,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Luckiest Guy', cursive;
-    background-image: url("/game/static/introduction-img/background_hard.jpg");
+    background-image: url("/static/introduction-img/background-hard.jpg");
     background-repeat: no-repeat;
     background-size: 1500px;
 }
