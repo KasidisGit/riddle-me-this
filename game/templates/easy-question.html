@@ -1,15 +1,20 @@
+{% load socialaccount %}
+{% providers_media_js %}
+{% load static %}
 <img src='{{question.image.url}}' id="img">
+<link rel="stylesheet" type="text/css" href='{% static "/css/eq-style.css" %}'>
 
 {{question.answer}}
-{{question_length}}
+{{ans_length}}
 
 <form style="display: inline-block">
-{% for i in n %}
-<input type="text" id="inputs" maxlength="1" size='3'>
+{% for i in ans_length %}
+    <input type="text" class='textbox' id="inputs" maxlength="1" size='3'>
 {% endfor %}
 </form>
 <button onclick="submit()">Submit</button>
 <button onclick="hint()">Hint</button>
+<button><a href="{% url 'game:e-picture' next_question.id%}">Next</a></button>
 <script src="https://code.jquery.com/jquery-3.4.1.js" ></script>
 
 <script>
@@ -22,9 +27,15 @@ $(document).ready(function(){
     }
 })
 })
+
 var ans = ''
 $(document).keypress(function(event){
-    ans += (String.fromCharCode(event.which));
+    if (ans.length < '{{question.answer}}'.length) {
+        ans += (String.fromCharCode(event.which));
+    }
+    else {
+        ans += '';
+    }
 });
 
 function submit() {
@@ -36,7 +47,7 @@ function submit() {
         alert('False')
         ans = ''
     }
-    }
+}
 function hint() {
     var ranChar = '';
     var characters = '{{question.answer}}'

@@ -1,0 +1,7 @@
+.textbox
+{
+    width: 20px;
+    border: 1px solid #ccc;
+    font: 14px monaco, monospace;
+    text-transform: uppercase;
+}
