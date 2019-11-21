@@ -104,3 +104,4 @@ venv.bak/
 .mypy_cache/
 .vscode
 game/.DS_Store
+.DS_Store
