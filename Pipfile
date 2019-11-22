@@ -31,6 +31,7 @@ Django = "==2.2.5"
 Pillow = "==5.4.1"
 django-heroku = "*"
 python-dotenv = "*"
+dj-database-url = "*"
 
 [requires]
 python_version = "3.7"
