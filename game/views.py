@@ -52,6 +52,7 @@ def EasyPicture(request,question_id):
         next_question = EasyQuestion.objects.get(pk=question_id+1)
     else:
         next_question = EasyQuestion.objects.get(pk=1)
+
     return render(request,"easy-question.html",{
         "question": Question,
         "next_question": next_question,

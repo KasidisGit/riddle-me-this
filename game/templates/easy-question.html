@@ -6,59 +6,38 @@
 
 {{question.answer}}
 {{ans_length}}
-
-<form style="display: inline-block">
-<input type='text' class='textbox' id='1' maxlength="1" size='3'>
-<input type='text' class='textbox' id='2' maxlength="1" size='3'>
-<input type='text' class='textbox' id='3' maxlength="1" size='3'>
-<input type='text' class='textbox' id='4' maxlength="1" size='3'>
-<input type='text' class='textbox' id='5' maxlength="1" size='3'>
-<input type='text' class='textbox' id='6' maxlength="1" size='3'>
-<input type='text' class='textbox' id='7' maxlength="1" size='3'>
-<input type='text' class='textbox' id='8' maxlength="1" size='3'>
-<input type='text' class='textbox' id='9' maxlength="1" size='3'>
-<input type='text' class='textbox' id='10' maxlength="1" size='3'>
+<form>
+    <input type="text" id="input" onkeypress='handle(e)' maxlength='{{ans_length}}' placeholder='{{ans_length}} letters' size='15' autofocus>
 </form>
-<button onclick="submit()">Submit</button>
+<button onclick='submit()'>Submit</button>
 <button onclick="hint()">Hint</button>
 <button><a href="{% url 'game:e-picture' next_question.id%}">Next</a></button>
 <script src="https://code.jquery.com/jquery-3.4.1.js" ></script>
 
 <script>
-$(document).ready(function(){
-    $( 'input' ).keypress(function(){
-    if ($(this).val.length == 1){
-        $(this).next().focus()
-    }else{
-        $(this).blur()
-    }
-})
-})
-$( 'input' ).click(function(){
-    $(document).keypress(function(event){
-        text1 = document.getElementById(0)
-        alert(text1)
-})
-// var ans = ''
-// $( 'input' ).click(function(){
-//     $(document).keypress(function(event){
-//         if (ans.length < '{{question.answer}}'.length) {
-//             ans += (String.fromCharCode(event.which));
-//         }
-//         else {
-//             ans += ''
-//         }
-// })
-// })
+var ans = ''
+ans = document.getElementById('input');
+
 
 function submit() {
-    if (ans == '{{question.answer}}') {
+    if (ans.value == '{{question.answer}}') {
         alert('True')
     }
     else {
         alert('False')
+        ans.value = ''
     }
-    alert(ans)
+}
+function handle(e){
+    if(e.keyCode === 13){
+        if (ans.value == '{{question.answer}}') {
+            alert('True')
+        }
+        else {
+            alert('False')
+            ans.value = ''
+        }
+    }
 }
 function hint() {
     var ranChar = '';
