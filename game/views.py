@@ -31,7 +31,7 @@ def HardPicture(request,question_id):
     return render(request,"hard-question.html",{
         "question": Question,
         "next_question": next_question,
-        'ans_length' : range(len(Question.answer))
+        'ans_length' : (len(Question.answer))
     })
 
 def MediumPicture(request,question_id):
@@ -43,7 +43,7 @@ def MediumPicture(request,question_id):
     return render(request,"medium-question.html",{
         "question": Question,
         "next_question": next_question,
-        'ans_length' : range(len(Question.answer))
+        'ans_length' : (len(Question.answer))
     })
 
 def EasyPicture(request,question_id):
@@ -55,6 +55,6 @@ def EasyPicture(request,question_id):
     return render(request,"easy-question.html",{
         "question": Question,
         "next_question": next_question,
-        'ans_length' : range(len(Question.answer))
+        'ans_length' : (len(Question.answer)),
     })
 

@@ -8,9 +8,16 @@
 {{ans_length}}
 
 <form style="display: inline-block">
-{% for i in ans_length %}
-    <input type="text" class='textbox' id="inputs" maxlength="1" size='3'>
-{% endfor %}
+<input type='text' class='textbox' id='1' maxlength="1" size='3'>
+<input type='text' class='textbox' id='2' maxlength="1" size='3'>
+<input type='text' class='textbox' id='3' maxlength="1" size='3'>
+<input type='text' class='textbox' id='4' maxlength="1" size='3'>
+<input type='text' class='textbox' id='5' maxlength="1" size='3'>
+<input type='text' class='textbox' id='6' maxlength="1" size='3'>
+<input type='text' class='textbox' id='7' maxlength="1" size='3'>
+<input type='text' class='textbox' id='8' maxlength="1" size='3'>
+<input type='text' class='textbox' id='9' maxlength="1" size='3'>
+<input type='text' class='textbox' id='10' maxlength="1" size='3'>
 </form>
 <button onclick="submit()">Submit</button>
 <button onclick="hint()">Hint</button>
@@ -19,7 +26,7 @@
 
 <script>
 $(document).ready(function(){
-    $( "input" ).keypress(function(){
+    $( 'input' ).keypress(function(){
     if ($(this).val.length == 1){
         $(this).next().focus()
     }else{
@@ -27,26 +34,31 @@ $(document).ready(function(){
     }
 })
 })
-
-var ans = ''
-$(document).keypress(function(event){
-    if (ans.length < '{{question.answer}}'.length) {
-        ans += (String.fromCharCode(event.which));
-    }
-    else {
-        ans += '';
-    }
-});
+$( 'input' ).click(function(){
+    $(document).keypress(function(event){
+        text1 = document.getElementById(0)
+        alert(text1)
+})
+// var ans = ''
+// $( 'input' ).click(function(){
+//     $(document).keypress(function(event){
+//         if (ans.length < '{{question.answer}}'.length) {
+//             ans += (String.fromCharCode(event.which));
+//         }
+//         else {
+//             ans += ''
+//         }
+// })
+// })
 
 function submit() {
     if (ans == '{{question.answer}}') {
         alert('True')
-        ans = ''
     }
     else {
         alert('False')
-        ans = ''
     }
+    alert(ans)
 }
 function hint() {
     var ranChar = '';
