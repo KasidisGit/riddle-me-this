@@ -5,18 +5,17 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="easy.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
   </head>
 
   <body>
     <div>
-    <span><a href= "____________"  class="button-left">Main menu</a></span>
-    <span><h1>DAVINCI GAME</h1></span>
-    <span class="textright"><h3 id="num">10</h3></span>
+    <a href= "____________"  class="button-left">Main menu</a>
+    <h1>DAVINCI GAME</h1>
     </div>
 
     <hr>
-
+    <p id="num" class="score-box">10</p>
     <img src="1rainbow.png" alt="rainbow" height="270" width="410" id="img">
     <div class="input-box">
       <span><input type="fullword" placeholder="text here"></span>
@@ -40,7 +39,7 @@
     document.getElementById("correct").style.color = "Brown";
     document.getElementById("correct").style.fontFamily = "Arial Rounded MT";
     document.getElementById("correct").style.fontSize = "larger";
-  }
+    }
 
   var scoreText = document.getElementById("num")
   var score = Number(scoreText.innerText)
@@ -56,11 +55,19 @@
 
   function nexttoPage() {
     document.getElementById("forsubmit").style.visibility = 'hidden';
+    submit_btn.style.display="none";
     document.getElementById("next").style.visibility = 'visible';
+    next_btn.display="block";
   }
-  
-  // $(button).ready(function(){
-  // $("button-submit").click(hintonClick() {
-  // $("button-next").replaceWith(nexttoPage() {
+
+  function showMore() {
+    next_btn.style.display="none";
+    submit_btn.style.display="block";
+  }
+
+  // function showLess() {
+  //   next_btn.display="block";
+  //   submit_btn.style.display="none";
+  // }
 
 </script>

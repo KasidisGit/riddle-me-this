@@ -41,6 +41,7 @@ h1 {
 
 img {
     margin: 50px auto;
+    margin-left: 420px;
     display: block;
 }
 
@@ -152,3 +153,19 @@ p {
     right: 0;
   }
 
+.score-box {
+    background-color: #08979d; /* Green */
+    border: 3px solid royalblue;
+    border-style: inset;
+    color: #4d0101;
+    padding: 10px 20px;
+    text-align: center;
+    font-family: Georgia;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 17px;
+    width: 50px;
+    float: right;
+    margin-right: 30px;
+    position: relative;
+}
