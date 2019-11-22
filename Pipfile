@@ -4,6 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+python-dotenv = "*"
 
 [packages]
 autopep8 = "==1.4.4"
@@ -29,6 +30,7 @@ urllib3 = "==1.25.7"
 Django = "==2.2.5"
 Pillow = "==5.4.1"
 django-heroku = "*"
+python-dotenv = "*"
 
 [requires]
 python_version = "3.7"
