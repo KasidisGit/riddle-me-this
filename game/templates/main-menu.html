@@ -1,5 +1,6 @@
 <html>
 {% load socialaccount %}
+
 {% load static %}
 <head>
     <meta charset="utf-8">
@@ -59,7 +60,7 @@
             </div>
             <div class="facebook ">
                 <div class="f_btn">
-                    <a class="gradient_btn"><span><i class="fa fa-facebook-square"></i>  Facebook</span></a>
+                    <a class="gradient_btn" href="{% provider_login_url "facebook" method="js_sdk" %}"><span><i class="fa fa-facebook-square"></i>  Facebook</span></a>
                 </div>
             </div>
             <div class="guest">
