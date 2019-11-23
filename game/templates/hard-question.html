@@ -10,6 +10,9 @@
     <input type="hidden" id="ansKey" value="{{question.answer}}">
     <input type="text" id="input" maxlength="{{ans_length}}" placeholder="{{ans_length}} letters" size="12" autofocus>
 </form>
+{% if question.id == 14 %}
+    <p>The answer has 2 spaces.</p>
+{% endif %}
 <button id="sub_btn">Submit</button>
 <button onclick="hint()">Hint</button>
 {% if question.id < 15 %}

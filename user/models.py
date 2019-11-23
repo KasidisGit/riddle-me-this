@@ -43,9 +43,8 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     last_login = models.DateTimeField(null=True, blank=True)
     date_joined = models.DateTimeField(auto_now_add=True)
-    all_score = models.DecimalField(default=0, decimal_places=0, max_digits=3)
+    all_score = models.IntegerField(default=0)
     
-
     USERNAME_FIELD = 'email'
     EMAIL_FIELD = 'email'
     REQUIRED_FIELDS = []
@@ -59,7 +58,6 @@ class User(AbstractBaseUser, PermissionsMixin):
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.date_joined <= now
 
-    
 class NameUser(models.Model):
     name = models.CharField(max_length=20)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)

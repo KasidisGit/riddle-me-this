@@ -41,6 +41,7 @@
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
         <a class="sidetext" style="color: #effeff;"> Welcome, {{user}}</a>
+        <a class="sidetext" style="color: #effeff;"> Score: {{user.all_score}}</a>
         <div class="log">
             <div class="l_btn">
                 <a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a>
