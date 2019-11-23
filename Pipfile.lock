@@ -189,7 +189,7 @@
                 "sha256:fc9a12aad714af36cf3ad0275a96a733526571e52710319855628f476dcb144e"
             ],
             "index": "pypi",
-            "version": "==5.4.1"
+            "version": "==6.2.1"
         },
         "pipenv": {
             "hashes": [
