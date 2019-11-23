@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from django.views import generic
 from django.utils import timezone
 from .models import *
@@ -48,14 +48,13 @@ def MediumPicture(request,question_id):
 
 def EasyPicture(request,question_id):
     Question = EasyQuestion.objects.get(pk=question_id)
-    if question_id < 15:
+    if question_id < 20:
         next_question = EasyQuestion.objects.get(pk=question_id+1)
     else:
         next_question = EasyQuestion.objects.get(pk=1)
-
-    return render(request,"easy-question.html",{
+    return render(request,"medium-question.html",{
         "question": Question,
         "next_question": next_question,
-        'ans_length' : (len(Question.answer)),
+        'ans_length' : (len(Question.answer))
     })
 
