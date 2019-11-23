@@ -1,22 +1,23 @@
-<img src='{{question.image.url}}' id="img">
-{{question.answer}}
-{{question_length}}
-<form style="display: inline-block">
-{% for i in n %}
-<input type="text" id="inputs" maxlength="1" size="3" />
-{% endfor %}
+<html>
+{% load static %}
+<head>
+    <link rel="stylesheet" type="text/css" href='{% static "/css/question-style.css" %}'>
+    <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">
+</head>
+<body>
+    <img src="{{question.image.url}}" id="img">
+<form>
+    <input type="hidden" id="ansKey" value="{{question.answer}}">
+    <input type="text" id="input" maxlength="{{ans_length}}" placeholder="{{ans_length}} letters" size="12" autofocus>
 </form>
+<button id="sub_btn">Submit</button>
+<button onclick="hint()">Hint</button>
+{% if question.id < 15 %}
+    <button><a href="{% url 'game:h-picture' next_question.id %}">Next</a></button>
+{% else %}
+    <button><a href="{% url 'game:hard' %}">Next</a></button>
+{% endif %}
 <script src="https://code.jquery.com/jquery-3.4.1.js" ></script>
-<script>
-
-$(document).ready(function(){
-    $( "input" ).keypress(function(){
-    if ($(this).val.length == 1){
-        $(this).next().focus()
-    }else{
-        $(this).blur()
-    }
-})
-})
-
-</script>
+<script src="../static/js/question-js/active.js"></script>
+</body>
+</html>

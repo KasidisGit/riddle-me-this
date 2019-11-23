@@ -27,7 +27,10 @@ def EasyStage(request):
 
 def HardPicture(request,question_id):
     Question = HardQuestion.objects.get(pk=question_id)
-    next_question = HardQuestion.objects.get(pk=question_id+1)
+    if question_id < 15:
+        next_question = HardQuestion.objects.get(pk=question_id+1)
+    else:
+        next_question = HardQuestion.objects.get(pk=1)
     return render(request,"hard-question.html",{
         "question": Question,
         "next_question": next_question,
@@ -48,13 +51,14 @@ def MediumPicture(request,question_id):
 
 def EasyPicture(request,question_id):
     Question = EasyQuestion.objects.get(pk=question_id)
-    if question_id < 20:
+    maxq = 15
+    if question_id < 15:
         next_question = EasyQuestion.objects.get(pk=question_id+1)
     else:
         next_question = EasyQuestion.objects.get(pk=1)
-    return render(request,"medium-question.html",{
+    return render(request,"easy-question.html",{
         "question": Question,
         "next_question": next_question,
-        'ans_length' : (len(Question.answer))
+        "ans_length" : (len(Question.answer))
     })
 
