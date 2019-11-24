@@ -19,7 +19,14 @@
     </div>
     <img src="1rainbow.png" alt="rainbow" height="320" width="450">
     <div class="input-box">
-      <span><input type="fullword" placeholder="text here"></span>
+      <!-- <span><input type="fullword" placeholder="text here"></span> -->
+      <!-- <span><a href="../../templates/easy-question.html">my link</a></span> -->
+      <form style="display: inline-block">
+        {% for i in n %}
+        <input type="text" id="inputs" maxlength="1" size="3" />
+        {% endfor %}
+        </form>
+        <script src="https://code.jquery.com/jquery-3.4.1.js" ></script>
       <p id="correct"></p>
       <span><button class="button-hint" onclick="hintonClick()">Hint</button></span>
     </div>
@@ -58,4 +65,15 @@
     document.getElementById("next").style.visibility = 'visible';
     next_btn.display="block";
   }
+
+  $(document).ready(function(){
+  $( "input" ).keypress(function(){
+  if ($(this).val.length == 1){
+    $(this).next().focus()
+  }else{
+    $(this).blur()
+    }
+  })
+  })
+ 
 </script>
