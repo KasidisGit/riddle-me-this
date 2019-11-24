@@ -3,6 +3,7 @@
 <head>
     <link rel="stylesheet" type="text/css" href='{% static "/css/question-style.css" %}'>
     <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <img src="{{question.image.url}}" id="img">
@@ -13,6 +14,7 @@
 {% if question.id == 14 %}
     <p>The answer has 2 spaces.</p>
 {% endif %}
+<p id="status"></p>
 <button id="sub_btn">Submit</button>
 <button onclick="hint()">Hint</button>
 {% if question.id < 15 %}

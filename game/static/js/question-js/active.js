@@ -9,13 +9,10 @@ $("#input").keypress(function(event) {
 });
 
 $("#sub_btn").click(function() { 
-    if (ans.value == ansKey.value) {
-        console.log(true)
-    }
-    else {
-        console.log(false)
-        ans.value = ''
-    }
+    // $("#status").show();
+    // $("#status").hide(4000);
+    document.getElementById("status").style.visibility = "hidden";
+    document.getElementById("status").style.visibility = "visible";
 }); 
 
 function hint() {
@@ -24,4 +21,14 @@ function hint() {
     var charactersLength = characters.length;
     ranChar = characters.charAt(Math.floor(Math.random() * charactersLength));
     alert(ranChar)
+}
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("opennav").style.display = "none";
+}
+  
+  function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("opennav").style.display = "block";
 }

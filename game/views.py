@@ -1,4 +1,6 @@
 from django.shortcuts import get_object_or_404, render
+from django.http import HttpResponse, HttpResponseRedirect
+from django.urls import reverse
 from django.views import generic
 from django.utils import timezone
 from .models import *
@@ -34,7 +36,7 @@ def HardPicture(request,question_id):
     return render(request,"hard-question.html",{
         "question": question,
         "next_question": next_question,
-        'ans_length' : (len(Question.answer))
+        "ans_length": (len(question.answer)),
     })
 
 def MediumPicture(request,question_id):
@@ -46,11 +48,19 @@ def MediumPicture(request,question_id):
     return render(request,"medium-question.html",{
         "question": question,
         "next_question": next_question,
-        'ans_length' : (len(Question.answer))
+        "ans_length": (len(question.answer)),
     })
 
 def EasyPicture(request,question_id):
     question = EasyQuestion.objects.get(pk=question_id)
+    user = request.user
+    if request.method == 'POST':
+        if request.POST.get('textfield',None) == question.answer or request.POST.get('button') == question.answer:
+            question.is_pass = True
+            user.all_score += question.score
+            question.score = 0
+            question.save()
+            user.save()
     if question_id < 15:
         next_question = EasyQuestion.objects.get(pk=question_id+1)
     else:
@@ -58,5 +68,18 @@ def EasyPicture(request,question_id):
     return render(request,"easy-question.html",{
         "question": question,
         "next_question": next_question,
-        "ans_length" : (len(Question.answer))
+        "ans_length": (len(question.answer)),
     })
+
+#def HintClick(request):
+
+        
+
+
+
+
+
+
+
+
+

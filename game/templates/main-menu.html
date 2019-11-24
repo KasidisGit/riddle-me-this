@@ -38,20 +38,20 @@
         </ul>
     </div>
     {% if user.is_authenticated %}
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
-        <a class="sidetext" style="color: #effeff;"> Welcome, {{user}}</a>
-        <a class="sidetext" style="color: #effeff;"> Score: {{user.all_score}}</a>
-        <div class="log">
-            <div class="l_btn">
-                <a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
+            <a class="sidetext" style="color: #effeff;"> Welcome, {{user}}</a>
+            <a class="sidetext" style="color: #effeff;"> Score: {{user.all_score}}</a>
+            <div class="log">
+                <div class="l_btn">
+                    <a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a>
+                </div>
             </div>
         </div>
-    </div>
-    <span id="opennav" class="side_bar" onclick="openNav(), style.display = 'none'"><i class="fa fa-chevron-circle-left"></i></span>
-    <div class="footer">
-        <h3>You are now logged in as {{user}}. Enjoy the game.  <i class="fa fa-hand-peace-o"></i></h3>
-    </div>
+        <span id="opennav" class="side_bar" onclick="openNav()"><i class="fa fa-chevron-circle-left"></i></span>
+        <div class="footer">
+            <h3>You are now logged in as {{user}}. Enjoy the game.  <i class="fa fa-hand-peace-o"></i></h3>
+        </div>
     {% else %}
         <div class="footer">
             <div class="google">
