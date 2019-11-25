@@ -1,0 +1,3 @@
+{% for question in all_question %}
+<button><a href="{% url 'game:m-picture' question.id%}">M {{question.id}}</a></button>
+{% endfor %}
