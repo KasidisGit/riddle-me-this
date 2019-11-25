@@ -10,6 +10,9 @@ install:
   - pip install -r requirements.txt
 
 script:
+  - python manage.py makemigrations user
+  - python manage.py makemigrations game
+  - python manage.py migrate
   - coverage run manage.py test
 
 after_success:
