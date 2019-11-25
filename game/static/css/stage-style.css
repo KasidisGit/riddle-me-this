@@ -73,17 +73,32 @@
     margin-top: 40px;
 }
 
-.button-sub-level button {
+.log-button-sub-level button {
     width: 100px;
     height: 100px;
-    font-size: 25px;
+    font-size: 30px;
     font-family: 'Luckiest Guy', cursive;
     text-align: center;
     margin: 10px;
     padding: 35px;
+    background-image: url("/game/static/introduction-img/log-stage.jpg");
     background-color: #ffffff; color: black;
-    border-radius: 50%;
-    color: black;
+    border-radius: 50%; color: black;
+    
+}
+
+.button-sub-level button {
+    width: 100px;
+    height: 100px;
+    font-size: 30px;
+    font-family: 'Luckiest Guy', cursive;
+    text-align: center;
+    margin: 10px;
+    padding: 35px;
+    background-image: url("/game/static/introduction-img/log-stage.jpg");
+    background-color: #ffffff; color: black;
+    border-radius: 50%; color: black;
+    
 }
 
 .back-to-mainmemu button{
