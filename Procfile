@@ -1,0 +1,1 @@
+web: gunicorn riddle-me-this.wsgi

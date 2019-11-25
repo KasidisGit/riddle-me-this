@@ -1,0 +1,94 @@
+<html>
+    {% load socialaccount %}
+    {% providers_media_js %}
+    {% load static %}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Main Menu</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href='{% static "/css/menu-style.css" %}'>
+    </head>
+    
+    <body class="header_area">
+        <div class="main_title">
+            <h2>Riddle Me This</h2>
+            <h1>Riddle Me This</h1>
+        <a class="video-play-button">
+            <span>?</span>
+        </a>
+    </div>
+    <div class="navbar">
+        <ul class="nav navbar-nav navbar-right">
+            <div style="text-align: center;">
+                <li class="nav-item submenu">
+                    <a class="primary_btn">Play</a>
+                        <ul class="dropdown-menu">
+                            <li class="nav-item"><a href="{% url 'game:easy' %}" class="nav-link">Easy</a>
+                            <li class="nav-item"><a href="{% url 'game:medium' %}" class="nav-link">Medium</a>
+                            <li class="nav-item"><a href="{% url 'game:hard' %}" class="nav-link">Hard</a>
+                        </ul>
+                </li>
+            </div>
+            <br></br>
+            <li class="nav-item"><a href="{% url 'game:htp' %}" class="primary_btn">How to Play</a></li>
+            <br></br>
+            <li class="nav-item"><a href="#" class="primary_btn">Scoreboard</a></li>
+        </ul>
+    </div>
+    {% if user.is_authenticated %}
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
+        <a class="sidetext" style="color: #effeff;"> Welcome, {{user.name}}</a>
+        <form method="POST" > {% csrf_token %}
+            {{ form.as_p }}
+        </form>
+        <div id="block_container">
+            <a class="log_btn" id="button" href="{% url 'logout' %}"><span>Change Name</span></a>
+            <a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a>
+        </div>
+    </div>
+    <span id="opennav" class="side_bar" onclick="openNav(), style.display = 'none'"><i class="fa fa-chevron-circle-left"></i></span>
+    <div class="footer">
+        <h3>You are now logged in as {{user.name}}. Enjoy the game.  <i class="fa fa-hand-peace-o"></i></h3>
+    </div>
+    {% else %}
+        <div class="footer">
+            <div class="google">
+                <div class="g_btn">
+                    <a class="gradient_btn" href="{% provider_login_url "google" %}"><span><i class="fa fa-google-plus-circle"></i>  Google</span></a>
+                </div>
+            </div>
+            <div class="facebook ">
+                <div class="f_btn">
+                    <a class="gradient_btn" href="{% provider_login_url "facebook" method="js_sdk" %}"><span><i class="fa fa-facebook-square"></i>  Facebook</span></a>
+                </div>
+            </div>
+            <div class="guest">
+                <div class="gu_btn">
+                    <a class="gradient_btn" id="btn-guest"><span><i class="fa fa-user-circle"></i>  Guest</span></a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script>
+    function openNav() {
+      document.getElementById("mySidenav").style.width = "250px";
+      document.getElementById("opennav").style.display = "none";
+    }
+    
+    function closeNav() {
+      document.getElementById("mySidenav").style.width = "0";
+      document.getElementById("opennav").style.display = "block";
+    }
+    </script>
+    <script>
+    $('#btn-guest').click(function(){
+        console.log("{{user}}")
+    })
+    </script>
+</body>
+</html>

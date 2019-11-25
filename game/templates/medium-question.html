@@ -1,0 +1,22 @@
+<img src='{{question.image.url}}' id="img">
+{{question.answer}}
+{{question_length}}
+<form style="display: inline-block">
+{% for i in n %}
+<input type="text" id="inputs" maxlength="1" size="3" />
+{% endfor %}
+</form>
+<script src="https://code.jquery.com/jquery-3.4.1.js" ></script>
+<script>
+
+$(document).ready(function(){
+    $( "input" ).keypress(function(){
+    if ($(this).val.length == 1){
+        $(this).next().focus()
+    }else{
+        $(this).blur()
+    }
+})
+})
+
+</script>

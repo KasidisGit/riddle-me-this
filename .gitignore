@@ -102,3 +102,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+.vscode
+game/.DS_Store
+.env
+*.dump
+riddle-me-this/.DS_Store
+latest.dump

@@ -1,0 +1,195 @@
+<html>
+{% load static %}
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<title>How to Play</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href='{% static "/css/animate.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "/css/howto-style.css" %}'>
+</head>
+<body>
+    <section class="top-area bg-gray">
+        <div class="main-title">
+            <h2>How to Play</h2>
+            <h1>How to Play</h1>
+        </div>
+        <div class="container">
+            <div class="row-p">
+                <div class="col-12 col-lg-8">
+                    <div class="text">
+                        <h2>Rules</h2>
+                        <p>There are 50 level of questions. The questions will come in form of pictures. You have to turn those pictures into only a single word. Each word is illustrated by pictures.</p>
+                        <p>Riddle me this is designed as a mixture of guess the word games and pictures trivia quiz to improve your creativity but still fun and rewarding. The more level is increased, the more complicated pictures will be. To solve tricky quizzes, You need to think outside the box! You can see game statistics down here.</p>
+                        <h2>Scoring</h2>
+                        <p>If you put a correct answer, you get score. If you are stuck, there is a hint for all questions. If you uses hint, we will give one letter of the answer and your score will be deducted. The score will not be deducted if you put the wrong answer.<p>
+                        <a href="{% url 'game:index' %}" class="btn fancy-btn fancy-dark">Main Menu</a>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 col-xl-4 ml-xl-auto">
+                    <table class="table table-center">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="col" class="tablepress">Stage</th>
+                                <th scope="col" class="tablepress">Pass</th>
+                                <th scope="col" class="tablepress">Hint</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="table-success">
+                                <th scope="row" class="tablepress">Easy</th>
+                                <td class="table-text tablepress">2</td>
+                                <td class="table-text tablepress">-2</td>
+                            </tr>
+                            <tr class="table-warning">
+                                <th scope="row" class="tablepress">Medium</th>
+                                <td class="table-text tablepress">3</td>
+                                <td class="table-text tablepress">-2</td>
+                            </tr>
+                            <tr class="table-danger">
+                                <th scope="row" class="tablepress">Hard</th>
+                                <td class="table-text tablepress">4</td>
+                                <td class="table-text tablepress">-2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+	</section>
+    <section class="stat-area section-padding-100">
+        <div class="container mySlides">
+            <div class="row">
+                <div class="col-md-6 col-lg-6">
+                    <div class="text2">
+                        <h3>Easy</h3>
+                        <img src="static/introduction-img/1strawberry.png">
+                        <h3 class="wow fadeInUp" data-wow-delay="0.5s">Straw + berry = Strawberry</h3>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-5 ml-auto">
+                    <div class="section-heading">
+                        <h2>Game Statistics</h2>
+                        <p>The statistics represent a particular aspect of each stage. An example is on the left side.</p>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="0.5s">
+                        <h6>Difficulty</h6>
+                        <div id="bar1" class="barfiller">
+                            <span class="fill" data-percentage="15"></span>
+                        </div>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="0.8s">
+                        <h6>Creativity</h6>
+                        <div id="bar2" class="barfiller">
+                            <span class="fill" data-percentage="25"></span>
+                        </div>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="1.1s">
+                        <h6>Novelty of Words</h6>
+                        <div id="bar3" class="barfiller">
+                            <span class="fill" data-percentage="30"></span>
+                        </div>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="1.4s">
+                        <h6>Uprightness of Pictures</h6>
+                        <div id="bar4" class="barfiller">
+                            <span class="fill" data-percentage="85"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mySlides">
+            <div class="row">
+                <div class="col-md-6 col-lg-6">
+                    <div class="text2">
+                        <h3>Medium</h3>
+                        <img src="static/introduction-img/2peacock.png">
+                        <h3 class="wow fadeInUp" data-wow-delay="0.5s">Pea + C(l)ock = Peacock</h3>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-5 ml-auto">
+                    <div class="section-heading">
+                        <h2>Game Statistics</h2>
+                        <p>The statistics represent a particular aspect of each stage. An example is on the left side.</p>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="0.5s">
+                        <h6>Difficulty</h6>
+                        <div id="bar5" class="barfiller">
+                            <span class="fill" data-percentage="50"></span>
+                        </div>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="0.8s">
+                        <h6>Creativity</h6>
+                        <div id="bar6" class="barfiller">
+                            <span class="fill" data-percentage="60"></span>
+                        </div>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="1.1s">
+                        <h6>Novelty of Words</h6>
+                        <div id="bar7" class="barfiller">
+                            <span class="fill" data-percentage="40"></span>
+                        </div>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="1.4s">
+                        <h6>Uprightness of Pictures</h6>
+                        <div id="bar8" class="barfiller">
+                            <span class="fill" data-percentage="60"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mySlides">
+            <div class="row">
+                <div class="col-md-6 col-lg-6">
+                    <div class="text2">
+                        <h3>Hard</h3>
+                        <img src="static/introduction-img/3surface.png">
+                        <h3 class="wow fadeInUp" data-wow-delay="0.5s">Ace is Surfing = Surface</h3>
+                    </div>
+                </div>
+                <div class="col-12 col-md-6 col-xl-5 ml-auto">
+                    <div class="section-heading">
+                        <h2>Game Statistics</h2>
+                        <p>The statistics represent a particular aspect of each stage. An example is on the left side.</p>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="0.5s">
+                        <h6>Difficulty</h6>
+                        <div id="bar9" class="barfiller">
+                            <span class="fill" data-percentage="90"></span>
+                        </div>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="0.8s">
+                        <h6>Creativity</h6>
+                        <div id="bar10" class="barfiller">
+                            <span class="fill" data-percentage="100"></span>
+                        </div>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="1.1s">
+                        <h6>Novelty of Words</h6>
+                        <div id="bar11" class="barfiller">
+                            <span class="fill" data-percentage="35"></span>
+                        </div>
+                    </div>
+                    <div class="single_progress_bar wow fadeInUp" data-wow-delay="1.4s">
+                        <h6>Uprightness of Pictures</h6>
+                        <div id="bar12" class="barfiller">
+                            <span class="fill" data-percentage="15"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="button-padding">
+            <span class="dot" onclick="currentSlide(1)"></span> 
+            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </section>
+    <script src="static/howto-js/jquery-2.2.4.min.js"></script>
+    <script src="static/howto-js/plugins.js"></script>
+    <script src="static/howto-js/active.js"></script>
+</body>
+</html>
