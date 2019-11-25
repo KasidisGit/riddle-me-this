@@ -1,20 +1,21 @@
 <html>
-{% load socialaccount %}
-{% providers_media_js %}
-{% load static %}
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Main Menu</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href='{% static "/css/menu-style.css" %}'>
-</head>
-<body class="header_area">
-    <div class="main_title">
-        <h2>Riddle Me This</h2>
-        <h1>Riddle Me This</h1>
+    {% load socialaccount %}
+    {% providers_media_js %}
+    {% load static %}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Main Menu</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href='{% static "/css/menu-style.css" %}'>
+    </head>
+    
+    <body class="header_area">
+        <div class="main_title">
+            <h2>Riddle Me This</h2>
+            <h1>Riddle Me This</h1>
         <a class="video-play-button">
             <span>?</span>
         </a>
@@ -40,17 +41,22 @@
     {% if user.is_authenticated %}
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
-            <a class="sidetext" style="color: #effeff;"> Welcome, {{user}}</a>
+            <a class="sidetext" style="color: #effeff;"> Welcome, {{user.name}}</a>
             <a class="sidetext" style="color: #effeff;"> Score: {{user.all_score}}</a>
-            <div class="log">
-                <div class="l_btn">
-                    <a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a>
-                </div>
+            <form method="POST" > {% csrf_token %}
+                {{ form.as_p }}
+            </form>
+            <div id="block_container">
+                <a class="log_btn" id="button" href="{% url 'logout' %}"><span>Change Name</span></a>
+                <a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a>
             </div>
         </div>
         <span id="opennav" class="side_bar" onclick="openNav()"><i class="fa fa-chevron-circle-left"></i></span>
         <div class="footer">
             <h3>You are now logged in as {{user}}. Enjoy the game.  <i class="fa fa-hand-peace-o"></i></h3>
+        </div>
+        <div class="footer">
+            <h3>You are now logged in as {{user.name}}. Enjoy the game.  <i class="fa fa-hand-peace-o"></i></h3>
         </div>
     {% else %}
         <div class="footer">
