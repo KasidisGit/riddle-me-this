@@ -160,5 +160,6 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-django_heroku.settings(locals())
-del DATABASES['default']['OPTIONS']['sslmode']
+if '/app' in os.environ['HOME']:
+    django_heroku.settings(locals())
+    del DATABASES['default']['OPTIONS']['sslmode']
