@@ -1,5 +1,5 @@
 body {
-    background: url('bg-easy-level1.jpg') no-repeat center fixed; 
+    background: url(../introduction-img/bg-easy-level1.jpg) no-repeat center fixed; 
     background-size: cover;
     overflow: auto;
 }

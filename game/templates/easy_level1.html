@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html>
+{% load static %}
+<html> 
   <head>
     <title>DAVINCI GAME - EASY LEVEL</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="easy.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/easy.css' %}">
   </head>
 
   <body>
@@ -17,7 +18,7 @@
       <span style="padding-right: 20px; font-size: 25px; font-family: Arial, Helvetica, sans-serif;">Score: </span>
       <span id="num" class="score-box">10</span>
     </div>
-    <img src="1rainbow.png" alt="rainbow" height="320" width="450">
+    <img src="{{question.image.url}}" id='img' alt="rainbow" height="320" width="450">
     <div class="input-box">
       <span><input type="fullword" placeholder="text here"></span>
       <p id="correct"></p>
