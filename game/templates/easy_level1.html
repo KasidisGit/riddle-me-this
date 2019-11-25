@@ -16,8 +16,9 @@
 
     <div class="turntoright">
       <span style="padding-right: 20px; font-size: 25px; font-family: Arial, Helvetica, sans-serif;">Score: </span>
-      <span id="num" class="score-box">10</span>
+      <span id="num" class="score-box">{{user.all_score}}</span>
     </div>
+    <br>
     <img src="{{question.image.url}}" id='img' alt="rainbow" height="320" width="450">
     <div class="input-box">
       <span><input type="fullword" placeholder="text here"></span>
@@ -58,5 +59,9 @@
     submit_btn.style.display="none";
     document.getElementById("next").style.visibility = 'visible';
     next_btn.display="block";
+  }
+
+  function hintScore() {
+
   }
 </script>

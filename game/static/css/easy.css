@@ -39,7 +39,7 @@ h1 {
 
 img {
     margin: 80px auto;
-    margin-left: 400px;
+    /* margin-left: 400px; */
     margin-bottom: 30px;
     display: block;
 }
