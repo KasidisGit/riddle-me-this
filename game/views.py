@@ -41,7 +41,7 @@ def MediumPicture(request,question_id):
 
 def EasyPicture(request,question_id):
     Question = EasyQuestion.objects.get(pk=question_id)
-    return render(request,"easy_level1.html",{
+    return render(request,"../templates/easy-level/easy_level1.html",{
         "question": Question,
         'n' : range(len(Question.answer))
     })
