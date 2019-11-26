@@ -32,7 +32,7 @@ def HardPicture(request,question_id):
         'n' : range(len(Question.answer))
     })
 
-def MediumPicture(request,question_id):
+def MediumPicture(request,question_id): 
     Question = MediumQuestion.objects.get(pk=question_id)
     return render(request,"medium-question.html",{
         "question": Question,

@@ -1,29 +1,33 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
     <head>
-        <title>DAVINCI GAME</title>
+        <title>DAVINCI GAME - HARD LEVEL</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <link rel="stylesheet" href="hard.css">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/hard.css' %}">
     </head>
 
     <body>
-
-        <a href= "https://www.facebook.com/" class="button-left">Main menu</a>
+        <a href= "../main-menu2.html" class="button-left">Main menu</a>
         <h1>DAVINCI GAME</h1>
 
         <hr>
 
-        <img src="https://1.bp.blogspot.com/-UFQaMPqGQ0o/UEIv_XawOnI/AAAAAAAADhM/CxfUGV_Nz1k/s1600/Funny+Rebus+Puzzle.gif " alt="summary" height="270" width="410">
-
-        <div class="input-box">
-            <input type="fullword" placeholder="text here">
-            <button class="button-hint">Hint</button>
-            <form>
-                <INPUT TYPE="button" class="button-submit" VALUE="SUBMIT" onClick="parent.location='medium-level1.html'">
-            </form>
+        <div class="turntoright">
+            <span style="padding-right: 20px; font-size: 25px; font-family: Arial, Helvetica, sans-serif;">Score: </span>
+            <span id="num" class="score-box">{{user.all_score}}</span>
         </div>
-        
-
+        <br>
+        <img src="{{question.image.url}}" id='img' alt="summary" height="320" width="450">
+        <div class="input-box">
+            <span><input type="fullword" placeholder="text here"></span>
+            <p id="correct"></p>
+            <span><button class="button-hint" onclick="hintonClick()">Hint</button></span>
+        </div>
+        <form>
+            <INPUT TYPE="button" id="forsubmit" class="button-submit" onclick="myFunction(), nexttoPage()" VALUE="SUBMIT">
+            <a href="hard_level2.html" class="button-next" style="vertical-align:middle; visibility:hidden" id="next"><span>Next</span></a>
+        </form>
     </body>
 </html>
