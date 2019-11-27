@@ -2,6 +2,7 @@ from django.contrib.auth.models import AbstractBaseUser,    BaseUserManager, Per
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
+from game.models import EasyQuestion
 import datetime
 
 
