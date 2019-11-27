@@ -6,6 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="{% static 'css/easy.css' %}">
+    <!-- <script src="{% static 'gamepage-js/main.js' %}"></script> -->
   </head>
 
   <body>
@@ -19,7 +20,7 @@
       <span id="num" class="score-box">{{user.all_score}}</span>
     </div>
     <br>
-    <img src="{{question.image.url}}" id='img' alt="rainbow" height="320" width="450">
+    <img src="{{question.image.url}}" id='img' alt="easypic" height="320" width="450">
     <div class="input-box">
       <span><input type="fullword" placeholder="text here"></span>
       <p id="correct"></p>
@@ -27,7 +28,11 @@
     </div>
     <form>
       <INPUT TYPE="button" id="forsubmit" class="button-submit" onclick="myFunction(), nexttoPage()" VALUE="SUBMIT">
-      <a href="easy_level2.html" class="button-next" style="vertical-align:middle; visibility:hidden" id="next"><span>Next</span></a>
+      {% if question.id < 15 %}
+        <a href="{% url 'game:e-picture' question_id.id %}" class="button-next" style="vertical-align:middle; visibility:hidden" id="next"><span>Next</span></a>
+      {% else %}
+        <a href="{% url 'game:index' %}" class="button-next" style="vertical-align:middle; visibility:hidden" id="next"><span>Next</span></a>
+      {% endif %}
     </form>
   </body>
 </html>
