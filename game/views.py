@@ -64,3 +64,8 @@ def EasyPicture(request,question_id):
         'n' : range(len(Question.answer))
     })
 
+# def HintScore(request):
+#     score = 
+#     if request.POST:
+#         all_score -= 2
+

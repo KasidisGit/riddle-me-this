@@ -16,7 +16,15 @@ class UserView(TemplateView):
             u = User.objects.get(email = request.user)        
             u.name = request.POST.get('name')
             u.save()
+            u.all_score = request.POST.get('all_score')
+            # while u.all_score >0:
+            if u.all_score >= 2:
+                u.all_score -= 2;
+                u.save()
             form = UserForm()
 
         args = {'form': form}
         return render(request, self.template_name , args)
+    
+    # def hintscore(self, request):
+    #     u.all_score 

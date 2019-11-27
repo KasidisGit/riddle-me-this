@@ -1,5 +1,5 @@
 from django import forms
-from .models import NameUser
+from .models import *
 
 
 class UserForm(forms.ModelForm):
@@ -7,4 +7,10 @@ class UserForm(forms.ModelForm):
         model = NameUser
         fields = [
             'name',
+        ]
+    
+    class Meta:
+        model = User
+        fields = [
+            'all_score',
         ]
