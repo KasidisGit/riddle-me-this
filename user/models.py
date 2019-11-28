@@ -2,7 +2,6 @@ from django.contrib.auth.models import AbstractBaseUser,    BaseUserManager, Per
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
-from game.models import EasyQuestion
 import datetime
 
 
@@ -44,7 +43,10 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     last_login = models.DateTimeField(null=True, blank=True)
     date_joined = models.DateTimeField(auto_now_add=True)
-    all_score = models.IntegerField(default=0)
+    all_score = models.IntegerField(default=4)
+    current_easy = models.IntegerField(default=1)
+    current_medium = models.IntegerField(default=1)
+    current_hard = models.IntegerField(default=1)
     
     USERNAME_FIELD = 'email'
     EMAIL_FIELD = 'email'

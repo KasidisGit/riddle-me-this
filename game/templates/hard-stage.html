@@ -1,3 +1,7 @@
-{% for question in all_question %}
-<button><a href="{% url 'game:h-picture' question.id%}">H {{question.id}}</a></button>
+{% for question in range_available %}
+    <button><a href="{% url 'game:h-picture' question.id%}">H {{question.id}}</a></button>
 {% endfor %}
+{% for question in range_lock %}
+    <button disabled>E {{question.id}}</a></button>
+{% endfor %}
+{{user.current_easy}}

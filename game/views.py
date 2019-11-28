@@ -13,22 +13,39 @@ def HowtoView(request):
     return render(request,"how-to-play.html")
 
 def HardStage(request):
+    user = request.user
     return render(request,"hard-stage.html",{
-        "all_question": HardQuestion.objects.all(),
+        "range_available": HardQuestion.objects.filter(id__lte=user.current_hard),
+        "range_lock": HardQuestion.objects.filter(id__gte=user.current_hard+1),
     })
 
 def MediumStage(request):
+    user = request.user
     return render(request,"medium-stage.html",{
-        "all_question": MediumQuestion.objects.all(),
+        "range_available": MediumQuestion.objects.filter(id__lte=user.current_medium),
+        "range_lock": MediumQuestion.objects.filter(id__gte=user.current_medium+1),
     })
 
 def EasyStage(request):
+    user = request.user
     return render(request,"easy-stage.html",{
-        "all_question": EasyQuestion.objects.all(),
+        "range_available": EasyQuestion.objects.filter(id__lte=user.current_easy),
+        "range_lock": EasyQuestion.objects.filter(id__gte=user.current_easy+1),
     })
 
 def HardPicture(request,question_id):
     question = HardQuestion.objects.get(pk=question_id)
+    user = request.user
+    if request.method == 'POST':
+        if request.POST.get('textfield',None) == question.answer or request.POST.get('button') == question.answer:
+            if user.current_hard > question_id:
+                pass
+            elif user.current_hard == question.id:
+                user.current_hard += 1
+                user.all_score += question.score
+            elif user.current_hard < question.id:
+                pass
+            user.save()
     if question_id < 15:
         next_question = HardQuestion.objects.get(pk=question_id+1)
     else:
@@ -41,6 +58,17 @@ def HardPicture(request,question_id):
 
 def MediumPicture(request,question_id):
     question = MediumQuestion.objects.get(pk=question_id)
+    user = request.user
+    if request.method == 'POST':
+        if request.POST.get('textfield',None) == question.answer or request.POST.get('button') == question.answer:
+            if user.current_medium > question_id:
+                pass
+            elif user.current_medium == question.id:
+                user.current_medium += 1
+                user.all_score += question.score
+            elif user.current_medium < question.id:
+                pass
+            user.save()
     if question_id < 20:
         next_question = MediumQuestion.objects.get(pk=question_id+1)
     else:
@@ -56,10 +84,13 @@ def EasyPicture(request,question_id):
     user = request.user
     if request.method == 'POST':
         if request.POST.get('textfield',None) == question.answer or request.POST.get('button') == question.answer:
-            question.is_pass = True
-            user.all_score += question.score
-            question.score = 0
-            question.save()
+            if user.current_easy > question_id:
+                pass
+            elif user.current_easy == question.id:
+                user.current_easy += 1
+                user.all_score += question.score
+            elif user.current_easy < question.id:
+                pass
             user.save()
     if question_id < 15:
         next_question = EasyQuestion.objects.get(pk=question_id+1)

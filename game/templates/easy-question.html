@@ -29,20 +29,17 @@
     <input type="text" name="textfield" id="input" maxlength="{{ans_length}}" placeholder="{{ans_length}} letters" size="12" autofocus />
     <input type="submit" name="button" id="sub_btn" value="Submit"/>
 </form>
-{% if question.is_pass %}
+{% if user.current_easy > question.id %}
     <p><i class="fa fa-check"></i>  You got it!!</p>
+    {% if question.id < 15 %}
+        <button><a href="{% url 'game:e-picture' next_question.id %}">Next</a></button>
+    {% else %}
+        <button><a href="{% url 'game:easy' %}">Next</a></button>
+    {% endif %}
 {% else %}
     <p id="status"><i class="fa fa-close"></i>  Try again</p>
 {% endif %}
-{{question.is_pass}}
 <button onclick="hint()">Hint</button>
-{% if question.is_pass %}
-{% if question.id < 15 %}
-    <button><a href="{% url 'game:e-picture' next_question.id %}">Next</a></button>
-{% else %}
-    <button><a href="{% url 'game:easy' %}">Next</a></button>
-{% endif %}
-{% endif %}
 <script src="https://code.jquery.com/jquery-3.4.1.js" ></script>
 <script src="../static/js/question-js/active.js"></script>
 </body>
