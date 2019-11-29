@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.views import generic
 from django.utils import timezone
 from .models import *
+from django.contrib.auth.models import User
 
 def IndexView(request):
     # q = Question.objects.get(pk=1)
@@ -52,19 +53,23 @@ def MediumPicture(request,question_id):
     })
 
 def EasyPicture(request,question_id):
+    user = request.user
     Question = EasyQuestion.objects.get(pk=question_id)
     if question_id < 15:
         next_q = EasyQuestion.objects.get(pk=question_id+1)
     else:
         next_q = EasyQuestion.objects.get(pk=1)
-    
+    # print( request.POST.get('hint-btn'))
+    if request.GET.get('hint-btn')== 'Hint':
+        if user.all_score >= 2:
+            user.all_score -= 2
+        else:
+            pass
+        user.save()
+
     return render(request,"easy_page.html",{
         "question": Question,
         "question_id" : next_q,
         'n' : range(len(Question.answer))
     })
 
-# def HintScore(request):
-#     score = 
-#     if request.POST:
-#         all_score -= 2

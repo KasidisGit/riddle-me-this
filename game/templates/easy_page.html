@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="{% static 'css/easy.css' %}">
-    <!-- <script src="{% static 'gamepage-js/main.js' %}"></script> -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
   </head>
 
   <body>
@@ -24,9 +24,10 @@
     <div class="input-box">
       <span><input type="fullword" placeholder="text here"></span>
       <p id="correct"></p>
-      <!-- <form method="POST"> -->
-        <span><button class="button-hint" onclick="hintonClick()">Hint</button></span>
-      <!-- </form> -->
+      <form method="GET">
+        {% csrf_token %}
+        <span><input type="submit" class="button-hint" name="hint-btn" value="Hint"/> </span>
+      </form>
     </div>
     <form>
       <INPUT TYPE="button" id="forsubmit" class="button-submit" onclick="myFunction(), nexttoPage()" VALUE="SUBMIT">
@@ -55,11 +56,12 @@
   var next_btn = document.getElementById("next")
   
   function hintonClick(){
-    if (score >= 2) {
+    if ( score >= 2) {
       score -= 2;
       scoreText.innerText =  String(score)
     }
   }
+
 
   function nexttoPage() {
     document.getElementById("forsubmit").style.visibility = 'hidden';
