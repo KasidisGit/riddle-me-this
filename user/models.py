@@ -43,7 +43,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     is_active = models.BooleanField(default=True)
     last_login = models.DateTimeField(null=True, blank=True)
     date_joined = models.DateTimeField(auto_now_add=True)
-    all_score = models.IntegerField(default=0)
+    all_score = models.IntegerField(default=8)
 
     USERNAME_FIELD = 'email'
     EMAIL_FIELD = 'email'

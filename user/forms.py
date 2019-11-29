@@ -1,16 +1,9 @@
 from django import forms
-from .models import *
-
+from .models import NameUser
 
 class UserForm(forms.ModelForm):
     class Meta:
         model = NameUser
         fields = [
             'name',
-        ]
-    
-    class Meta:
-        model = User
-        fields = [
-            'all_score',
         ]

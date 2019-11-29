@@ -68,4 +68,3 @@ def EasyPicture(request,question_id):
 #     score = 
 #     if request.POST:
 #         all_score -= 2
-

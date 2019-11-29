@@ -1,7 +1,7 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render
 from .forms import UserForm
-from .models import User
+from .models import *
 
 class UserView(TemplateView):
     template_name = 'user.html'
@@ -16,15 +16,20 @@ class UserView(TemplateView):
             u = User.objects.get(email = request.user)        
             u.name = request.POST.get('name')
             u.save()
-            u.all_score = request.POST.get('all_score')
-            # while u.all_score >0:
-            if u.all_score >= 2:
-                u.all_score -= 2;
-                u.save()
             form = UserForm()
 
         args = {'form': form}
         return render(request, self.template_name , args)
     
-    # def hintscore(self, request):
-    #     u.all_score 
+    def hintscore(self, request):
+        form = UserForm(request.POST)
+        if form.is_valid():
+            u = User.objects.get(pk=pk)
+            u.all_score = request.POST.get('all_score')
+            # while u.all_score >0:
+            if u.all_score >= 2:
+                u.all_score -= 2;
+                u.save() 
+        
+        args = {'form': form}
+        return render(request, 'easy_page.html' , args)
