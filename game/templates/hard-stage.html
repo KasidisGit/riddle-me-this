@@ -2,6 +2,5 @@
     <button><a href="{% url 'game:h-picture' question.id%}">H {{question.id}}</a></button>
 {% endfor %}
 {% for question in range_lock %}
-    <button disabled>E {{question.id}}</a></button>
+    <button disabled>H {{question.id}}</a></button>
 {% endfor %}
-{{user.current_easy}}

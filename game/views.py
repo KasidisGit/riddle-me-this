@@ -53,6 +53,7 @@ def HardPicture(request,question_id):
     return render(request,"hard-question.html",{
         "question": question,
         "next_question": next_question,
+        "last_question": HardQuestion.objects.last(),
         "ans_length": (len(question.answer)),
     })
 
@@ -76,6 +77,7 @@ def MediumPicture(request,question_id):
     return render(request,"medium-question.html",{
         "question": question,
         "next_question": next_question,
+        "last_question": MediumQuestion.objects.last(),
         "ans_length": (len(question.answer)),
     })
 
@@ -99,6 +101,7 @@ def EasyPicture(request,question_id):
     return render(request,"easy-question.html",{
         "question": question,
         "next_question": next_question,
+        "last_question": EasyQuestion.objects.last(),
         "ans_length": (len(question.answer)),
     })
 

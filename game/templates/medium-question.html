@@ -31,7 +31,7 @@
 </form>
 {% if user.current_medium > question.id %}
     <p><i class="fa fa-check"></i>  You got it!!</p>
-    {% if question.id < 15 %}
+    {% if question.id < last_question.id  %}
         <button><a href="{% url 'game:m-picture' next_question.id %}">Next</a></button>
     {% else %}
         <button><a href="{% url 'game:medium' %}">Next</a></button>
