@@ -47,6 +47,7 @@
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
         {% if user.name == 'guest'%}
         <p style="color: #effeff; text-align: center;">No Profile..!</p>
+        <a class="sidetext" style="color: #effeff;"> Score: {{user.all_score}}</a>
         {% else %}
         <p style="color: #effeff; text-align: center;">Player Profile:</p>
         <img class="provider_pic" src="{{social_user.get_avatar_url}}">
@@ -55,6 +56,7 @@
                 <i class="fa fa-pencil-square" style="color: #effeff;" onclick="editName()"></i>
             </button>
             <br>
+        <a class="sidetext" style="color: #effeff;"> Score: {{user.all_score}}</a>
         {% endif %}
         </a>
         <a class="sidetext" style="color: #effeff;">
@@ -73,11 +75,6 @@
                     {% endif %}
                 </div>
         </div>
-    </div>
-    <span id="opennav" class="side_bar" onclick="openNav(), style.display = 'none'"><i class="fa fa-chevron-circle-left"></i></span>
-    <div class="footer">
-        <h3>You are now logged in as {{user.name}}. Enjoy the game.  <i class="fa fa-hand-peace-o"></i></h3>
-    </div>
     {% else %}
         <div class="footer">
             <div class="google">
