@@ -24,11 +24,15 @@
         <ul class="nav navbar-nav navbar-right">
             <div style="text-align: center;">
                 <li class="nav-item submenu">
-                    <a class="primary_btn">Play</a>
+                    <a class="primary_btn" s>Play</a>
                         <ul class="dropdown-menu">
-                            <li class="nav-item"><a href="{% url 'game:easy' %}" class="nav-link">Easy</a>
-                            <li class="nav-item"><a href="{% url 'game:medium' %}" class="nav-link">Medium</a>
-                            <li class="nav-item"><a href="{% url 'game:hard' %}" class="nav-link">Hard</a>
+                            {% if user.is_authenticated %}
+                                <li class="nav-item"><a href="{% url 'game:easy' %}" class="nav-link">Easy</a>
+                                <li class="nav-item"><a href="{% url 'game:medium' %}" class="nav-link">Medium</a>
+                                <li class="nav-item"><a href="{% url 'game:hard' %}" class="nav-link">Hard</a>
+                            {% else %}
+                                    <!-- pop up coming soon -->
+                            {% endif %}
                         </ul>
                 </li>
             </div>
@@ -68,7 +72,7 @@
             </div>
             <div class="guest">
                 <div class="gu_btn">
-                    <a class="gradient_btn" id="btn-guest"><span><i class="fa fa-user-circle"></i>  Guest</span></a>
+                    <a class="gradient_btn" id="btn-guest" href="{% url 'game:guest' %}"><span><i class="fa fa-user-circle"></i>  Guest</span></a>
                 </div>
             </div>
         </div>
@@ -84,11 +88,24 @@
       document.getElementById("mySidenav").style.width = "0";
       document.getElementById("opennav").style.display = "block";
     }
-    </script>
-    <script>
+
     $('#btn-guest').click(function(){
         console.log("{{user}}")
     })
+
+    function editName(){
+        if ($('#id_name').attr('type') == 'hidden'){
+            $('#edit-name').click(function(){
+            $('#id_name').attr('type','text')
+            $('#id_name').attr('placeholder','  New name here')
+            $('#id_name').attr('size','17')
+        })
+        }else{
+            $('#edit-name').click(function(){
+            $('#id_name').attr('type','hidden')
+        })
+        }
+    }
     </script>
 </body>
 </html>

@@ -1,7 +1,6 @@
 /*----------------------------------------------------
 @File: Default Styles
 @Author: SPONDON IT
-
 This file contains the styling for the actual theme, this
 is the file you need to edit to change the look of the
 theme.
@@ -10,10 +9,12 @@ theme.
 @Template Name: HostHub Construction 
 @Developed By: Naim Lasker
 Author E-mail: naimlasker@gmail.com
-
 =====================================================================*/
 
 @import url("https://fonts.googleapis.com/css?family=Rajdhani:600,700|Roboto:400,500,500i");
+
+
+
 
 body {
   line-height: 24px;
@@ -368,7 +369,7 @@ img {
           margin-top: 0px; }
       .header_area .navbar .nav .nav-item:last-child {
         margin-right: 0px; }
- 
+
 .header_area .navbar-right .primary_btn {
   min-width: 135px;
   font-size: 25px;
@@ -404,7 +405,7 @@ img {
       background: -moz-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
       background: -o-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
       background: linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%); }
-  
+
 .facebook {
   background: transparent;
   display: inline-block;
@@ -440,6 +441,7 @@ img {
   display: inline-block;
   position: relative;
   margin-left: 50px;}
+
 .guest .gu_btn {
   padding-bottom: 10px;
   color: #fff; }
@@ -455,6 +457,7 @@ img {
       left: 0px;
       right: 0;
       bottom: 0; }
+
 .guest.active .gu_btn .gradient_btn, .guest:hover .gu_btn .gradient_btn {
   color: #22195e;
   box-shadow: 0px 10px 30px rgba(130, 82, 250, 0.2);
@@ -465,6 +468,15 @@ img {
     background: -moz-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
     background: -o-linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%);
     background: linear-gradient(to right, #3fcaff 0%, #a4ffb0 100%); }
+
+img.provider_pic {
+  background: transparent;
+  display: inline-block;
+  margin-left: 75px;
+  position: relative;
+  width: 100;
+  height: 100;
+}
 
 .log {
   background: transparent;
@@ -486,6 +498,7 @@ img {
       left: 0px;
       right: 0;
       bottom: 0; }
+
 .log.active .l_btn .log_btn, .log:hover .l_btn .log_btn {
   color: #22195e;
   box-shadow: 0px 10px 30px rgba(130, 82, 250, 0.2);
@@ -554,5 +567,3 @@ img {
   .side_bar:hover {
     color: #3fcaff;
   }
-  
-
