@@ -2,6 +2,7 @@ from django.contrib.auth.models import AbstractBaseUser,    BaseUserManager, Per
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
+from game.models import EasyQuestion,MediumQuestion,HardQuestion
 import datetime
 
 
@@ -36,18 +37,22 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
 
-    email = models.EmailField(max_length=254, unique=True, default='guest')
-    name = models.CharField(max_length=254, null=True, blank=True)
+    email = models.EmailField(max_length=254, unique=True)
+    name = models.CharField(max_length=254, null=True, default='guest')
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
     last_login = models.DateTimeField(null=True, blank=True)
     date_joined = models.DateTimeField(auto_now_add=True)
-    all_score = models.IntegerField(default=8)
+    all_score = models.IntegerField(default=4)
+    current_easy = models.IntegerField(default=1)
+    current_medium = models.IntegerField(default=1)
+    current_hard = models.IntegerField(default=1)
 
     USERNAME_FIELD = 'email'
     EMAIL_FIELD = 'email'
     REQUIRED_FIELDS = []
+
 
     objects = UserManager()
 
@@ -58,7 +63,7 @@ class User(AbstractBaseUser, PermissionsMixin):
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.date_joined <= now
 
-    
 class NameUser(models.Model):
     name = models.CharField(max_length=20)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)
+
