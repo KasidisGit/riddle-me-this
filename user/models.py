@@ -2,6 +2,7 @@ from django.contrib.auth.models import AbstractBaseUser,    BaseUserManager, Per
 from django.db import models
 from django.utils import timezone
 from django.conf import settings
+from game.models import EasyQuestion,MediumQuestion,HardQuestion
 import datetime
 
 
@@ -36,8 +37,8 @@ class UserManager(BaseUserManager):
 
 class User(AbstractBaseUser, PermissionsMixin):
 
-    email = models.EmailField(max_length=254, unique=True, default='guest')
-    name = models.CharField(max_length=254, null=True, blank=True)
+    email = models.EmailField(max_length=254, unique=True)
+    name = models.CharField(max_length=254, null=True, default='guest')
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)
     is_active = models.BooleanField(default=True)
@@ -52,6 +53,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     EMAIL_FIELD = 'email'
     REQUIRED_FIELDS = []
 
+
     objects = UserManager()
 
     def get_absolute_url(self):
@@ -64,3 +66,4 @@ class User(AbstractBaseUser, PermissionsMixin):
 class NameUser(models.Model):
     name = models.CharField(max_length=20)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)
+

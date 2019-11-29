@@ -26,9 +26,13 @@
                 <li class="nav-item submenu">
                     <a class="primary_btn">Play</a>
                         <ul class="dropdown-menu">
-                            <li class="nav-item"><a href="{% url 'game:easy' %}" class="nav-link">Easy</a>
-                            <li class="nav-item"><a href="{% url 'game:medium' %}" class="nav-link">Medium</a>
-                            <li class="nav-item"><a href="{% url 'game:hard' %}" class="nav-link">Hard</a>
+                            {% if user.is_authenticated %}
+                                <li class="nav-item"><a href="{% url 'game:easy' %}" class="nav-link">Easy</a>
+                                <li class="nav-item"><a href="{% url 'game:medium' %}" class="nav-link">Medium</a>
+                                <li class="nav-item"><a href="{% url 'game:hard' %}" class="nav-link">Hard</a>
+                            {% else %}
+                                    <!-- pop up coming soon -->
+                            {% endif %}
                         </ul>
                 </li>
             </div>
@@ -39,21 +43,37 @@
         </ul>
     </div>
     {% if user.is_authenticated %}
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
-            <a class="sidetext" style="color: #effeff;"> Welcome, {{user.name}}</a>
-            <a class="sidetext" style="color: #effeff;"> Score: {{user.all_score}}</a>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
+        {% if user.name == 'guest'%}
+        <p style="color: #effeff; text-align: center;">No Profile..!</p>
+        <a class="sidetext" style="color: #effeff;"> Score: {{user.all_score}}</a>
+        {% else %}
+        <p style="color: #effeff; text-align: center;">Player Profile:</p>
+        <img class="provider_pic" src="{{social_user.get_avatar_url}}">
+        <a class="sidetext" style="color: #effeff;"> Username: {{ social_user.extra_data.given_name }} {{social_user.extra_data.first_name}}            
+            <button id="edit-name" style="padding: 0; border: none; background: none;">
+                <i class="fa fa-pencil-square" style="color: #effeff;" onclick="editName()"></i>
+            </button>
+            <br>
+        <a class="sidetext" style="color: #effeff;"> Score: {{user.all_score}}</a>
+        {% endif %}
+        </a>
+        <a class="sidetext" style="color: #effeff;">
+        <div class="provider_pic">
             <form method="POST" > {% csrf_token %}
                 {{ form.as_p }}
             </form>
-            <div id="block_container">
-                <a class="log_btn" id="button" href="{% url 'logout' %}"><span>Change Name</span></a>
-                <a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a>
-            </div>
         </div>
-        <span id="opennav" class="side_bar" onclick="openNav()"><i class="fa fa-chevron-circle-left"></i></span>
-        <div class="footer">
-            <h3>You are now logged in as {{user}}. Enjoy the game.  <i class="fa fa-hand-peace-o"></i></h3>
+        </a>
+        <div class="log">
+                <div class="l_btn">
+                    {% if user.name != 'guest' %}
+                    <a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a>
+                    {% else %}
+                    <a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Login?</span></a>
+                    {% endif %}
+                </div>
         </div>
     {% else %}
         <div class="footer">
@@ -69,7 +89,7 @@
             </div>
             <div class="guest">
                 <div class="gu_btn">
-                    <a class="gradient_btn" id="btn-guest"><span><i class="fa fa-user-circle"></i>  Guest</span></a>
+                    <a class="gradient_btn" id="btn-guest" href="{% url 'game:guest' %}"><span><i class="fa fa-user-circle"></i>  Guest</span></a>
                 </div>
             </div>
         </div>
@@ -85,11 +105,24 @@
       document.getElementById("mySidenav").style.width = "0";
       document.getElementById("opennav").style.display = "block";
     }
-    </script>
-    <script>
+
     $('#btn-guest').click(function(){
         console.log("{{user}}")
     })
+
+    function editName(){
+        if ($('#id_name').attr('type') == 'hidden'){
+            $('#edit-name').click(function(){
+            $('#id_name').attr('type','text')
+            $('#id_name').attr('placeholder','  New name here')
+            $('#id_name').attr('size','17')
+        })
+        }else{
+            $('#edit-name').click(function(){
+            $('#id_name').attr('type','hidden')
+        })
+        }
+    }
     </script>
 </body>
 </html>

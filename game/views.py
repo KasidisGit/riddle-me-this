@@ -1,13 +1,27 @@
-from django.shortcuts import get_object_or_404, render
-from django.http import HttpResponse, HttpResponseRedirect
-from django.urls import reverse
-from django.views import generic
+from django.shortcuts import render,redirect
 from django.utils import timezone
+from user.forms import UserForm
+from user.models import User
+from allauth.socialaccount.models import SocialAccount
+from django.contrib.auth import login
 from .models import *
 
+
+
+
 def IndexView(request):
-    # q = Question.objects.get(pk=1)
-    return render(request,"main-menu.html")
+    form = UserForm()
+    if request.method == "POST":
+        form = UserForm(request.POST)
+        player = User.objects.get(email= request.user)
+        player.name = request.POST.get('name')
+        player.save()
+        form = UserForm()
+        return redirect("game:index")
+    if request.user.is_authenticated and request.user.name != 'guest':
+        social_user = SocialAccount.objects.get(user=request.user)
+        return render(request,"main-menu.html",{"social_user":social_user,"form":form})
+    return render(request,"main-menu.html",{"form":form})
 
 def HowtoView(request):
     return render(request,"how-to-play.html")
@@ -105,15 +119,9 @@ def EasyPicture(request,question_id):
         "ans_length": (len(question.answer)),
     })
 
-#def HintClick(request):
-
-        
-
-
-
-
-
-
-
-
-
+def create_guest(request):
+    user = User.objects.filter(name='guest').order_by('id')
+    new_user = User.objects.create(email=f'guest {len(user)+1}')
+    new_user.save()
+    login(request, new_user)
+    return redirect("game:index")
