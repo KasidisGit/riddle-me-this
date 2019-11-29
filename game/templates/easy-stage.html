@@ -1,27 +1,17 @@
-{% load socialaccount %}
-{% providers_media_js %}
-{% load static %}
-
-{% for question in all_question %}
-<button><a href="{% url 'game:e-picture' question.id%}">E {{question.id}}</a></button>
-{% endfor %}
-
 <!DOCTYPE html>
 <html lang="en">
+{% load static %}
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>EASY</title>
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href='{% static "/css/stage-style.css" %}'>
-
 </head>
-
 <body class="body-stage-easy">
-
     <div class="stage">
         <div class="container-1">
             <div class="stage-name">
@@ -29,55 +19,28 @@
             </div>
         </div>
     </div>
-
-    <div class="log-level">
-        <div class="log-container">
-            <div class="log-button-sub-level">
-                
-                <button type="button"></button>
-                <button type="button"></button>
-                <button type="button"></button>
-                <button type="button"></button><br>
-                <button type="button"></button>
-                <button type="button"></button>
-                <button type="button"></button>
-                <button type="button"></button>
-                <button type="button"></button><br>
-                <button type="button"></button>
-                <button type="button"></button>
-                <button type="button"></button>
-                <button type="button"></button>
-                <button type="button"></button>
-            </div>
-        </div>
-    </div>
-
     <div class="level">
         <div class="container-1">
             <div class="button-sub-level">
-                <button type="button">1</button>
-                <button type="button">2</button>
-                <button type="button">3</button>
-                <button type="button">4</button>
-                <button type="button">5</button><br>
-                <button type="button">6</button>
-                <button type="button">7</button>
-                <button type="button">8</button>
-                <button type="button">9</button>
-                <button type="button">10</button><br>
-                <button type="button">11</button>
-                <button type="button">12</button>
-                <button type="button">13</button>
-                <button type="button">14</button>
-                <button type="button">15</button>
+                {% for question in range_available %}
+                    <button><a href="{% url 'game:e-picture' question.id%}">{{question.id}}</a></button>
+                    {% if question.id == 5 or question.id == 10 %}
+                        <br>
+                    {% endif %}
+                {% endfor %}
+                {% for question in range_lock %}
+                    <button disabled>{{question.id}}</a></button>
+                    {% if question.id == 5 or question.id == 10 %}
+                        <br>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>
-
     <div class="box-3">
         <div class="container-2">
             <div class="btn btn-three">
-                <span> <i class="fa fa-home"></i>  MAIN MENU</span>
+                <span><i class="fa fa-home"></i>  MAIN MENU</span>
             </div>
         </div>
     </div>
@@ -85,3 +48,4 @@
 
 </body>
 </html>
+

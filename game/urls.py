@@ -12,4 +12,5 @@ urlpatterns = [
     path('easy', views.EasyStage, name='easy'),
     path('easy/<int:question_id>', views.EasyPicture, name='e-picture'),
     path('scoreboard', views.ScoreView, name='scoreboard'),
+    path('guest/', views.create_guest ,name='guest')
 ]

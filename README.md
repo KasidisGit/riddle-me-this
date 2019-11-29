@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/KasidisGit/riddle-me-this.svg?branch=master)](https://travis-ci.com/KasidisGit/riddle-me-this)
+[![codecov](https://codecov.io/gh/KasidisGit/riddle-me-this/branch/master/graph/badge.svg)](https://codecov.io/gh/KasidisGit/riddle-me-this)
 # Riddle Me This
 
 It is an online educational game that tests knowledge and creativity of a player. The questions will come in the form of pictures. The player has to turn those pictures into only a single word. Each word is illustrated by pictures. This game application is designed as a mixture of guess the word games and pictures trivia quiz to improve the player creativity but still fun and rewarding. The more level is increased, the more complicated pictures will be. To solve tricky quizzes, You need to think outside the box. We will collect score of each player and put it in scoreboard showing top 10 players with their highest score.

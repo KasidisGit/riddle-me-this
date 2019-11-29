@@ -1,5 +1,5 @@
 from django.views.generic import TemplateView
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from .forms import UserForm
 from .models import User
 
