@@ -72,4 +72,3 @@ def EasyPicture(request,question_id):
         "question_id" : next_q,
         'n' : range(len(Question.answer))
     })
-

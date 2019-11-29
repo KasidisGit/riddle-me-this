@@ -24,7 +24,10 @@
         <div class="input-box">
             <span><input type="fullword" placeholder="text here"></span>
             <p id="correct"></p>
-            <span><button class="button-hint" onclick="hintonClick()">Hint</button></span>
+            <form method="GET">
+            {% csrf_token %}
+              <span><input type="submit" class="button-hint" name="hint-btn" value="Hint"/></span>
+            </form>
         </div>
         <form>
             <INPUT TYPE="button" id="forsubmit" class="button-submit" onclick="myFunction(), nexttoPage()" VALUE="SUBMIT">
@@ -51,13 +54,6 @@
     var score = Number(scoreText.innerText)
     var submit_btn = document.getElementById("forsubmit")
     var next_btn = document.getElementById("next")
-    
-    function hintonClick(){
-      if (score >= 2) {
-        score -= 2;
-        scoreText.innerText =  String(score)
-      }
-    }
   
     function nexttoPage() {
       document.getElementById("forsubmit").style.visibility = 'hidden';

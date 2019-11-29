@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="{% static 'css/easy.css' %}">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script> -->
   </head>
 
   <body>
@@ -25,7 +25,7 @@
       <span><input type="fullword" placeholder="text here"></span>
       <p id="correct"></p>
       <form method="GET">
-        {% csrf_token %}
+      {% csrf_token %}
         <span><input type="submit" class="button-hint" name="hint-btn" value="Hint"/> </span>
       </form>
     </div>
@@ -55,12 +55,12 @@
   var submit_btn = document.getElementById("forsubmit")
   var next_btn = document.getElementById("next")
   
-  function hintonClick(){
-    if ( score >= 2) {
-      score -= 2;
-      scoreText.innerText =  String(score)
-    }
-  }
+  // function hintonClick(){
+  //   if ( score >= 2) {
+  //     score -= 2;
+  //     scoreText.innerText =  String(score)
+  //   }
+  // }
 
 
   function nexttoPage() {
