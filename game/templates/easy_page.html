@@ -30,7 +30,7 @@
       </form>
     </div>
     <form>
-      <INPUT TYPE="button" id="forsubmit" class="button-submit" onclick="myFunction(), nexttoPage()" VALUE="SUBMIT">
+      <INPUT TYPE="button" id="forsubmit" class="button-submit" onclick="myFunction(), nexttoPage()" VALUE="SUBMIT"/>
       {% if question.id < 15 %}
         <a href="{% url 'game:e-picture' question_id.id %}" class="button-next" style="vertical-align:middle; visibility:hidden" id="next"><span>Next</span></a>
       {% else %}

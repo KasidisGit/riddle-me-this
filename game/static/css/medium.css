@@ -1,5 +1,5 @@
 body {
-    background-image: url("picture-medium.jpg") no-repeat center fixed; 
+    background: url("../introduction-img/picturemedium.jpg") no-repeat center fixed; 
     background-size: cover;
     overflow: auto;;
 }
@@ -107,7 +107,7 @@ p {
 }
 
 .button-next {
-    display: inline-block;
+    /* display: inline-block; */
     border-radius: 4px;
     background-color: #945158;
     border: none;

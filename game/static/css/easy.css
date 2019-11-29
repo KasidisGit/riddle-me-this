@@ -108,7 +108,7 @@ p {
 }
 
 .button-next {
-    display: inline-block;
+    /* display: inline-block; */
     border-radius: 4px;
     background-color: #945158;
     border: none;

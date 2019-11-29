@@ -27,11 +27,19 @@ def EasyStage(request):
     })
 
 def HardPicture(request,question_id):
+    user = request.user
     Question = HardQuestion.objects.get(pk=question_id)
     if question_id < 15:
         next_q = HardQuestion.objects.get(pk=question_id+1)
     else:
         next_q = HardQuestion.objects.get(pk=1)
+    
+    if request.GET.get('hint-btn')== 'Hint':
+        if user.all_score >= 2:
+            user.all_score -= 2
+        else:
+            pass
+        user.save()
 
     return render(request,"hard_page.html",{
         "question": Question,
@@ -39,12 +47,20 @@ def HardPicture(request,question_id):
         'n' : range(len(Question.answer))
     })
 
-def MediumPicture(request,question_id): 
+def MediumPicture(request,question_id):
+    user = request.user
     Question = MediumQuestion.objects.get(pk=question_id)
     if question_id < 20:
         next_q = MediumQuestion.objects.get(pk=question_id+1)
     else:
         next_q = MediumQuestion.objects.get(pk=1)
+
+    if request.GET.get('hint-btn')== 'Hint':
+        if user.all_score >= 2:
+            user.all_score -= 2
+        else:
+            pass
+        user.save()
 
     return render(request,"medium_page.html",{
         "question": Question,
