@@ -6,8 +6,8 @@ class UserForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.fields['name'].widget.attrs.update(size='20', placeholder='Your name here')
         self.fields['name'].label = ""
+        self.fields['name'].widget =  forms.HiddenInput()
 
     class Meta:
         model = NameUser
