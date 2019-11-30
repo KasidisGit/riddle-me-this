@@ -1,56 +1,86 @@
 <html>
-{% load socialaccount %}
-{% providers_media_js %}
-{% load static %}
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>Main Menu</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href='{% static "/css/menu-style.css" %}'>
-</head>
-<body class="header_area">
-    <div class="main_title">
-        <h2>Riddle Me This</h2>
-        <h1>Riddle Me This</h1>
+    {% load socialaccount %}
+    {% providers_media_js %}
+    {% load static %}
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Main Menu</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" type="text/css" href='{% static "/css/menu-style.css" %}'>
+    </head>
+    <body class="header_area">
+        <div class="main_title">
+            <h2>Riddle Me This</h2>
+            <h1>Riddle Me This</h1>
         <a class="video-play-button">
             <span>?</span>
         </a>
-    </div>
-    <div class="navbar">
-        <ul class="nav navbar-nav navbar-right">
-            <div style="text-align: center;">
-                <li class="nav-item submenu">
-                    <a class="primary_btn">Play</a>
-                        <ul class="dropdown-menu">
-                            <li class="nav-item"><a href="{% url 'game:easy' %}" class="nav-link">Easy</a>
-                            <li class="nav-item"><a href="{% url 'game:medium' %}" class="nav-link">Medium</a>
-                            <li class="nav-item"><a href="{% url 'game:hard' %}" class="nav-link">Hard</a>
-                        </ul>
-                </li>
-            </div>
-            <br></br>
-            <li class="nav-item"><a href="{% url 'game:htp' %}" class="primary_btn">How to Play</a></li>
-            <br></br>
-            <li class="nav-item"><a href="#" class="primary_btn">Scoreboard</a></li>
-        </ul>
-    </div>
-    {% if user.is_authenticated %}
-    <div id="mySidenav" class="sidenav">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
-        <a class="sidetext" style="color: #effeff;"> Welcome, {{user}}</a>
-        <div class="log">
-            <div class="l_btn">
-                <a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a>
-            </div>
         </div>
-    </div>
-    <span id="opennav" class="side_bar" onclick="openNav(), style.display = 'none'"><i class="fa fa-chevron-circle-left"></i></span>
-    <div class="footer">
-        <h3>You are now logged in as {{user}}. Enjoy the game.  <i class="fa fa-hand-peace-o"></i></h3>
-    </div>
+        <div class="navbar">
+            <ul class="nav navbar-nav navbar-right">
+                <div style="text-align: center;">
+                    <li class="nav-item submenu">
+                        <a class="primary_btn">Play</a>
+                            <ul class="dropdown-menu">
+                                {% if user.is_authenticated %}
+                                    <li class="nav-item"><a href="{% url 'game:easy' %}" class="nav-link">Easy</a>
+                                    <li class="nav-item"><a href="{% url 'game:medium' %}" class="nav-link">Medium</a>
+                                    <li class="nav-item"><a href="{% url 'game:hard' %}" class="nav-link">Hard</a>
+                                {% else %}
+                                        <!-- pop up coming soon -->
+                                {% endif %}
+                            </ul>
+                    </li>
+                </div>
+                <br></br>
+                <li class="nav-item"><a href="{% url 'game:htp' %}" class="primary_btn">How to Play</a></li>
+                <br></br>
+                <li class="nav-item"><a href="#" class="primary_btn">Scoreboard</a></li>
+            </ul>
+        </div>
+        {% if user.is_authenticated %}
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
+                    {% if user.name == 'guest'%}
+                        <p style="color: #effeff; text-align: center;">No Profile..!</p>
+                    {% else %}
+                        <p style="color: #effeff; text-align: center;">Player Profile:</p>
+                        <img class="provider_pic" src="{{social_user.get_avatar_url}}">
+                        <a class="sidetext" style="color: #effeff;"> Username: {{ social_user.extra_data.given_name }} {{social_user.extra_data.first_name}}            
+                        <button id="edit-name" style="padding: 0; border: none; background: none;">
+                        <i class="fa fa-pencil-square" style="color: #effeff;" onclick="editName()"></i>
+                        </button>
+                        <br>
+                    {% endif %}
+                </a>
+                <a class="sidetext" style="color: #effeff;">
+                <div class="provider_pic">
+                    <form method="POST" > {% csrf_token %}
+                        {{ form.as_p }}
+                    </form>
+                </div>
+                </a>
+                <div class="log">
+                    <div class="l_btn">
+                        {% if user.name != 'guest' %}
+                        <a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a>
+                        {% else %}
+                        <a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Login?</span></a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            <span id="opennav" class="side_bar" onclick="openNav(), style.display = 'none'"><i class="fa fa-chevron-circle-left"></i></span>
+            <div class="footer">
+                {% if user.name != 'guest' %}
+                <h3>You are now logged in as {{social_user.provider|title}}. Enjoy the game.  <i class="fa fa-hand-peace-o"></i></h3>
+                {% else %}
+                <h3>Score will be recorded but your name will be Guest.</h3>
+                {% endif %}
+            </div>
     {% else %}
         <div class="footer">
             <div class="google">
@@ -65,7 +95,7 @@
             </div>
             <div class="guest">
                 <div class="gu_btn">
-                    <a class="gradient_btn" id="btn-guest"><span><i class="fa fa-user-circle"></i>  Guest</span></a>
+                    <a class="gradient_btn" id="btn-guest" href="{% url 'game:guest' %}"><span><i class="fa fa-user-circle"></i>  Guest</span></a>
                 </div>
             </div>
         </div>
@@ -81,11 +111,24 @@
       document.getElementById("mySidenav").style.width = "0";
       document.getElementById("opennav").style.display = "block";
     }
-    </script>
-    <script>
+
     $('#btn-guest').click(function(){
         console.log("{{user}}")
     })
+
+    function editName(){
+        if ($('#id_name').attr('type') == 'hidden'){
+            $('#edit-name').click(function(){
+            $('#id_name').attr('type','text')
+            $('#id_name').attr('placeholder','  New name here')
+            $('#id_name').attr('size','15')
+        })
+        }else{
+            $('#edit-name').click(function(){
+            $('#id_name').attr('type','hidden')
+        })
+        }
+    }
     </script>
 </body>
 </html>

@@ -69,3 +69,9 @@
     </div>
 </body>
 </html>
+{% for question in range_available %}
+    <button><a href="{% url 'game:m-picture' question.id%}">M {{question.id}}</a></button>
+{% endfor %}
+{% for question in range_lock %}
+    <button disabled>M {{question.id}}</a></button>
+{% endfor %}
