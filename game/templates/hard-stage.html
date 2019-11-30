@@ -29,21 +29,18 @@
     <div class="level">
         <div class="container-1">
             <div class="button-sub-level">
-                <button type="button">1</button>
-                <button type="button">2</button>
-                <button type="button">3</button>
-                <button type="button">4</button>
-                <button type="button">5</button><br>
-                <button type="button">6</button>
-                <button type="button">7</button>
-                <button type="button">8</button>
-                <button type="button">9</button>
-                <button type="button">10</button><br>
-                <button type="button">11</button>
-                <button type="button">12</button>
-                <button type="button">13</button>
-                <button type="button">14</button>
-                <button type="button">15</button>
+                {% for question in range_available %}
+                    <button><a href="{% url 'game:m-picture' question.id%}">{{question.id}}</a></button>
+                    {% if question.id|divisibleby:"5" %}
+                        <br>
+                    {% endif %}
+                {% endfor %}
+                {% for question in range_lock %}
+                    <button disabled><i class="fa fa-lock"></i></a></button>
+                    {% if question.id|divisibleby:"5" %}
+                        <br>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>
@@ -60,9 +57,3 @@
 
 </body>
 </html>
-{% for question in range_available %}
-    <button><a href="{% url 'game:h-picture' question.id%}">H {{question.id}}</a></button>
-{% endfor %}
-{% for question in range_lock %}
-    <button disabled>H {{question.id}}</a></button>
-{% endfor %}
