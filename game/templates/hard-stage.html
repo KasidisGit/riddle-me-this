@@ -2,10 +2,6 @@
 {% providers_media_js %}
 {% load static %}
 
-{% for question in all_question %}
-<button><a href="{% url 'game:h-picture' question.id%}">H {{question.id}}</a></button>
-{% endfor %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
