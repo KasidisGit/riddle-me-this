@@ -6,37 +6,62 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="{% static 'css/easy.css' %}">
+    <link rel="stylesheet" type="text/css" href='{% static "/css/menu-style.css" %}'>
+    <link rel="stylesheet" type="text/css" href='{% static "/css/question-style.css" %}'>
     <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js" crossorigin="anonymous"></script> -->
   </head>
 
   <body>
     <a href= "../main-menu.html"  class="button-left">Main menu</a>
     <h1>DAVINCI GAME</h1>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
+        <a class="sidetext" style="color: #000000;"> Welcome, {{user}}</a>
+        <a class="sidetext" style="color: #000000;"> Score: {{user.all_score}}</a>
+        <div class="log">
+            <div class="l_btn">
+                <a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a>
+            </div>
+        </div>
+    </div>
 
     <hr>
 
+    <span id="opennav" class="side_bar" onclick="openNav()"><i class="fa fa-chevron-circle-left"></i></span>
     <div class="turntoright">
       <span style="padding-right: 20px; font-size: 25px; font-family: Arial, Helvetica, sans-serif;">Score: </span>
       <span id="num" class="score-box">{{user.all_score}}</span>
     </div>
     <br>
     <img src="{{question.image.url}}" id='img' alt="easypic" height="320" width="450">
-    <div class="input-box">
-      <span><input type="fullword" placeholder="text here"></span>
-      <p id="correct"></p>
+    <form method="POST">
+      {% crsf token %}
+        <input type="text" name="textfield" id="input" maxlength="{{ans_length}}" placeholder="{{ans_length}} letters" size="12" autofocus />
+        <input TYPE="button" id="forsubmit" class="button-submit" onclick="myFunction(), nexttoPage()" VALUE="SUBMIT"/>
+    </form>
+    <!-- <div class="input-box"> -->
+    <div>
+      {% if user.current_easy > question.id %}
+        <p><i class="fa fa-check"></i>  You got it!!</p>
+      <!-- <p id="correct"></p> -->
+        {% if question.id < last_question.id %}
+          <a href="{% url 'game:e-picture' question_id.id %}" class="button-next" style="vertical-align:middle; visibility:hidden" id="next"><span>Next</span></a>
+        {% else %}
+          <a href="{% url 'game:easy' %}" class="button-next" style="vertical-align:middle; visibility:hidden" id="next"><span>Next</span></a>
+      {% endif %}
+      {% else %}
+        <p id="status"><i class="fa fa-close"></i>  Try again</p>
+      {% endif %}
       <form method="GET">
       {% csrf_token %}
         <span><input type="submit" class="button-hint" name="hint-btn" value="Hint"/> </span>
       </form>
     </div>
-    <form>
-      <INPUT TYPE="button" id="forsubmit" class="button-submit" onclick="myFunction(), nexttoPage()" VALUE="SUBMIT"/>
-      {% if question.id < 15 %}
+    <!-- {% if question.id < 15 %}
         <a href="{% url 'game:e-picture' question_id.id %}" class="button-next" style="vertical-align:middle; visibility:hidden" id="next"><span>Next</span></a>
-      {% else %}
+    {% else %}
         <a href="{% url 'game:index' %}" class="button-next" style="vertical-align:middle; visibility:hidden" id="next"><span>Next</span></a>
-      {% endif %}
-    </form>
+    {% endif %} -->
   </body>
 </html>
 
