@@ -10,7 +10,7 @@ def IndexView(request):
     form = UserForm()
     if request.method == "POST":
         form = UserForm(request.POST)
-        player = User.objects.get(email= request.user)
+        player = User.objects.get(email=request.user)
         player.name = request.POST.get('name')
         player.save()
         form = UserForm()

@@ -17,61 +17,16 @@
         <div class="container">
                 <table>
                     <thead>
-                            <th></th>
-                            <th>Username</th>
+                            <th>Email</th>
                             <th>Score</th>
                     </thead>
                     <tbody>
+                        {% for user in score_order %}
                         <tr>
-                            <td>Cell 1</td>
-                            <td>Cell 2</td>
-                            <td>Cell 3</td>
+                            <td>{{ user.email }}</td>
+                            <td>{{ user.all_score }}</td>
                         </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Cell 2</td>
-                            <td>Cell 3</td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Cell 2</td>
-                            <td>Cell 3</td>
-                        </tr>
-                        <tr>
-                            <td>4</td>
-                            <td>Cell 2</td>
-                            <td>Cell 3</td>
-                        </tr>
-                        <tr>
-                            <td>5</td>
-                            <td>Cell 2</td>
-                            <td>Cell 3</td>
-                        </tr>
-                        <tr>
-                            <td>6</td>
-                            <td>Cell 2</td>
-                            <td>Cell 3</td>
-                        </tr>
-                        <tr>
-                            <td>7</td>
-                            <td>Cell 2</td>
-                            <td>Cell 3</td>
-                        </tr>
-                        <tr>
-                            <td>8</td>
-                            <td>Cell 2</td>
-                            <td>Cell 3</td>
-                        </tr>
-                        <tr>
-                            <td>9</td>
-                            <td>Cell 2</td>
-                            <td>Cell 3</td>
-                        </tr>
-                        <tr>
-                            <td>10</td>
-                            <td>Cell 2</td>
-                            <td>Cell 3</td>
-                        </tr>
+                        {% endfor %}
                     </tbody>
                 </table>
             </div>
