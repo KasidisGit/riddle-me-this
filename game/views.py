@@ -7,9 +7,6 @@ from django.contrib.auth import login
 from .models import *
 from django.contrib.auth.models import User
 
-
-
-
 def IndexView(request):
     form = UserForm()
     if request.method == "POST":
