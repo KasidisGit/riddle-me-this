@@ -162,6 +162,5 @@ SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 
-if '/app' in os.environ['HOME']:
-    django_heroku.settings(locals())
+django_heroku.settings(locals())
 
