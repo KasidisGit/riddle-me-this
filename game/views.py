@@ -6,9 +6,6 @@ from allauth.socialaccount.models import SocialAccount
 from django.contrib.auth import login
 from .models import *
 
-
-
-
 def IndexView(request):
     form = UserForm()
     if request.method == "POST":
@@ -27,7 +24,9 @@ def HowtoView(request):
     return render(request,"how-to-play.html")
 
 def ScoreView(request):
-    return render(request,"scoreboard.html")
+    return render(request,"scoreboard.html",{
+        "score_order": User.objects.order_by('-all_score')[:10],
+    })
 
 def HardStage(request):
     user = request.user
