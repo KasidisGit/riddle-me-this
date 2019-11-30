@@ -1,3 +1,5 @@
+@import compass
+
 html,
 body {
   height: 100%;
@@ -33,7 +35,7 @@ h1{
 }
 
 table {
-
+  position: relative;
   width: 800px;
   border-collapse: collapse;
   overflow: hidden;
