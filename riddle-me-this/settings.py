@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
+    # 'social-auth',
+    'social.apps.django_app.default',
 ]
 
 MIDDLEWARE = [
@@ -89,8 +91,14 @@ WSGI_APPLICATION = 'riddle-me-this.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+# DATABASES = {}
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 # db_from_env = dj_database_url.config(conn_max_age=600)
 # DATABASES['default'].update(db_from_env)
@@ -156,7 +164,6 @@ ACCOUNT_USERNAME_REQUIRED = False
 SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 
-
-if '/app' in os.environ['HOME']:
-    django_heroku.settings(locals())
-    del DATABASES['default']['OPTIONS']['sslmode']
+# if '/app' in os.environ['HOME']:
+#     django_heroku.settings(locals())
+#     del DATABASES['default']['OPTIONS']['sslmode']
