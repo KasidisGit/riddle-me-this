@@ -1,7 +1,23 @@
 from django.shortcuts import render
+from django.http import HttpResponse
 from django.views import generic
 from django.utils import timezone
-from .models import *
+from .models import HardQuestion,MediumQuestion,EasyQuestion
+from django.shortcuts import render_to_response
+from django.template import RequestContext
+
+def handler404(request, exception,*args, **argv):
+    response = render_to_response('400.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 404
+    return response
+
+
+def handler500(request, *args, **argv):
+    response = render_to_response('500.html', {},
+                                  context_instance=RequestContext(request))
+    response.status_code = 500
+    return response
 
 def IndexView(request):
     # q = Question.objects.get(pk=1)
