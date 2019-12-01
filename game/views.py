@@ -6,9 +6,6 @@ from allauth.socialaccount.models import SocialAccount
 from django.contrib.auth import login
 from .models import *
 
-
-
-
 def IndexView(request):
     form = UserForm()
     if request.method == "POST":
