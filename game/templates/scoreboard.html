@@ -8,17 +8,17 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Scoreboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href='{% static "/css/howto-style.css" %}'>
+    <!-- <link rel="stylesheet" type="text/css" href='{% static "/css/menu-style.css" %}'> -->
     <link rel="stylesheet" type="text/css" href='{% static "/css/scoreboard-style.css" %}'>
     <link href="https://fonts.googleapis.com/css?family=Orbitron:800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 class="font-h1">Scoreboard</h1>
+    <h1 class="tracking-in-expand ">SCOREBOARD</h1>
         <div class="container">
                 <table>
                     <thead>
-                            <th>Email</th>
-                            <th>Score</th>
+                            <th>EMAIL</th>
+                            <th>SCORE</th>
                     </thead>
                     <tbody>
                         {% for user in score_order %}
@@ -32,9 +32,11 @@
             </div>
     <div class="container-mainmenu">
         <div class="text">
-            <a href="{% url 'game:index' %}" class="btn fancy-btn fancy-dark">Main Menu</a>
+            <!-- <a class="primary_btn">Play</a> -->
+            <a href="{% url 'game:index' %}" class="primary_btn">Main Menu</a>
         </div>
     </div>
+    
     
 </body>
 </html>
