@@ -1,5 +1,6 @@
+
 from django import forms
-from .models import NameUser
+from .models import User
 
 
 class UserForm(forms.ModelForm):
@@ -10,7 +11,7 @@ class UserForm(forms.ModelForm):
         self.fields['name'].widget =  forms.HiddenInput()
 
     class Meta:
-        model = NameUser
+        model = User
         fields = ['name']
 
     

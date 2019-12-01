@@ -44,12 +44,12 @@
         {% if user.is_authenticated %}
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
-                    {% if user.name == 'guest'%}
+                    {% if user.name == 'guest' %}
                         <p style="color: #effeff; text-align: center;">No Profile..!</p>
                     {% else %}
                         <p style="color: #effeff; text-align: center;">Player Profile:</p>
                         <img class="provider_pic" src="{{social_user.get_avatar_url}}">
-                        <a class="sidetext" style="color: #effeff;"> Username: {{ social_user.extra_data.given_name }} {{social_user.extra_data.first_name}}            
+                        <a class="sidetext" style="color: #effeff;"> Username: {{user.name}}
                         <button id="edit-name" style="padding: 0; border: none; background: none;">
                         <i class="fa fa-pencil-square" style="color: #effeff;" onclick="editName()"></i>
                         </button>
