@@ -42,19 +42,22 @@
                     <li class="nav-item"><a href="#" class="primary_btn">Scoreboard</a></li>
                 {% else %}
                     <li class="nav-item" onclick="openPop()"><a class="primary_btn">Scoreboard</a></li>
-                    <div class="wrap-login" id="login_pop" style="display: none;">
-                        <span class="login-title">Excuse the interruption.</span>
-                        <div class="text-center login_text1">Please login before playing game.</div>
-                        <div class="flex-g">
-                            <a href="{% provider_login_url "google" %}" class="login-social-item"><img src="static/introduction-img/icon-google.png" alt="GOOGLE"><span>Google</span></a>
+                    <div class="popup_login" id="login_pop" style="display: none;">
+                        <div class="wrap-login">
+                            <span class="close_btn" onclick="closePop()">&times;</span>
+                            <span class="login-title">Excuse the interruption.</span>
+                            <div class="text-center login_text1">Please login before playing game.</div>
+                            <div class="flex-g">
+                                <a href="{% provider_login_url "google" %}" class="login-social-item"><img src="static/introduction-img/icon-google.png" alt="GOOGLE"><span>Google</span></a>
+                            </div>
+                            <div class="flex-f">
+                                <a href="{% provider_login_url "facebook" method="js_sdk" %}" class="login-social-item"><i class="fa fa-facebook-square"></i><span>Facebook</span></a>
+                            </div>
+                            <div class="text-center login_text1 separator">Or play as</div>
+                            <div class="container-btn">
+                                <a href="{% url 'game:guest' %}"><button class="login-form-btn"><i class="fa fa-user-circle"></i>Guest</button></a>
+                            <div class="text-center login_text2">If you play as guest, you score will be recorded as Guest !</div>
                         </div>
-                        <div class="flex-f">
-                            <a href="{% provider_login_url "facebook" method="js_sdk" %}" class="login-social-item"><i class="fa fa-facebook-square"></i><span>Facebook</span></a>
-                        </div>
-                        <div class="text-center login_text1 separator">Or play as</div>
-                        <div class="container-btn">
-                            <a href="{% url 'game:guest' %}"><button class="login-form-btn"><i class="fa fa-user-circle"></i>Guest</button></a>
-                        <div class="text-center login_text2">If you play as guest, you score will be recorded as Guest !</div>
                     </div>
                 {% endif %}
             </ul>
@@ -62,12 +65,12 @@
         {% if user.is_authenticated %}
             <div id="mySidenav" class="sidenav">
                 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
-                    {% if user.name == 'guest'%}
+                    {% if user.name == 'guest' %}
                         <p style="color: #effeff; text-align: center;">No Profile..!</p>
                     {% else %}
                         <p style="color: #effeff; text-align: center;">Player Profile:</p>
                         <img class="provider_pic rounded mx-auto d-block" src="{{social_user.get_avatar_url}}">
-                        <a class="sidetext" style="color: #effeff;"> Username: {{ social_user.extra_data.given_name }} {{social_user.extra_data.first_name}}            
+                        <a class="sidetext" style="color: #effeff;"> Username: {{user.name}}
                         <button id="edit-name" style="padding: 0; border: none; background: none;">
                         <i class="fa fa-pencil-square" style="color: #effeff;" onclick="editName()"></i>
                         </button>
@@ -133,7 +136,10 @@
     function openPop() {
         document.getElementById("login_pop").style.display = "block";
     }
-
+    function closePop() {
+        document.getElementById("login_pop").style.display = "none";
+    }
+    
     $('#btn-guest').click(function(){
         console.log("{{user}}")
     })
