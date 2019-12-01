@@ -17,6 +17,12 @@ def IndexView(request):
         return redirect("game:index")
     if request.user.is_authenticated and request.user.name != 'guest':
         social_user = SocialAccount.objects.get(user=request.user)
+        player = User.objects.get(email= request.user)
+        if social_user.provider == 'google':
+            player.name = social_user.extra_data['given_name']
+        else:
+            player.name = social_user.extra_data['first_name']
+        player.save()
         return render(request,"main-menu.html",{"social_user":social_user,"form":form})
     return render(request,"main-menu.html",{"form":form})
 
@@ -123,7 +129,7 @@ def EasyPicture(request,question_id):
 
 def create_guest(request):
     user = User.objects.filter(name='guest').order_by('id')
-    new_user = User.objects.create(email=f'guest {len(user)+1}')
+    new_user = User.objects.create(email=f'guest {len(user)+1}', name='guest')
     new_user.save()
     login(request, new_user)
     return redirect("game:index")
