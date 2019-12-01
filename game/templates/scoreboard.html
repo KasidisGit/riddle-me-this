@@ -8,14 +8,14 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Scoreboard</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href='{% static "/css/howto-style.css" %}'>
+    <!-- <link rel="stylesheet" type="text/css" href='{% static "/css/menu-style.css" %}'> -->
     <link rel="stylesheet" type="text/css" href='{% static "/css/scoreboard-style.css" %}'>
     <link href="https://fonts.googleapis.com/css?family=Orbitron:800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1 class="font-h1">Scoreboard</h1>
+    <h1 class="tracking-in-expand ">SCOREBOARD</h1>
         <div class="container">
-                <table align="center">
+                <table>
                     <thead>
                             <th>Picture</th>
                             <th>Email</th>
@@ -25,9 +25,9 @@
                         {% for user in score_order %}
                         <tr>
                             {% if user.id in socialaccount_id_list %}
-                                <td style='width: 200px; height: 200px;'><img class="provider_pic" style='width: 250px; height: 180px;'src="{{user.socialaccount_set.all.0.get_avatar_url}}"></td>
+                                <td ><img class="provider_pic" style='width: 100px; height: 100px;'src="{{user.socialaccount_set.all.0.get_avatar_url}}"></td>
                             {% else %}
-                                <td style='width: 200px; height: 200px;'><img style='width: 250px; height: 180px;' src="{{user.profile_image}}"></td>
+                                <td ><img style='width: 100px; height: 100px;' src="{{user.profile_image}}"></td>
                             {% endif %}
                             <td>{{ user.name }}</td>
                             <td>{{ user.all_score }}</td>
@@ -38,9 +38,9 @@
             </div>
     <div class="container-mainmenu">
         <div class="text">
-            <a href="{% url 'game:index' %}" class="btn fancy-btn fancy-dark">Main Menu</a>
+            <!-- <a class="primary_btn">Play</a> -->
+            <a href="{% url 'game:index' %}" class="primary_btn">Main Menu</a>
         </div>
-    </div>
-    
+    </div>    
 </body>
 </html>
