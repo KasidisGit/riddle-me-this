@@ -15,15 +15,21 @@
 <body>
     <h1 class="font-h1">Scoreboard</h1>
         <div class="container">
-                <table>
+                <table align="center">
                     <thead>
+                            <th>Picture</th>
                             <th>Email</th>
                             <th>Score</th>
                     </thead>
                     <tbody>
                         {% for user in score_order %}
                         <tr>
-                            <td>{{ user.email }}</td>
+                            {% if user.id in socialaccount_id_list %}
+                                <td style='width: 200px; height: 200px;'><img class="provider_pic" style='width: 250px; height: 180px;'src="{{user.socialaccount_set.all.0.get_avatar_url}}"></td>
+                            {% else %}
+                                <td style='width: 200px; height: 200px;'><img style='width: 250px; height: 180px;' src="{{user.profile_image}}"></td>
+                            {% endif %}
+                            <td>{{ user.name }}</td>
                             <td>{{ user.all_score }}</td>
                         </tr>
                         {% endfor %}
