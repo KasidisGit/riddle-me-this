@@ -164,5 +164,5 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 
 if '/app' in os.environ['HOME']:
     django_heroku.settings(locals())
-    del DATABASES['default']['OPTIONS']['sslmode']
+    # del DATABASES['default']['OPTIONS']['sslmode']
 
