@@ -27,7 +27,6 @@ if os.path.isfile(dotenv_file):
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'lh($e$z5lsknsktvf7@v4#0-3ior_l7#o@w087^z8u&=qfpr%f'
 SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -160,9 +159,9 @@ ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_USERNAME_REQUIRED = False
 SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 SQLALCHEMY_TRACK_MODIFICATIONS = False
-SOCIALACCOUNT_ADAPTER = 'my.adapter.MySocialAccountAdapter'
+SOCIALACCOUNT_ADAPTER = 'riddle-me-this.adapter.MySocialAccountAdapter'
 
 if '/app' in os.environ['HOME']:
     django_heroku.settings(locals())
-    # del DATABASES['default']['OPTIONS']['sslmode']
+    del DATABASES['default']['OPTIONS']['sslmode']
 
