@@ -28,6 +28,13 @@ body {
   width: auto;
 }
 
+a {
+  text-decoration: none;
+  transition: all 0.3s ease-in-out; }
+  a:hover, a:focus {
+    text-decoration: none;
+    outline: none; }
+
 h1{
     font-family: 'Orbitron', sans-serif;
     text-align: center;
