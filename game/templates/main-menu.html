@@ -70,7 +70,7 @@
                     {% else %}
                         <p style="color: #effeff; text-align: center;">Player Profile:</p>
                         <img class="provider_pic rounded mx-auto d-block" src="{{social_user.get_avatar_url}}">
-                        <a class="sidetext" style="color: #effeff;"> Username: {{user.name}}
+                        <a class="sidetext" style="color: #effeff;"> Username: {% if user.name == None %} {{user.socialaccount_set.all.0.extra_data.given_name}} {{user.socialaccount_set.all.0.extra_data.first_name}} {% else %} {{user.name}} {% endif %}
                         <button id="edit-name" style="padding: 0; border: none; background: none;">
                         <i class="fa fa-pencil-square" style="color: #effeff;" onclick="editName()"></i>
                         </button>
