@@ -160,9 +160,9 @@ ACCOUNT_USER_MODEL_USERNAME_FIELD = None
 ACCOUNT_USERNAME_REQUIRED = False
 SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 SQLALCHEMY_TRACK_MODIFICATIONS = False
-
+SOCIALACCOUNT_ADAPTER = 'my.adapter.MySocialAccountAdapter'
 
 if '/app' in os.environ['HOME']:
     django_heroku.settings(locals())
-    del DATABASES['default']['OPTIONS']['sslmode']
+    # del DATABASES['default']['OPTIONS']['sslmode']
 
