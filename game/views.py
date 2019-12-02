@@ -8,7 +8,6 @@ from .models import *
 
 
 
-
 def IndexView(request):
     form = UserForm()
     if request.method == "POST":
