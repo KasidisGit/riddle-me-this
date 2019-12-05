@@ -68,34 +68,29 @@
                 {% if user.name == 'guest' %}
                     <img class="provider_pic" src="{{user.profile_image}}">
                     <a class="sidetext" style="color: #effeff;">Welcome, Guest</a>
-                    <a class="sidetext" style="color: #effeff;"> Score {{user.all_score}} points</a>
+                    <a class="sidetext" style="color: #effeff;">Score {{user.all_score}} points</a>
+                    <div class="log">
+                        <div class="l_btn"><a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Login?</span></a></div>
+                    </div>
                 {% else %}
                     <img class="provider_pic" src="{{social_user.get_avatar_url}}">
-                    <a class="sidetext" style="color: #effeff;"> Username: {% if user.name == None %} {{user.socialaccount_set.all.0.extra_data.given_name}} {{user.socialaccount_set.all.0.extra_data.first_name}} {% else %} {{user.name}} {% endif %}
+                    <a class="sidetext" style="color: #effeff;">Welcome, {% if user.name == None %} {{user.socialaccount_set.all.0.extra_data.given_name}} {{user.socialaccount_set.all.0.extra_data.first_name}} {% else %} {{user.name}} {% endif %}
                     <button id="edit-name" class="change-name">
                     <i class="fa fa-pencil-square" onclick="editName()"></i>
                     </button>
                     </a>
-                    <a class="sidetext" id="change-name" style="color: #effeff; display: none;">
-                        <div class="provider_pic">
-                            <form method="POST"> {% csrf_token %}
-                                {{ form.as_p }}
-                            </form>
-                        </div>
+                    <a class="sidetext" id="change-name" style="display: none;">
+                        <form method="POST"> {% csrf_token %}
+                            {{ form.as_p }}
+                        </form>
                     </a>
-                    <a class="sidetext" style="color: #effeff;"> Score: {{user.all_score}}</a>
-                {% endif %}
-                <div class="log">
-                    <div class="l_btn">
-                        {% if user.name != 'guest' %}
-                        <a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a>
-                        {% else %}
-                        <a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Login?</span></a>
-                        {% endif %}
+                    <a class="sidetext" style="color: #effeff;">Score {{user.all_score}} points</a>
+                    <div class="log">
+                        <div class="l_btn"><a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a></div>
                     </div>
-                </div>
+                {% endif %}
             </div>
-            <span id="opennav" class="side_bar" onclick="openNav(), style.display = 'none'"><i class="fa fa-chevron-circle-left"></i></span>
+            <span id="opennav" class="side_bar" onclick="openNav()"><i class="fa fa-chevron-circle-left"></i></span>
             <div class="footer">
                 {% if user.name != 'guest' %}
                 <h3>You are now logged in as {{social_user.provider|title}}. Enjoy the game.  <i class="fa fa-hand-peace-o"></i></h3>
@@ -149,7 +144,7 @@
         if ($('#id_name').attr('type') == 'hidden'){
             $('#edit-name').click(function(){
             $('#id_name').attr('type','text')
-            $('#id_name').attr('placeholder','  New name here')
+            $('#id_name').attr('placeholder','New name here')
             $('#id_name').attr('size','15')
             document.getElementById('change-name').style.display = "block";
         })

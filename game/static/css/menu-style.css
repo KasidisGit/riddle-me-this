@@ -793,4 +793,6 @@ img.provider_pic {
   text-indent: -2px;
 }
 
-
+.input-new-name {
+  size: 10px;
+}

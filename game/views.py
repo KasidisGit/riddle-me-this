@@ -30,7 +30,6 @@ def HowtoView(request):
     return render(request,"how-to-play.html")
 
 def ScoreView(request):
-
     socialaccount_id_list = []
     for s in SocialAccount.objects.all():
         socialaccount_id_list.append(s.user_id)

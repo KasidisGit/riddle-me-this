@@ -33,8 +33,8 @@
                     {% endif %}
                 {% endfor %}
                 {% for question in range_lock %}
-                    <button disabled>{{question.id}}</a></button>
-                    {% if question.id == 5 or question.id == 10 %}
+                <button disabled><i class="fa fa-lock"></i></a></button>
+                    {% if question.id|divisibleby:"5" %}
                         <br>
                     {% endif %}
                 {% endfor %}

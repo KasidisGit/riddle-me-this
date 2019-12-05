@@ -14,13 +14,30 @@
 <body>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
-    <a class="sidetext" style="color: #000000;"> Welcome, {{user}}</a>
-    <a class="sidetext" style="color: #000000;"> Score: {{user.all_score}}</a>
-    <div class="log">
-        <div class="l_btn">
-            <a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a>
-        </div>
-    </div>
+        {% if user.name == 'guest' %}
+            <img class="provider_pic" src="../profile_image/user.png">
+            <a class="sidetext" style="color: #effeff;">Welcome, Guest</a>
+            <a class="sidetext" style="color: #effeff;">Score {{user.all_score}} points</a>
+            <div class="log">
+                <div class="l_btn"><a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Login?</span></a></div>
+            </div>
+        {% else %}
+            <img class="provider_pic" src="{{user.socialaccount_set.all.0.get_avatar_url}}">
+            <a class="sidetext" style="color: #effeff;">Welcome, {% if user.name == None %} {{user.socialaccount_set.all.0.extra_data.given_name}} {{user.socialaccount_set.all.0.extra_data.first_name}} {% else %} {{user.name}} {% endif %}
+            <button id="edit-name" class="change-name">
+            <i class="fa fa-pencil-square" onclick="editName()"></i>
+            </button>
+            </a>
+            <a class="sidetext" id="change-name" style="display: none;">
+                <form method="POST"> {% csrf_token %}
+                    {{ form.as_p }}
+                </form>
+            </a>
+            <a class="sidetext" style="color: #effeff;">Score {{user.all_score}} points</a>
+            <div class="log">
+                <div class="l_btn"><a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a></div>
+            </div>
+        {% endif %}
 </div>
 <span id="opennav" class="side_bar" onclick="openNav()"><i class="fa fa-chevron-circle-left"></i></span>
 <div><img src="{{question.image.url}}" id="img"></div>
