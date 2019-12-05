@@ -4,7 +4,8 @@
   "pk": 1,
   "fields": {
     "image": "img/hard/1-cookie.png",
-    "answer": "cookie"
+    "answer": "cookie",
+    "score": 4
   }
 },
 {
@@ -12,7 +13,8 @@
   "pk": 2,
   "fields": {
     "image": "img/hard/2-address.png",
-    "answer": "address"
+    "answer": "address",
+    "score": 4
   }
 },
 {
@@ -20,7 +22,8 @@
   "pk": 3,
   "fields": {
     "image": "img/hard/3-tired.png",
-    "answer": "tired"
+    "answer": "tired",
+    "score": 4
   }
 },
 {
@@ -28,7 +31,8 @@
   "pk": 4,
   "fields": {
     "image": "img/hard/4-spyglass.png",
-    "answer": "spyglass"
+    "answer": "spyglass",
+    "score": 4
   }
 },
 {
@@ -36,7 +40,8 @@
   "pk": 5,
   "fields": {
     "image": "img/hard/5-tulip.png",
-    "answer": "tulip"
+    "answer": "tulip",
+    "score": 4
   }
 },
 {
@@ -44,7 +49,8 @@
   "pk": 6,
   "fields": {
     "image": "img/hard/6-design.png",
-    "answer": "design"
+    "answer": "design",
+    "score": 4
   }
 },
 {
@@ -52,7 +58,8 @@
   "pk": 7,
   "fields": {
     "image": "img/hard/7-sixty.png",
-    "answer": "sixty"
+    "answer": "sixty",
+    "score": 4
   }
 },
 {
@@ -60,7 +67,8 @@
   "pk": 8,
   "fields": {
     "image": "img/hard/8-belong.png",
-    "answer": "belong"
+    "answer": "belong",
+    "score": 4
   }
 },
 {
@@ -68,7 +76,8 @@
   "pk": 9,
   "fields": {
     "image": "img/hard/9-summary.png",
-    "answer": "summary"
+    "answer": "summary",
+    "score": 4
   }
 },
 {
@@ -76,7 +85,8 @@
   "pk": 10,
   "fields": {
     "image": "img/hard/10-microphone.png",
-    "answer": "microphone"
+    "answer": "microphone",
+    "score": 4
   }
 },
 {
@@ -84,7 +94,8 @@
   "pk": 11,
   "fields": {
     "image": "img/hard/11-championship.png",
-    "answer": "championship"
+    "answer": "championship",
+    "score": 4
   }
 },
 {
@@ -92,7 +103,8 @@
   "pk": 12,
   "fields": {
     "image": "img/hard/12-party.png",
-    "answer": "party"
+    "answer": "party",
+    "score": 4
   }
 },
 {
@@ -100,7 +112,8 @@
   "pk": 13,
   "fields": {
     "image": "img/hard/13-ready.png",
-    "answer": "ready"
+    "answer": "ready",
+    "score": 4
   }
 },
 {
@@ -108,7 +121,8 @@
   "pk": 14,
   "fields": {
     "image": "img/hard/14-keep_in_touch.png",
-    "answer": "keep in touch"
+    "answer": "keep in touch",
+    "score": 4
   }
 },
 {
@@ -116,7 +130,8 @@
   "pk": 15,
   "fields": {
     "image": "img/hard/15-playlist.png",
-    "answer": "playlist"
+    "answer": "playlist",
+    "score": 4
   }
 },
 {
@@ -124,7 +139,8 @@
   "pk": 1,
   "fields": {
     "image": "img/medium/1-friday.png",
-    "answer": "friday"
+    "answer": "friday",
+    "score": 3
   }
 },
 {
@@ -132,7 +148,8 @@
   "pk": 2,
   "fields": {
     "image": "img/medium/2-lovesick.png",
-    "answer": "lovesick"
+    "answer": "lovesick",
+    "score": 3
   }
 },
 {
@@ -140,7 +157,8 @@
   "pk": 3,
   "fields": {
     "image": "img/medium/3-combat.png",
-    "answer": "combat"
+    "answer": "combat",
+    "score": 3
   }
 },
 {
@@ -148,7 +166,8 @@
   "pk": 4,
   "fields": {
     "image": "img/medium/4-billion.png",
-    "answer": "billion"
+    "answer": "billion",
+    "score": 3
   }
 },
 {
@@ -156,7 +175,8 @@
   "pk": 5,
   "fields": {
     "image": "img/medium/5-software.png",
-    "answer": "software"
+    "answer": "software",
+    "score": 3
   }
 },
 {
@@ -164,7 +184,8 @@
   "pk": 6,
   "fields": {
     "image": "img/medium/6-bargain.png",
-    "answer": "bargain"
+    "answer": "bargain",
+    "score": 3
   }
 },
 {
@@ -172,7 +193,8 @@
   "pk": 7,
   "fields": {
     "image": "img/medium/7-firefly.png",
-    "answer": "firefly"
+    "answer": "firefly",
+    "score": 3
   }
 },
 {
@@ -180,7 +202,8 @@
   "pk": 8,
   "fields": {
     "image": "img/medium/8-office.png",
-    "answer": "office"
+    "answer": "office",
+    "score": 3
   }
 },
 {
@@ -188,7 +211,8 @@
   "pk": 9,
   "fields": {
     "image": "img/medium/9-pipet.png",
-    "answer": "pipet"
+    "answer": "pipet",
+    "score": 3
   }
 },
 {
@@ -196,7 +220,8 @@
   "pk": 10,
   "fields": {
     "image": "img/medium/10-password.png",
-    "answer": "password"
+    "answer": "password",
+    "score": 3
   }
 },
 {
@@ -204,7 +229,8 @@
   "pk": 11,
   "fields": {
     "image": "img/medium/11-babysit.png",
-    "answer": "babysit"
+    "answer": "babysit",
+    "score": 3
   }
 },
 {
@@ -212,7 +238,8 @@
   "pk": 12,
   "fields": {
     "image": "img/medium/12-begin.png",
-    "answer": "begin"
+    "answer": "begin",
+    "score": 3
   }
 },
 {
@@ -220,7 +247,8 @@
   "pk": 13,
   "fields": {
     "image": "img/medium/13-waterfall.png",
-    "answer": "waterfall"
+    "answer": "waterfall",
+    "score": 3
   }
 },
 {
@@ -228,7 +256,8 @@
   "pk": 14,
   "fields": {
     "image": "img/medium/14-peasant.png",
-    "answer": "peasant"
+    "answer": "peasant",
+    "score": 3
   }
 },
 {
@@ -236,7 +265,8 @@
   "pk": 15,
   "fields": {
     "image": "img/medium/15-nightmare.png",
-    "answer": "nightmare"
+    "answer": "nightmare",
+    "score": 3
   }
 },
 {
@@ -244,7 +274,8 @@
   "pk": 16,
   "fields": {
     "image": "img/medium/16-secondhand.png",
-    "answer": "secondhand"
+    "answer": "secondhand",
+    "score": 3
   }
 },
 {
@@ -252,7 +283,8 @@
   "pk": 17,
   "fields": {
     "image": "img/medium/17-asleep.png",
-    "answer": "asleep"
+    "answer": "asleep",
+    "score": 3
   }
 },
 {
@@ -260,7 +292,8 @@
   "pk": 18,
   "fields": {
     "image": "img/medium/18-cocktail.png",
-    "answer": "cocktail"
+    "answer": "cocktail",
+    "score": 3
   }
 },
 {
@@ -268,7 +301,8 @@
   "pk": 19,
   "fields": {
     "image": "img/medium/19-hijack.png",
-    "answer": "hijack"
+    "answer": "hijack",
+    "score": 3
   }
 },
 {
@@ -276,7 +310,8 @@
   "pk": 20,
   "fields": {
     "image": "img/medium/20-romantic.png",
-    "answer": "romantic"
+    "answer": "romantic",
+    "score": 3
   }
 },
 {
@@ -284,7 +319,8 @@
   "pk": 1,
   "fields": {
     "image": "img/easy/1rainbow.png",
-    "answer": "rainbow"
+    "answer": "rainbow",
+    "score": 2
   }
 },
 {
@@ -292,7 +328,8 @@
   "pk": 2,
   "fields": {
     "image": "img/easy/2background.png",
-    "answer": "background"
+    "answer": "background",
+    "score": 2
   }
 },
 {
@@ -300,7 +337,8 @@
   "pk": 3,
   "fields": {
     "image": "img/easy/3butterfly.png",
-    "answer": "butterfly"
+    "answer": "butterfly",
+    "score": 2
   }
 },
 {
@@ -308,7 +346,8 @@
   "pk": 4,
   "fields": {
     "image": "img/easy/4cowboy.png",
-    "answer": "cowboy"
+    "answer": "cowboy",
+    "score": 2
   }
 },
 {
@@ -316,7 +355,8 @@
   "pk": 5,
   "fields": {
     "image": "img/easy/5facebook.png",
-    "answer": "facebook"
+    "answer": "facebook",
+    "score": 2
   }
 },
 {
@@ -324,7 +364,8 @@
   "pk": 6,
   "fields": {
     "image": "img/easy/6firefox.png",
-    "answer": "firefox"
+    "answer": "firefox",
+    "score": 2
   }
 },
 {
@@ -332,7 +373,8 @@
   "pk": 7,
   "fields": {
     "image": "img/easy/7football.png",
-    "answer": "football"
+    "answer": "football",
+    "score": 2
   }
 },
 {
@@ -340,7 +382,8 @@
   "pk": 8,
   "fields": {
     "image": "img/easy/8hotdog.png",
-    "answer": "hotdog"
+    "answer": "hotdog",
+    "score": 2
   }
 },
 {
@@ -348,7 +391,8 @@
   "pk": 9,
   "fields": {
     "image": "img/easy/9mountain.png",
-    "answer": "mountain"
+    "answer": "mountain",
+    "score": 2
   }
 },
 {
@@ -356,7 +400,8 @@
   "pk": 10,
   "fields": {
     "image": "img/easy/10carpet.png",
-    "answer": "carpet"
+    "answer": "carpet",
+    "score": 2
   }
 },
 {
@@ -364,7 +409,8 @@
   "pk": 11,
   "fields": {
     "image": "img/easy/11notebook.png",
-    "answer": "notebook"
+    "answer": "notebook",
+    "score": 2
   }
 },
 {
@@ -372,7 +418,8 @@
   "pk": 12,
   "fields": {
     "image": "img/easy/12pancake.png",
-    "answer": "pancake"
+    "answer": "pancake",
+    "score": 2
   }
 },
 {
@@ -380,7 +427,8 @@
   "pk": 13,
   "fields": {
     "image": "img/easy/13pillow.png",
-    "answer": "pillow"
+    "answer": "pillow",
+    "score": 2
   }
 },
 {
@@ -388,7 +436,8 @@
   "pk": 14,
   "fields": {
     "image": "img/easy/14wallpaper.png",
-    "answer": "wallpaper"
+    "answer": "wallpaper",
+    "score": 2
   }
 },
 {
@@ -396,7 +445,8 @@
   "pk": 15,
   "fields": {
     "image": "img/easy/15watermelon.png",
-    "answer": "watermelon"
+    "answer": "watermelon",
+    "score": 2
   }
 }
 ]

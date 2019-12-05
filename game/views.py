@@ -29,6 +29,16 @@ def IndexView(request):
 def HowtoView(request):
     return render(request,"how-to-play.html")
 
+def ScoreView(request):
+
+    socialaccount_id_list = []
+    for s in SocialAccount.objects.all():
+        socialaccount_id_list.append(s.user_id)
+    return render(request,"scoreboard.html",{
+        "score_order": User.objects.order_by('-all_score')[:10],
+        "socialaccount_id_list":socialaccount_id_list,
+    })
+
 def HardStage(request):
     user = request.user
     return render(request,"hard-stage.html",{
