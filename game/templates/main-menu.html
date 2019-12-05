@@ -66,8 +66,9 @@
             <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
                 {% if user.name == 'guest' %}
+                    <img class="provider_pic" src="{{user.profile_image}}">
                     <a class="sidetext" style="color: #effeff;">Welcome, Guest</a>
-                    <a class="sidetext" style="color: #effeff;"> Score: {{user.all_score}}</a>
+                    <a class="sidetext" style="color: #effeff;"> Score {{user.all_score}} points</a>
                 {% else %}
                     <img class="provider_pic" src="{{social_user.get_avatar_url}}">
                     <a class="sidetext" style="color: #effeff;"> Username: {% if user.name == None %} {{user.socialaccount_set.all.0.extra_data.given_name}} {{user.socialaccount_set.all.0.extra_data.first_name}} {% else %} {{user.name}} {% endif %}
@@ -75,9 +76,9 @@
                     <i class="fa fa-pencil-square" onclick="editName()"></i>
                     </button>
                     </a>
-                    <a class="sidetext" style="color: #effeff;">
+                    <a class="sidetext" id="change-name" style="color: #effeff; display: none;">
                         <div class="provider_pic">
-                            <form method="POST" > {% csrf_token %}
+                            <form method="POST"> {% csrf_token %}
                                 {{ form.as_p }}
                             </form>
                         </div>
@@ -102,25 +103,25 @@
                 <h3>You are logged in as Guest. To see your name login with social account.</h3>
                 {% endif %}
             </div>
-    {% else %}
-        <div class="footer">
-            <div class="google">
-                <div class="g_btn">
-                    <a class="gradient_btn" href="{% provider_login_url "google" %}"><span><i class="fa fa-google-plus-circle"></i>  Google</span></a>
+        {% else %}
+            <div class="footer">
+                <div class="google">
+                    <div class="g_btn">
+                        <a class="gradient_btn" href="{% provider_login_url "google" %}"><span><i class="fa fa-google-plus-circle"></i>  Google</span></a>
+                    </div>
+                </div>
+                <div class="facebook ">
+                    <div class="f_btn">
+                        <a class="gradient_btn" href="{% provider_login_url "facebook" method="js_sdk" %}"><span><i class="fa fa-facebook-square"></i>  Facebook</span></a>
+                    </div>
+                </div>
+                <div class="guest">
+                    <div class="gu_btn">
+                        <a class="gradient_btn" id="btn-guest" href="{% url 'game:guest' %}"><span><i class="fa fa-user-circle"></i>  Guest</span></a>
+                    </div>
                 </div>
             </div>
-            <div class="facebook ">
-                <div class="f_btn">
-                    <a class="gradient_btn" href="{% provider_login_url "facebook" method="js_sdk" %}"><span><i class="fa fa-facebook-square"></i>  Facebook</span></a>
-                </div>
-            </div>
-            <div class="guest">
-                <div class="gu_btn">
-                    <a class="gradient_btn" id="btn-guest" href="{% url 'game:guest' %}"><span><i class="fa fa-user-circle"></i>  Guest</span></a>
-                </div>
-            </div>
-        </div>
-    {% endif %}
+        {% endif %}
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script>
     function openNav() {
@@ -150,10 +151,12 @@
             $('#id_name').attr('type','text')
             $('#id_name').attr('placeholder','  New name here')
             $('#id_name').attr('size','15')
+            document.getElementById('change-name').style.display = "block";
         })
         }else{
             $('#edit-name').click(function(){
             $('#id_name').attr('type','hidden')
+            document.getElementById('change-name').style.display = "none";
         })
         }
     }
