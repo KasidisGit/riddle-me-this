@@ -16,20 +16,20 @@ Author E-mail: naimlasker@gmail.com
 
 
 
-body {
+/* body {
   line-height: 24px;
   font-size: 20px;
   font-family: "Rajdhani", sans-serif;
-  font-weight: 500; }
+  font-weight: 500; } */
 
-h1,
+/* h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
   font-family: "Rajdhani", sans-serif;
-  font-weight: 600; }
+  font-weight: 600; } */
 
 a {
   text-decoration: none;
@@ -42,8 +42,8 @@ button:focus {
   outline: none;
   box-shadow: none; }
 
-img {
-  max-width: 100%; }
+/* img {
+  max-width: 100%; } */
 
 .main_title {
   text-align: center;

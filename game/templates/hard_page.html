@@ -6,6 +6,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type="text/css" href="{% static 'css/hard.css' %}">
+        <!-- <link rel="stylesheet" type="text/css" href='{% static "/css/question-style.css" %}'> -->
     </head>
 
     <body>
@@ -20,18 +21,30 @@
         </div>
         <br>
         <img src="{{question.image.url}}" id='img' alt="hardpic" height="320" width="450">
+        <form method="GET">
+          <input type="hidden" id="ansKey" value="{{question.answer}}">
+          <input type='text' id='key' value="{{key}}"/>
+        </form>
+        
         <div class="input-box">
-            <span><input type="fullword" placeholder="text here"></span>
-            <p id="correct"></p>
+          <form method="POST">
+          {% csrf_token %}
+            <span><input type="text" name="textfield" id="input" maxlength="{{ans_length}}" placeholder="{{ans_length}} letters" size="12" autofocus /></span>
+            {% if user.current_hard > question.id %}
+              <p id='correct'><i class="fa fa-check"></i></p>
+            {% else %}
+              <p id=incorrect"><i class="fa fa-close"></i></p>
+            {% endif %}
+          </form>
             <form method="GET">
             {% csrf_token %}
-              <span><button class="button-hint" onclick="hintonClick()">Hint</button></span>
+              <span><input type="submit" class="button-hint" name="hint-btn" onclick="hintLetter()" value="Hint"/></button></span>
             </form>
         </div>
-        <form>
+        <form method="GET">
             <INPUT TYPE="button" id="forsubmit" class="button-submit" onclick="myFunction(), nexttoPage()" VALUE="SUBMIT">
             {% if question.id < 15 %}
-                <a href="{% url 'game:h-picture' question_id.id %}" class="button-next" style="vertical-align:middle; visibility:hidden" id="next"><span>Next</span></a>
+                <a href="{% url 'game:h-picture' question.id %}" class="button-next" style="vertical-align:middle; visibility:hidden" id="next"><span>Next</span></a>
             {% else %}
                 <a href="{% url 'game:index' %}" class="button-next" style="vertical-align:middle; visibility:hidden" id="next"><span>Next</span></a>
             {% endif %}
@@ -43,6 +56,7 @@
 
     function myFunction() { 
       document.getElementById("correct").innerHTML = "You are correct!";
+      document.getElementById("correct").innerHTML = "Try again";
       document.getElementById("correct").style.textAlign = "center";
       document.getElementById("correct").style.color = "Brown";
       document.getElementById("correct").style.fontFamily = "Arial Rounded MT";
@@ -60,6 +74,16 @@
         scoreText.innerText =  String(score)
       }
     }
+
+    function hintLetter() {
+      var ranChar = '';
+      var characters = ansKey.value;
+      var charactersLength = characters.length;
+      ranChar = characters.charAt(Math.floor(Math.random() * charactersLength));
+      document.getElementById('key').innerHTML = "ranChar";
+      // ranChar.style.visibility=" visible";
+
+  }
   
     function nexttoPage() {
       document.getElementById("forsubmit").style.visibility = 'hidden';

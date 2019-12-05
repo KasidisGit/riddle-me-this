@@ -48,11 +48,21 @@ img {
     display: block;
 }
 
-.input-box input[type="fullword"]
+.input-box input[type="text"]
 {
-    font-size: 1rem;
-    height: 40px;
-    width: 200px;
+    /* padding: 8px 20px; */
+    font-size: 20px;
+    letter-spacing: 0.1em;
+    height: 30px;
+    width: 150px;
+    text-align: center;
+}
+
+::placeholder {
+    text-transform: none;
+}
+input[type=text]:focus {
+    border: 3px solid #555;
 }
 
 .button-hint {

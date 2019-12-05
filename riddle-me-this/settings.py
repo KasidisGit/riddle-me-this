@@ -53,8 +53,6 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.facebook',
     'allauth.socialaccount.providers.google',
-    # 'social-auth',
-    'social.apps.django_app.default',
 ]
 
 MIDDLEWARE = [

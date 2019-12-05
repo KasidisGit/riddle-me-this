@@ -49,6 +49,7 @@ img {
     margin-top: 50px;
     margin-right: 100px;
     text-align: center;
+    display: inline-block;
 }
 
 .input-box input[type="fullword"]
