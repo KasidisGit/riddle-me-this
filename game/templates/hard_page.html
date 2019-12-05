@@ -6,12 +6,22 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type="text/css" href="{% static 'css/hard.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/menu-style.css' %}">
         <!-- <link rel="stylesheet" type="text/css" href='{% static "/css/question-style.css" %}'> -->
     </head>
 
     <body>
         <a href= "../main-menu.html" class="button-left">Main menu</a>
         <h1>DAVINCI GAME</h1>
+        <div id="mySidenav" class="sidenav">
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
+          <a class="sidetext" style="color: #000000;"> Welcome, {{user}}</a>
+          <div class="log">
+              <div class="l_btn">
+                  <a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a>
+              </div>
+          </div>
+      </div>
 
         <hr>
 
@@ -21,10 +31,11 @@
         </div>
         <br>
         <img src="{{question.image.url}}" id='img' alt="hardpic" height="320" width="450">
-        <form method="GET">
-          <input type="hidden" id="ansKey" value="{{question.answer}}">
-          <input type='text' id='key' value="{{key}}"/>
-        </form>
+        <!-- <form method="GET">
+          <input type="hidden" id="ansKey" value="{{key_give}}"> -->
+          <!-- <input type='text' id='key' value="{{key}}"/> -->
+          <!-- <p id="key">{{key}}</p> -->
+        <!-- </form> -->
         
         <div class="input-box">
           <form method="POST">
@@ -36,8 +47,11 @@
               <p id=incorrect"><i class="fa fa-close"></i></p>
             {% endif %}
           </form>
+          <br>
             <form method="GET">
             {% csrf_token %}
+              <input type="hidden" id="ansKey" value="{{key_give}}">
+              <p id="key">{{key}}</p>
               <span><input type="submit" class="button-hint" name="hint-btn" onclick="hintLetter()" value="Hint"/></button></span>
             </form>
         </div>
@@ -79,9 +93,13 @@
       var ranChar = '';
       var characters = ansKey.value;
       var charactersLength = characters.length;
-      ranChar = characters.charAt(Math.floor(Math.random() * charactersLength));
-      document.getElementById('key').innerHTML = "ranChar";
-      // ranChar.style.visibility=" visible";
+      // ranChar = characters.charAt(Math.floor(Math.random() * charactersLength));
+      for (var i =0; i< ChannelMergerNode; i++){
+        // ranChar = characters[i];
+        document.getElementById('key').innerHTML = characters[i];
+      }
+      // document.getElementById('key').innerHTML = ranChar;
+      
 
   }
   

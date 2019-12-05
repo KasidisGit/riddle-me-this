@@ -38,9 +38,9 @@ a {
     text-decoration: none;
     outline: none; }
 
-button:focus {
+/* button:focus {
   outline: none;
-  box-shadow: none; }
+  box-shadow: none; } */
 
 /* img {
   max-width: 100%; } */

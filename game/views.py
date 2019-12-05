@@ -49,9 +49,10 @@ def HardPicture(request,question_id):
     question = HardQuestion.objects.get(pk=question_id)
     user = request.user
     key_give = question.answer
+    ans_length = len(key_give)
     if request.GET.get('hint-btn') == 'Hint':
         key = key_give[0]
-        key_give = '0'
+        # key_give = 0
     if request.method == 'POST':
         if request.POST.get('textfield',None) == question.answer or request.POST.get('button') == question.answer:
             if user.current_hard > question_id:
@@ -66,13 +67,14 @@ def HardPicture(request,question_id):
         next_question = HardQuestion.objects.get(pk=question_id+1)
     else:
         next_question = HardQuestion.objects.get(pk=1)
-    return render(request,"hard_page.html",{
-        "question": question,
-        "next_question": next_question,
-        "last_question": HardQuestion.objects.last(),
-        "ans_length": (len(question.answer)),
-        "key": key,
-    })
+    # return render(request,"hard_page.html",{
+    #     "question": question,
+    #     "next_question": next_question,
+    #     "last_question": HardQuestion.objects.last(),
+    #     "ans_length": (len(question.answer)),
+    #     "key": key,
+    # })
+    return render(request,"hard_page.html", locals())
 
 # def MediumPicture(request,question_id):
 #     user = request.user
