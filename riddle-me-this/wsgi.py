@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Riddle_me_this.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'riddle-me-this.settings')
 
 application = get_wsgi_application()

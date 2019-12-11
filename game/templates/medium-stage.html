@@ -1,0 +1,60 @@
+{% load socialaccount %}
+{% providers_media_js %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MEDIUM</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href='{% static "/css/stage-style.css" %}'>
+
+</head>
+<body class="body-stage-medium">
+
+    <div class="body">
+    <div class="stage-m">
+        <div class="container-1">
+            <div class="stage-name">
+                <h1 class="header">MEDIUM</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="level-medium">
+        <div class="container-1">
+            <div class="button-sub-level">
+                {% for question in range_available %}
+                    <button><a href="{% url 'game:m-picture' question.id%}">{{question.id}}</a></button>
+                    {% if question.id|divisibleby:"5" %}
+                        <br>
+                    {% endif %}
+                {% endfor %}
+                {% for question in range_lock %}
+                <button disabled><i class="fa fa-lock"></i></a></button>
+                    {% if question.id|divisibleby:"5" %}
+                        <br>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <a href="{% url 'game:index' %}">
+        <div class="box-3-medium">
+            <div class="container-2">
+                <div class="btn-m btn-three">
+                    <span> <i class="fa fa-home"></i>  MAIN MENU</span>
+                </div>
+            </div>
+        </div>
+    </a>
+
+    </div>
+</body>
+</html>
+
