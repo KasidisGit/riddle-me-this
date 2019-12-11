@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 {% load static %}
 <html>
     <head>
@@ -31,11 +30,7 @@
         </div>
         <br>
         <img src="{{question.image.url}}" id='img' alt="hardpic" height="320" width="450">
-        <!-- <form method="GET">
-          <input type="hidden" id="ansKey" value="{{key_give}}"> -->
-          <!-- <input type='text' id='key' value="{{key}}"/> -->
-          <!-- <p id="key">{{key}}</p> -->
-        <!-- </form> -->
+        
         
         <div class="input-box">
           <form method="POST">
@@ -47,18 +42,20 @@
               <p id=incorrect"><i class="fa fa-close"></i></p>
             {% endif %}
           </form>
+
           <br>
-            <form method="GET">
-            {% csrf_token %}
-              <input type="hidden" id="ansKey" value="{{key_give}}">
-              <p id="key">{{key}}</p>
+              <!-- <input type="hidden" id="ansKey" value="{{question.answer}}"> -->
+              <form method="POST">
+              {% csrf_token %}
+                  <p name="hint_list">{{hint_list}}</p>
               <span><input type="submit" class="button-hint" name="hint-btn" onclick="hintLetter()" value="Hint"/></button></span>
-            </form>
+              </form>
+  
         </div>
         <form method="GET">
             <INPUT TYPE="button" id="forsubmit" class="button-submit" onclick="myFunction(), nexttoPage()" VALUE="SUBMIT">
             {% if question.id < 15 %}
-                <a href="{% url 'game:h-picture' question.id %}" class="button-next" style="vertical-align:middle; visibility:hidden" id="next"><span>Next</span></a>
+                <a href="{% url 'game:h-picture' next_question.id %}" class="button-next" style="vertical-align:middle; visibility:hidden" id="next"><span>Next</span></a>
             {% else %}
                 <a href="{% url 'game:index' %}" class="button-next" style="vertical-align:middle; visibility:hidden" id="next"><span>Next</span></a>
             {% endif %}
@@ -90,18 +87,13 @@
     }
 
     function hintLetter() {
-      var ranChar = '';
-      var characters = ansKey.value;
-      var charactersLength = characters.length;
-      // ranChar = characters.charAt(Math.floor(Math.random() * charactersLength));
-      for (var i =0; i< ChannelMergerNode; i++){
-        // ranChar = characters[i];
-        document.getElementById('key').innerHTML = characters[i];
-      }
-      // document.getElementById('key').innerHTML = ranChar;
+      var characters = document.getElementById("ansKey").value;
+      var charactersLength = characters.length - 1;
+      // var ranChar = Math.floor((Math.random() * charactersLength));
+      document.getElementById('hint_list').innerHTML;
       
-
-  }
+    }
+      
   
     function nexttoPage() {
       document.getElementById("forsubmit").style.visibility = 'hidden';

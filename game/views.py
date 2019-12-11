@@ -45,14 +45,32 @@ def EasyStage(request):
         "range_lock": EasyQuestion.objects.filter(id__gte=user.current_easy+1),
     })
 
-def HardPicture(request,question_id):
+def HardPicture(request, question_id):
+
     question = HardQuestion.objects.get(pk=question_id)
     user = request.user
     key_give = question.answer
-    ans_length = len(key_give)
-    if request.GET.get('hint-btn') == 'Hint':
-        key = key_give[0]
-        # key_give = 0
+    key_list = [key_give]
+    hint_list = []
+    listToStr = []
+
+    if request.method == 'GET':
+        hint_list.append(key_list[0][0])
+        key_list = [key_list[0][1:]]
+        listToStr = ' '.join([str(elem) for elem in hint_list]) 
+        print(hint_list)
+        print(key_list)
+        hint_list += [listToStr]
+        print(listToStr)
+
+    if request.POST.get('hint-btn') == 'Hint':
+        # print("HIHIHIHIHIHIHIHIIHI")
+        if user.all_score >= 2:
+            user.all_score -= 2
+        else:
+            pass
+        user.save()
+
     if request.method == 'POST':
         if request.POST.get('textfield',None) == question.answer or request.POST.get('button') == question.answer:
             if user.current_hard > question_id:
@@ -63,18 +81,18 @@ def HardPicture(request,question_id):
             elif user.current_hard < question.id:
                 pass
             user.save()
+
     if question_id < 15:
         next_question = HardQuestion.objects.get(pk=question_id+1)
     else:
         next_question = HardQuestion.objects.get(pk=1)
-    # return render(request,"hard_page.html",{
-    #     "question": question,
-    #     "next_question": next_question,
-    #     "last_question": HardQuestion.objects.last(),
-    #     "ans_length": (len(question.answer)),
-    #     "key": key,
-    # })
-    return render(request,"hard_page.html", locals())
+    return render(request,"hard_page.html",{
+        "question": question,
+        "next_question": next_question,
+        "last_question": HardQuestion.objects.last(),
+        "ans_length": (len(key_give)),
+        "hint_list" : listToStr,
+    })
 
 # def MediumPicture(request,question_id):
 #     user = request.user
