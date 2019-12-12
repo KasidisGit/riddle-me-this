@@ -39,16 +39,16 @@
             {% if user.current_hard > question.id %}
               <p id='correct'><i class="fa fa-check"></i></p>
             {% else %}
-              <p id=incorrect"><i class="fa fa-close"></i></p>
+              <p id="incorrect"><i class="fa fa-close"></i></p>
             {% endif %}
           </form>
 
           <br>
-              <!-- <input type="hidden" id="ansKey" value="{{question.answer}}"> -->
               <form method="POST">
               {% csrf_token %}
-                  <p name="hint_list">{{hint_list}}</p>
-              <span><input type="submit" class="button-hint" name="hint-btn" onclick="hintLetter()" value="Hint"/></button></span>
+                <span><input type="submit" class="button-hint" name="hint-btn" onclick="hintLetter()" value="Hint"/></button></span>
+                <input type="hidden" name="keygive_list" value="{{hint_list}}">
+                <p id="hintKey" style="margin-left: 190px;">{{hint_list}}</p>
               </form>
   
         </div>
@@ -87,13 +87,13 @@
     }
 
     function hintLetter() {
-      var characters = document.getElementById("ansKey").value;
-      var charactersLength = characters.length - 1;
-      // var ranChar = Math.floor((Math.random() * charactersLength));
-      document.getElementById('hint_list').innerHTML;
-      
+      var hintword = keygive_list;
+      var firstKey = hintword[0]
+      for (var elem=0; elem<hintword.length-1; elem++);
+        hintword.splice(0,1);
+        firstKey+=elem;
+        document.getElementById("hintKey").innerHTML = firstKey;
     }
-      
   
     function nexttoPage() {
       document.getElementById("forsubmit").style.visibility = 'hidden';

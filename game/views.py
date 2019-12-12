@@ -46,25 +46,34 @@ def EasyStage(request):
     })
 
 def HardPicture(request, question_id):
-
     question = HardQuestion.objects.get(pk=question_id)
     user = request.user
-    key_give = question.answer
-    key_list = [key_give]
+    key_list = [question.answer]
     hint_list = []
     listToStr = []
+    first_key = ' '
 
-    if request.method == 'GET':
+    if request.method == 'POST':
         hint_list.append(key_list[0][0])
+        first_key = hint_list[0]
         key_list = [key_list[0][1:]]
-        listToStr = ' '.join([str(elem) for elem in hint_list]) 
+        listToStr = ' '.join([str(elem) for elem in key_list]) 
+        # print(key_list)
+        # print(hint_list[0]+listToStr)
+        hint_list += listToStr
         print(hint_list)
-        print(key_list)
-        hint_list += [listToStr]
         print(listToStr)
+        # while len(key_list) != 0:
+        #     for letter in key_list:
+        #         hintword = hint_list[0]+letter
+        #         key_list.pop(0)
+        #         print(hintword)
+        for letter in hint_list[1:]:
+            first_key+=letter
+            print(first_key)
+        del hint_list[0]
 
     if request.POST.get('hint-btn') == 'Hint':
-        # print("HIHIHIHIHIHIHIHIIHI")
         if user.all_score >= 2:
             user.all_score -= 2
         else:
@@ -90,8 +99,9 @@ def HardPicture(request, question_id):
         "question": question,
         "next_question": next_question,
         "last_question": HardQuestion.objects.last(),
-        "ans_length": (len(key_give)),
-        "hint_list" : listToStr,
+        "ans_length": (len(question.answer)),
+        "hint_list" : first_key,
+        "keygive_list" : hint_list,
     })
 
 # def MediumPicture(request,question_id):
