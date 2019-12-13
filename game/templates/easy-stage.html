@@ -27,8 +27,8 @@
         <div class="container-1">
             <div class="button-sub-level">
                 {% for question in range_available %}
-                    <button><a href="{% url 'game:e-picture' question.id%}">{{question.id}}</a></button>
-                    {% if question.id == 5 or question.id == 10 %}
+                    <button><a href="{% url 'game:e-picture' question.id%}"">{{question.id}}</a></button>
+                    {% if question.id|divisibleby:"5" %}
                         <br>
                     {% endif %}
                 {% endfor %}
@@ -41,10 +41,12 @@
             </div>
         </div>
     </div>
-    <div class="box-3">
-        <div class="container-2">
-            <div class="btn btn-three">
-                <span><i class="fa fa-home"></i>  MAIN MENU</span>
+    <a href="{% url 'game:index' %}">
+        <div class="box-3">
+            <div class="container-2">
+                <div class="btn btn-three">
+                    <span> <i class="fa fa-home"></i>  MAIN MENU</span>
+                </div>
             </div>
         </div>
     </a>

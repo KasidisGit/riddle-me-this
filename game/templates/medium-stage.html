@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href='{% static "/css/stage-style.css" %}'>
-
 </head>
 <body class="body-stage-medium">
     <div class="body">
@@ -23,7 +22,6 @@
             </div>
         </div>
     </div>
-
     <div class="level-medium">
         <div class="container-1">
             <div class="button-sub-level">
@@ -42,15 +40,15 @@
             </div>
         </div>
     </div>
-
-    <div class="box-3-medium">
-        <div class="container-2">
-            <div class="btn btn-three">
-                <span> <i class="fa fa-home"></i>  MAIN MENU</span>
+    <a href="{% url 'game:index' %}">
+        <div class="box-3-medium">
+            <div class="container-2">
+                <div class="btn-m btn-three">
+                    <span> <i class="fa fa-home"></i>  MAIN MENU</span>
+                </div>
             </div>
         </div>
-    </div>
-
+    </a>
     </div>
 </body>
 </html>
