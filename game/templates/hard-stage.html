@@ -1,9 +1,6 @@
-{% for question in range_available %}
-    <button><a href="{% url 'game:h-picture' question.id%}">H {{question.id}}</a></button>
-{% endfor %}
-{% for question in range_lock %}
-    <button disabled>H {{question.id}}</a></button>
-{% endfor %}
+{% load socialaccount %}
+{% providers_media_js %}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -20,7 +17,6 @@
 </head>
 
 <body class="body-stage-hard">
-
     <div class="stage">
         <div class="container-1">
             <div class="stage-name">
@@ -28,46 +24,32 @@
             </div>
         </div>
     </div>
-
     <div class="level">
         <div class="container-1">
             <div class="button-sub-level">
-                <button type="button">1</button>
-                <button type="button">2</button>
-                <button type="button">3</button>
-                <button type="button">4</button>
-                <button type="button">5</button><br>
-                <button type="button">6</button>
-                <button type="button">7</button>
-                <button type="button">8</button>
-                <button type="button">9</button>
-                <button type="button">10</button><br>
-                <button type="button">11</button>
-                <button type="button">12</button>
-                <button type="button">13</button>
-                <button type="button">14</button>
-                <button type="button">15</button>
+                {% for question in range_available %}
+                    <button><a href="{% url 'game:h-picture' question.id%}">{{question.id}}</a></button>
+                    {% if question.id|divisibleby:"5" %}
+                        <br>
+                    {% endif %}
+                {% endfor %}
+                {% for question in range_lock %}
+                    <button disabled><i class="fa fa-lock"></i></a></button>
+                    {% if question.id|divisibleby:"5" %}
+                        <br>
+                    {% endif %}
+                {% endfor %}
             </div>
         </div>
     </div>
-
-    <div class="box-3">
-        <div class="container-2">
-            <div class="btn btn-three">
-                <span> <i class="fa fa-home"></i>  MAIN MENU</span>
+    <a href="{% url 'game:index' %}">
+        <div class="box-3">
+            <div class="container-2">
+                <div class="btn btn-three">
+                    <span> <i class="fa fa-home"></i>  MAIN MENU</span>
+                </div>
             </div>
         </div>
-    </div>
-
-    <!-- <div class="back-to-mainmemu">
-        <div class="container">
-            <div class="button-back-mainmenu">
-                <i class="fas fa-cloud"></i>
-                <button type="button">MAIN MENU</button>
-            </div>
-        </div>
-    </div> -->
-
+    </a>
 </body>
 </html>
-
