@@ -11,9 +11,17 @@
     <!-- <link rel="stylesheet" type="text/css" href='{% static "/css/menu-style.css" %}'> -->
     <link rel="stylesheet" type="text/css" href='{% static "/css/scoreboard-style.css" %}'>
     <link href="https://fonts.googleapis.com/css?family=Orbitron:800&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    
+    <link href="http://allfont.net/allfont.css?fonts=star-jedi" rel="stylesheet" type="text/css" />
 </head>
 <body>
-    <h1 class="tracking-in-expand ">SCOREBOARD</h1>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <div id='title'>
+
+    <h1 class="tracking-in-expand">SCOREBOARD</h1>
         <div class="container">
                 <table>
                     <thead>
@@ -25,9 +33,9 @@
                         {% for user in score_order %}
                         <tr>
                             {% if user.id in socialaccount_id_list %}
-                                <td ><img class="provider_pic" style='width: 100px; height: 100px;'src="{{user.socialaccount_set.all.0.get_avatar_url}}"></td>
+                                <td ><img class="provider_pic" style='width: 80px; height: 80px;'src="{{user.socialaccount_set.all.0.get_avatar_url}}"></td>
                             {% else %}
-                                <td ><img style='width: 100px; height: 100px;' src="{{user.profile_image}}"></td>
+                                <td ><img style='width: 80px; height: 80px;' src="{{user.profile_image}}"></td>
                             {% endif %}
                             <td>{{ user.name }}</td>
                             <td>{{ user.all_score }}</td>
@@ -40,6 +48,7 @@
         <div class="text">
             <a href="{% url 'game:index' %}" class="primary_btn">Main Menu</a>
         </div>
+    </div>
     </div>    
 </body>
 </html>
