@@ -62,8 +62,11 @@ def EasyStage(request):
 def HardPicture(request,question_id):
     question = HardQuestion.objects.get(pk=question_id)
     user = request.user
+    status = None
     if request.method == 'POST':
+        status = False
         if request.POST.get('textfield',None) == question.answer or request.POST.get('button') == question.answer:
+            status = True
             if user.current_hard > question_id:
                 pass
             elif user.current_hard == question.id:
@@ -81,13 +84,17 @@ def HardPicture(request,question_id):
         "next_question": next_question,
         "last_question": HardQuestion.objects.last(),
         "ans_length": (len(question.answer)),
+        "is_pass": status,
     })
 
 def MediumPicture(request,question_id):
     question = MediumQuestion.objects.get(pk=question_id)
     user = request.user
+    status = None
     if request.method == 'POST':
+        status = False
         if request.POST.get('textfield',None) == question.answer or request.POST.get('button') == question.answer:
+            status = True
             if user.current_medium > question_id:
                 pass
             elif user.current_medium == question.id:
@@ -105,13 +112,17 @@ def MediumPicture(request,question_id):
         "next_question": next_question,
         "last_question": MediumQuestion.objects.last(),
         "ans_length": (len(question.answer)),
+        "is_pass": status,
     })
 
 def EasyPicture(request,question_id):
     question = EasyQuestion.objects.get(pk=question_id)
     user = request.user
+    status = None
     if request.method == 'POST':
+        status = False
         if request.POST.get('textfield',None) == question.answer or request.POST.get('button') == question.answer:
+            status = True
             if user.current_easy > question_id:
                 pass
             elif user.current_easy == question.id:
@@ -129,6 +140,7 @@ def EasyPicture(request,question_id):
         "next_question": next_question,
         "last_question": EasyQuestion.objects.last(),
         "ans_length": (len(question.answer)),
+        "is_pass": status,
     })
 
 def create_guest(request):

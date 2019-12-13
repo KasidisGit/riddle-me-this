@@ -16,14 +16,14 @@
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
         {% if user.name == 'guest' %}
             <img class="provider_pic" src="../profile_image/user.png">
-            <a class="sidetext" style="color: #effeff;">Welcome, Guest</a>
-            <a class="sidetext" style="color: #effeff;">Score {{user.all_score}} points</a>
+            <a class="sidetext">Welcome, Guest</a>
+            <a class="sidetext">Score {{user.all_score}} points</a>
             <div class="log">
                 <div class="l_btn"><a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Login?</span></a></div>
             </div>
         {% else %}
             <img class="provider_pic" src="{{user.socialaccount_set.all.0.get_avatar_url}}">
-            <a class="sidetext" style="color: #effeff;">Welcome, {% if user.name == None %} {{user.socialaccount_set.all.0.extra_data.given_name}} {{user.socialaccount_set.all.0.extra_data.first_name}} {% else %} {{user.name}} {% endif %}
+            <a class="sidetext">Welcome, {% if user.name == None %} {{user.socialaccount_set.all.0.extra_data.given_name}} {{user.socialaccount_set.all.0.extra_data.first_name}} {% else %} {{user.name}} {% endif %}
             <button id="edit-name" class="change-name">
             <i class="fa fa-pencil-square" onclick="editName()"></i>
             </button>
@@ -33,7 +33,7 @@
                     {{ form.as_p }}
                 </form>
             </a>
-            <a class="sidetext" style="color: #effeff;">Score {{user.all_score}} points</a>
+            <a class="sidetext">Score {{user.all_score}} points</a>
             <div class="log">
                 <div class="l_btn"><a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a></div>
             </div>
@@ -45,16 +45,21 @@
     {% csrf_token %}
     <input type="text" name="textfield" id="input" maxlength="{{ans_length}}" placeholder="{{ans_length}} letters" size="12" autofocus />
     <input type="submit" name="button" id="sub_btn" value="Submit"/>
+    {% if is_pass %}
+    <p><i class="fa fa-check"></i>  You got it!!</p>
+    <p>The answer is "{{question.answer}}".</p>
+    {% elif is_pass == False%}
+    <p><i class="fa fa-close"></i>  Try again</p>
+    {% else %}
+    <p></p>
+    {% endif %}
 </form>
 {% if user.current_easy > question.id %}
-    <p><i class="fa fa-check"></i>  You got it!!</p>
     {% if question.id < last_question.id %}
         <button><a href="{% url 'game:e-picture' next_question.id %}">Next</a></button>
     {% else %}
         <button><a href="{% url 'game:easy' %}">Next</a></button>
     {% endif %}
-{% else %}
-    <p id="status"><i class="fa fa-close"></i>  Try again</p>
 {% endif %}
 <button onclick="hint()">Hint</button>
 <script src="https://code.jquery.com/jquery-3.4.1.js" ></script>

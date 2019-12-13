@@ -8,11 +8,7 @@ $("#input").keypress(function(event) {
     } 
 });
 
-$("#sub_btn").click(function() { 
-    // $("#status").show();
-    // $("#status").hide(4000);
-    document.getElementById("status").style.visibility = "hidden";
-    document.getElementById("status").style.visibility = "visible";
+$("#sub_btn").click(function() {
 }); 
 
 function hint() {
