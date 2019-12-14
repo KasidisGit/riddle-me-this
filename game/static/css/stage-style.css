@@ -1,3 +1,10 @@
+a {
+    text-decoration: none;
+    transition: all 0.3s ease-in-out; }
+    a:hover, a:focus {
+      text-decoration: none;
+      outline: none; }
+      
 .body-stage-easy{
     margin: 0;
     padding: 0;
@@ -12,8 +19,6 @@
 }
 
 .body-stage-medium{
-    margin-bottom: 20px;
-    margin-top: 20px;
     margin: 0;
     padding: 0;
     font-family: 'Luckiest Guy', cursive;
@@ -54,7 +59,17 @@
     background: (0, 0, 0);
     font-size: 60px;
     color: #ffffff;
-    letter-spacing: 10px
+    letter-spacing: 10px;
+    margin-top: 100px;
+}
+
+.stage-m{
+    width: 100%;
+    height: fit-content;
+    background: (0, 0, 0);
+    font-size: 60px;
+    color: #ffffff;
+    letter-spacing: 10px;
 }
 
 .level{
@@ -118,6 +133,17 @@
 
 .btn {
     font-size: 25px;
+    font-family: 'Luckiest Guy', cursive;
+    line-height: 50px;
+    height: 50px;
+    text-align: center;
+    width: 250px;
+    cursor: pointer;
+}
+
+.btn-m {
+    font-size: 25px;
+    margin-top: -30px; 
     font-family: 'Luckiest Guy', cursive;
     line-height: 50px;
     height: 50px;

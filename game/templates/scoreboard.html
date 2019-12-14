@@ -27,6 +27,7 @@
         <h1 class="tracking-in-expand"><i class="fa fa-paper-plane" aria-hidden="true"></i> SCOREBOARD <i
                 class="fa fa-paper-plane" aria-hidden="true"></i></h1>
         <div class="container">
+<<<<<<< HEAD
             <table>
                 <thead>
                     <th>Picture</th>
@@ -52,6 +53,28 @@
         <div class="container-mainmenu">
             <div class="text">
                 <a href="{% url 'game:index' %}" class="primary_btn"><i class="fa fa-home"></i> Main Menu</a>
+=======
+                <table>
+                    <thead>
+                            <th>Picture</th>
+                            <th>Name</th>
+                            <th>Score</th>
+                    </thead>
+                    <tbody>
+                        {% for user in score_order %}
+                        <tr>
+                            {% if user.id in socialaccount_id_list %}
+                                <td ><img class="provider_pic" style='width: 80px; height: 80px; border-radius: 50px;'src="{{user.socialaccount_set.all.0.get_avatar_url}}"></td>
+                            {% else %}
+                                <td ><img style='width: 80px; height: 80px;' src="{{user.profile_image}}"></td>
+                            {% endif %}
+                            <td>{{ user.name }}</td>
+                            <td>{{ user.all_score }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+>>>>>>> 0f92c5d8732404bdb8c03051b0769f9469969ed9
             </div>
         </div>
     </div>
