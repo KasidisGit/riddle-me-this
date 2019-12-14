@@ -52,26 +52,7 @@ def HardPicture(request, question_id):
     hint_list = []
     listToStr = []
     first_key = ' '
-
-    if request.method == 'POST':
-        hint_list.append(key_list[0][0])
-        first_key = hint_list[0]
-        key_list = [key_list[0][1:]]
-        listToStr = ' '.join([str(elem) for elem in key_list]) 
-        # print(key_list)
-        # print(hint_list[0]+listToStr)
-        hint_list += listToStr
-        print(hint_list)
-        print(listToStr)
-        # while len(key_list) != 0:
-        #     for letter in key_list:
-        #         hintword = hint_list[0]+letter
-        #         key_list.pop(0)
-        #         print(hintword)
-        for letter in hint_list[1:]:
-            first_key+=letter
-            print(first_key)
-        del hint_list[0]
+    hintword = question.answer
 
     if request.POST.get('hint-btn') == 'Hint':
         if user.all_score >= 2:
@@ -100,8 +81,8 @@ def HardPicture(request, question_id):
         "next_question": next_question,
         "last_question": HardQuestion.objects.last(),
         "ans_length": (len(question.answer)),
-        "hint_list" : first_key,
-        "keygive_list" : hint_list,
+        "hint_list" : hintword,
+        # "keygive_list" : hint_list,
     })
 
 # def MediumPicture(request,question_id):

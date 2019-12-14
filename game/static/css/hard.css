@@ -179,3 +179,7 @@ p {
     margin-top: 20px;
     margin-right: 30px;
 }
+
+.hintword {
+    display: "none";
+}
