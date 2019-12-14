@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Scoreboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href='{% static "/css/menu-style.css" %}'> -->
+    <link rel="stylesheet" type="text/css" href='{% static "/css/scoreboard-style.css" %}'>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron:800&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="http://allfont.net/allfont.css?fonts=star-jedi" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <div id='title'>
+
+        <h1 class="tracking-in-expand"><i class="fa fa-paper-plane" aria-hidden="true"></i> SCOREBOARD <i
+                class="fa fa-paper-plane" aria-hidden="true"></i></h1>
+        <div class="container">
+            <table>
+                <thead>
+                    <th>Picture</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                </thead>
+                <tbody>
+                    {% for user in score_order %}
+                    <tr>
+                        {% if user.id in socialaccount_id_list %}
+                        <td><img class="provider_pic" style='width: 80px; height: 80px; border-radius: 50px;'
+                                src="{{user.socialaccount_set.all.0.get_avatar_url}}"></td>
+                        {% else %}
+                        <td><img style='width: 80px; height: 80px;' src="{{user.profile_image}}"></td>
+                        {% endif %}
+                        <td>{{ user.name }}</td>
+                        <td>{{ user.all_score }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <div class="container-mainmenu">
+            <div class="text">
+                <a href="{% url 'game:index' %}" class="primary_btn"><i class="fa fa-home"></i> Main Menu</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

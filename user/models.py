@@ -48,6 +48,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     current_easy = models.IntegerField(default=1)
     current_medium = models.IntegerField(default=1)
     current_hard = models.IntegerField(default=1)
+    profile_image = models.ImageField(upload_to='profile_image', default='profile_image/user.png')
     
     USERNAME_FIELD = 'email'
     EMAIL_FIELD = 'email'
@@ -62,8 +63,4 @@ class User(AbstractBaseUser, PermissionsMixin):
     def was_published_recently(self):
         now = timezone.now()
         return now - datetime.timedelta(days=1) <= self.date_joined <= now
-
-class NameUser(models.Model):
-    name = models.CharField(max_length=20)
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,null=True)
 
