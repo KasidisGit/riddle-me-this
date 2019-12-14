@@ -4,6 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,29 +31,32 @@
         <div class="container-1">
             <div class="button-sub-level">
                 {% for question in range_available %}
-                    <button><a href="{% url 'game:e-picture' question.id%}"">{{question.id}}</a></button>
+                <button><a href="{% url 'game:e-picture' question.id%}"">{{question.id}}</a></button>
                     {% if question.id|divisibleby:"5" %}
                         <br>
                     {% endif %}
                 {% endfor %}
+
                 {% for question in range_lock %}
-                    <button disabled><i class="fa fa-lock"></i></a></button>
-                    {% if question.id|divisibleby:"5" %}
-                        <br>
-                    {% endif %}
+                    <button disabled><i class=" fa fa-lock"></i></a></button>
+                {% if question.id|divisibleby:"5" %}
+                <br>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>
     </div>
+
     <a href="{% url 'game:index' %}">
         <div class="box-3">
             <div class="container-2">
                 <div class="btn btn-three">
-                    <span> <i class="fa fa-home"></i>  MAIN MENU</span>
+                    <span> <i class="fa fa-home"></i> MAIN MENU</span>
                 </div>
             </div>
         </div>
     </a>
 
 </body>
+
 </html>
