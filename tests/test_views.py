@@ -25,17 +25,26 @@ class GameViewTests(TestCase):
         self.user = create_user('earnny13@gmail.com',1,1,1,1)
 
     def test_view_form(self):
+        """
+        Test that form can be accessed when user authenticated
+        """
         response = self.client.get(self.form_url)
         if self.user.is_authenticated:
             self.assertEqual(response.status_code, 200)
 
     def test_htp_and_scoreboard(self):
+        """
+        Test that how to play and scoreboard can be accessed
+        """
         response1 = self.client.get(reverse('game:htp'))
         self.assertEqual(response1.status_code, 200)
         response2 = self.client.get(reverse('game:scoreboard'))
         self.assertEqual(response2.status_code, 200)
 
     def test_stage_pages(self):
+        """
+        Test that all stage can be accessed when user authenticated
+        """
         self.client.force_login(self.user)
         easy_stage = self.client.get(reverse('game:easy'))
         self.assertEqual(easy_stage.status_code, 200)
@@ -45,6 +54,9 @@ class GameViewTests(TestCase):
         self.assertEqual(hard_stage.status_code, 200)         
 
     def test_easy_questions(self):
+        """
+        Test that easy question and post method can be accessed when user authenticated
+        """
         response = self.client.get(self.easy_url)
         if self.user.is_authenticated:
             self.assertEqual(response.status_code, 200)
@@ -52,6 +64,9 @@ class GameViewTests(TestCase):
         self.assertEqual(response_post.status_code, 200)
 
     def test_medium_questions(self):
+        """
+        Test that medium question and post method can be accessed when user authenticated
+        """
         response = self.client.get(self.medium_url)
         if self.user.is_authenticated:
             self.assertEqual(response.status_code, 200)
@@ -59,6 +74,9 @@ class GameViewTests(TestCase):
         self.assertEqual(response_post.status_code, 200)
 
     def test_hard_questions(self):
+        """
+        Test that hard question and post method can be accessed when user authenticated
+        """
         response = self.client.get(self.hard_url)
         if self.user.is_authenticated:
             self.assertEqual(response.status_code, 200)
