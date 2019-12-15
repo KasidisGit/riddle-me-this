@@ -18,6 +18,7 @@
     <body>
         <a href= "{% url 'game:index' %}" class="button-left">Main menu</a>
         <h1>MEDIUM LEVEL {{question.id}}</h1>
+        <hr>
         <div id="mySidenav" class="sidenav">
             <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
                 {% if user.name == 'guest' %}
@@ -98,10 +99,19 @@
       document.getElementById("correct").style.fontSize = "larger";
       }
   
-    var scoreText = document.getElementById("num")
-    var score = Number(scoreText.innerText)
-    var submit_btn = document.getElementById("forsubmit")
-    var next_btn = document.getElementById("next")
+    var hintlist = '{{hint_list}}'
+    var sumhl= ''
+    var i = 0
+    $(document).ready(function(){
+      $(".button-hint").click(function(){
+        sumhl += hintlist[i]
+        console.log(sumhl)
+        i+=1
+        $("#hintKey").innerHTML = sumhl;
+
+      })
+    })
+  
   
     function nexttoPage() {
       document.getElementById("forsubmit").style.visibility = 'hidden';

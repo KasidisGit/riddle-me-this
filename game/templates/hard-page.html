@@ -17,6 +17,7 @@
     <body>
         <a href= "{% url 'game:index' %}" class="button-left">Main menu</a>
         <h1>HARD LEVEL {{question.id}}</h1>
+        <hr>
         <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
               {% if user.name == 'guest' %}

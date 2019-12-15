@@ -147,6 +147,14 @@ def EasyPicture(request,question_id):
     question = EasyQuestion.objects.get(pk=question_id)
     user = request.user
     status = None
+
+    if request.POST.get('hint-btn') == 'Hint':
+        if user.all_score >= 2:
+            user.all_score -= 2
+        else:
+            pass
+        user.save()
+        
     if request.method == 'POST':
         status = False
         if request.POST.get('textfield',None) == question.answer or request.POST.get('button') == question.answer:
