@@ -6,14 +6,15 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <link rel="stylesheet" type="text/css" href="{% static 'css/hard.css' %}">
         <link rel="stylesheet" type="text/css" href="{% static 'css/menu-style.css' %}">
+        <link rel="stylesheet" type="text/css" href='{% static "/css/question-style.css" %}'>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <!-- <link rel="stylesheet" type="text/css" href='{% static "/css/question-style.css" %}'> -->
+        <script src="../static/js/question-js/active.js"></script>
     </head>
 
     <body>
-        <a href= "../main-menu.html" class="button-left">Main menu</a>
+        <a href= "{% url 'game:index' %}" class="button-left">Main menu</a>
         <h1>DAVINCI GAME</h1>
-        <div id="mySidenav" class="sidenav">
+        <div id="mySidenav" class="sidenav" style="z-index: 100;">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
           <a class="sidetext" style="color: #000000;"> Welcome, {{user}}</a>
           <div class="log">
@@ -62,6 +63,8 @@
             {% endif %}
         </form>
     </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../static/js/question-js/active.js"></script>
 </html>
 
 <script>

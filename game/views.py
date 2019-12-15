@@ -5,7 +5,6 @@ from user.models import User
 from allauth.socialaccount.models import SocialAccount
 from django.contrib.auth import login
 from .models import *
-from django.contrib.auth.models import User
 
 def IndexView(request):
     form = UserForm()
@@ -63,7 +62,7 @@ def EasyStage(request):
 def HardPicture(request, question_id):
     question = HardQuestion.objects.get(pk=question_id)
     user = request.user
-<<<<<<< HEAD
+    status = None
     key_list = [question.answer]
     hint_list = []
     listToStr = []
@@ -77,9 +76,7 @@ def HardPicture(request, question_id):
             pass
         user.save()
 
-=======
-    status = None
->>>>>>> bd5eb75443cd4a67c6f57999d5aeba761443fc96
+
     if request.method == 'POST':
         status = False
         if request.POST.get('textfield',None) == question.answer or request.POST.get('button') == question.answer:
@@ -102,12 +99,7 @@ def HardPicture(request, question_id):
         "next_question": next_question,
         "last_question": HardQuestion.objects.last(),
         "ans_length": (len(question.answer)),
-<<<<<<< HEAD
-        "hint_list" : hintword,
-        # "keygive_list" : hint_list,
-=======
         "is_pass": status,
->>>>>>> bd5eb75443cd4a67c6f57999d5aeba761443fc96
     })
 
 # def MediumPicture(request,question_id):
