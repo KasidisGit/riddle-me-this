@@ -148,10 +148,10 @@ class TestStage(unittest.TestCase):
         ele = self.driver.find_element_by_tag_name('h1')
         self.assertEqual("MEDIUM", ele.get_attribute('innerHTML'))
 
-        can go to game page or not
+        # can go to game page or not
         ele  = self.driver.find_element_by_id('gopage')
         
-        from easy stage back to main menu
+        # from easy stage back to main menu
         tag = self.driver.find_element_by_tag_name('a')
         time.sleep(1)
         tag.get_attribute('innerHTML')
