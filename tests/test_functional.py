@@ -58,6 +58,8 @@ class TestMainMenu(unittest.TestCase):
 
 
     def test_how_to_play(self):
+        """test button how to play and test how to play page."""  
+        
         self.driver.find_element_by_css_selector('#htp').click()
 
         ele = self.driver.find_element_by_tag_name('h1')
@@ -85,6 +87,8 @@ class TestMainMenu(unittest.TestCase):
         self.assertEqual('Riddle Me This',ele.get_attribute('innerHTML'))
 
     def test_scoreboard(self):
+        """test button scoreboard and test scoreboard page.""" 
+
         btn_login = self.driver.find_element_by_id('btn-guest')
         btn_login.get_attribute('innerHTML')
         time.sleep(1)
@@ -95,6 +99,13 @@ class TestMainMenu(unittest.TestCase):
         button_scoreboard.get_attribute('innerHTML')
         button_scoreboard.click()
         time.sleep(1)
+
+        ele = self.driver.find_element_by_class_name('tracking-in-expand')
+        self.assertIn('SCOREBOARD',ele.get_attribute('innerHTML'))
+        ele = self.driver.find_element_by_name('haed-table-1')
+        self.assertEqual('Picture',ele.get_attribute('innerHTML'))
+
+
 
 
 
