@@ -18,11 +18,26 @@ def IndexView(request):
         return redirect("game:index")
     if request.user.is_authenticated and request.user.name != 'guest':
         social_user = SocialAccount.objects.get(user=request.user)
+        player = User.objects.get(email= request.user)
+        if social_user.provider == 'google':
+            player.name = social_user.extra_data['given_name']
+        else:
+            player.name = social_user.extra_data['first_name']
+        player.save()
         return render(request,"main-menu.html",{"social_user":social_user,"form":form})
     return render(request,"main-menu.html",{"form":form})
 
 def HowtoView(request):
     return render(request,"how-to-play.html")
+
+def ScoreView(request):
+    socialaccount_id_list = []
+    for s in SocialAccount.objects.all():
+        socialaccount_id_list.append(s.user_id)
+    return render(request,"scoreboard.html",{
+        "score_order": User.objects.order_by('-all_score')[:10],
+        "socialaccount_id_list":socialaccount_id_list,
+    })
 
 def HardStage(request):
     user = request.user
@@ -48,6 +63,7 @@ def EasyStage(request):
 def HardPicture(request, question_id):
     question = HardQuestion.objects.get(pk=question_id)
     user = request.user
+<<<<<<< HEAD
     key_list = [question.answer]
     hint_list = []
     listToStr = []
@@ -61,8 +77,13 @@ def HardPicture(request, question_id):
             pass
         user.save()
 
+=======
+    status = None
+>>>>>>> bd5eb75443cd4a67c6f57999d5aeba761443fc96
     if request.method == 'POST':
+        status = False
         if request.POST.get('textfield',None) == question.answer or request.POST.get('button') == question.answer:
+            status = True
             if user.current_hard > question_id:
                 pass
             elif user.current_hard == question.id:
@@ -81,8 +102,12 @@ def HardPicture(request, question_id):
         "next_question": next_question,
         "last_question": HardQuestion.objects.last(),
         "ans_length": (len(question.answer)),
+<<<<<<< HEAD
         "hint_list" : hintword,
         # "keygive_list" : hint_list,
+=======
+        "is_pass": status,
+>>>>>>> bd5eb75443cd4a67c6f57999d5aeba761443fc96
     })
 
 # def MediumPicture(request,question_id):
@@ -142,8 +167,11 @@ def HardPicture(request, question_id):
 def MediumPicture(request,question_id):
     question = MediumQuestion.objects.get(pk=question_id)
     user = request.user
+    status = None
     if request.method == 'POST':
+        status = False
         if request.POST.get('textfield',None) == question.answer or request.POST.get('button') == question.answer:
+            status = True
             if user.current_medium > question_id:
                 pass
             elif user.current_medium == question.id:
@@ -161,13 +189,17 @@ def MediumPicture(request,question_id):
         "next_question": next_question,
         "last_question": MediumQuestion.objects.last(),
         "ans_length": (len(question.answer)),
+        "is_pass": status,
     })
 
 def EasyPicture(request,question_id):
     question = EasyQuestion.objects.get(pk=question_id)
     user = request.user
+    status = None
     if request.method == 'POST':
+        status = False
         if request.POST.get('textfield',None) == question.answer or request.POST.get('button') == question.answer:
+            status = True
             if user.current_easy > question_id:
                 pass
             elif user.current_easy == question.id:
@@ -185,11 +217,12 @@ def EasyPicture(request,question_id):
         "next_question": next_question,
         "last_question": EasyQuestion.objects.last(),
         "ans_length": (len(question.answer)),
+        "is_pass": status,
     })
 
 def create_guest(request):
     user = User.objects.filter(name='guest').order_by('id')
-    new_user = User.objects.create(email=f'guest {len(user)+1}')
+    new_user = User.objects.create(email=f'guest {len(user)+1}', name='guest')
     new_user.save()
     login(request, new_user)
     return redirect("game:index")
