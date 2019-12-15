@@ -94,7 +94,7 @@ def HardPicture(request, question_id):
         next_question = HardQuestion.objects.get(pk=question_id+1)
     else:
         next_question = HardQuestion.objects.get(pk=1)
-    return render(request,"hard_page.html",{
+    return render(request,"hard-page.html",{
         "question": question,
         "next_question": next_question,
         "last_question": HardQuestion.objects.last(),

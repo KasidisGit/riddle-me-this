@@ -117,8 +117,8 @@ p {
     /* display: inline-block; */
     border-radius: 4px;
     background-color: #945158;
+    color:white;
     border: none;
-    color: #FFFFFF;
     text-align: center;
     font-size: 22px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -135,6 +135,7 @@ p {
   
   .button-next span {
     cursor: pointer;
+    color: white;
     display: inline-block;
     position: relative;
     transition: 0.5s;
@@ -150,6 +151,7 @@ p {
   }
   
   .button-next:hover span {
+    color: white;
     padding-right: 25px;
   }
   
