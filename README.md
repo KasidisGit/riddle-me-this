@@ -20,5 +20,56 @@ It is an online educational game that tests knowledge and creativity of a player
 * [Iteration Script](https://docs.google.com/document/d/1eBriBu04WbI6myoH9GuHBDf7wkmMbYwD7kY3xDfpSIA/edit)
 * [Task Board](https://trello.com/b/y8vxcJPa/riddle-me-this)
 * [Code Review](https://docs.google.com/document/d/1QnH53fsqkTB0lhTCFExOkOOEtXv0lpKw0SpMnZ8ifWo/edit)
-* Design Documents
-* Screen Flow Diagram
+
+## Requirements
+
+The application requires python add-on modules as in [requirements.txt](requirements.txt)
+
+## Installation Steps
+
+Step 1: Clone the repository
+
+        git clone https://github.com/KasidisGit/riddle-me-this
+
+Step 2: Change directory to riddle-me-this
+
+        cd /some/directory/riddle-me-this
+
+Step 3: Install virtualenv
+
+        python -m pip install virtualenv
+
+Step 4: Create a virtualenv directory named env inside the project directory
+
+        virtualenv env
+
+Step 5: Activate the virtualenv using the activate script. Use the “.” command or “source” command.
+
+        .env/bin/activate
+
+or:
+
+        source env/bin/activate
+
+When virtualenv is activated it prepends `(env)` to your shell prompt so you know it is active.
+
+Step 6: Install requirements from requirements.txt
+
+        (env)cmd> pip install -r requirements.txt
+
+Step 7: Create database tables
+
+        (env)cmd> python manage.py migrate
+
+Step 8: Load data from `.json` files
+
+        (env)cmd> python manage.py loaddata */fixtures/*.json
+
+Step 9: Runserver
+
+        (env)cmd> python3 manage.py runserver
+
+Step 10: Exit the virtualenv using deactivate. You can also exit by closing the shell window.
+
+        (env)cmd> deactivate
+
