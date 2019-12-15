@@ -17,9 +17,9 @@ def create_user( email, days,current_e ,current_m ,current_h):
 class UserViewTests(TestCase):
 
     def setUp(self):
-        self.medium_url = reverse_lazy('game:e-picture',args=str(1))
+        self.easy_url = reverse_lazy('game:e-picture',args=str(1))
         self.medium_url = reverse_lazy('game:m-picture',args=str(1))
-        self.hard_url = reverse_lazy('game:m-picture',args=str(1))
+        self.hard_url = reverse_lazy('game:h-picture',args=str(1))
         self.form_url = reverse('user:form')
         call_command('loaddata', 'user.json', verbosity=0)
         call_command('loaddata', 'social-auth.json', verbosity=0) 
@@ -31,9 +31,8 @@ class UserViewTests(TestCase):
         if self.user.is_authenticated:
             self.assertEqual(response.status_code, 200)
 
-
     def test_view_easy(self):
-        response = self.client.get(self.form_url)
+        response = self.client.get(self.easy_url)
         if self.user.is_authenticated:
             self.assertEqual(response.status_code, 200)
 
