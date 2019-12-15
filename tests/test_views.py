@@ -1,5 +1,5 @@
 from django.test import TestCase
-from .models import User
+from user.models import User
 from django.utils import timezone
 import datetime
 from django.urls import reverse, reverse_lazy

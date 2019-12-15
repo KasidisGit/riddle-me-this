@@ -36,7 +36,7 @@
                     </li>
                 </div>
                 <br></br>
-                <li class="nav-item"><a href="{% url 'game:htp' %}" class="primary_btn">How to Play</a></li>
+                <li class="nav-item" id='htp'><a href="{% url 'game:htp' %}" class="primary_btn">How to Play</a></li>
                 <br></br>
                 {% if user.is_authenticated %}
                     <li class="nav-item"><a href="{% url 'game:scoreboard' %}" class="primary_btn">Scoreboard</a></li>
