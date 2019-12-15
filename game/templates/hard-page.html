@@ -70,13 +70,12 @@
           </form> 
 
           <br>
-              <form method="POST">
+            <form method="POST">
               {% csrf_token %}
-                <span><input type="submit" class="button-hint" name="hint-btn" value="Hint"/></button></span>
-                <input type="hidden" id="keygive_list" style="visibility: hidden;" value="{{hint_list}}"/>
-                <p id="hintKey" class="hintword" style="margin-left: 190px; " ></p>
-              </form>
-  
+              <span><input type="submit" class="button-hint" name="hint-btn" value="Hint"/></button></span>
+              <input type="hidden" id="keygive_list" style="visibility: hidden;" value="{{hint_list}}"/>
+              <p id="hintKey" class="hintword" style="margin-left: 190px; " ></p>
+            </form>
         </div>
         {% if user.current_hard > question.id %}
         {% if question.id < last_question.id  %}
@@ -84,7 +83,7 @@
         {% else %}
             <span><button class="button-next"><a href="{% url 'game:hard' %}">Next</a></button></span>
         {% endif %}
-    {% endif %}
+        {% endif %}
     </body>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="../static/js/question-js/active.js"></script>
