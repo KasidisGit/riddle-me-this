@@ -161,6 +161,6 @@ SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SOCIALACCOUNT_ADAPTER = 'riddle-me-this.adapter.MySocialAccountAdapter'
 
-
-django_heroku.settings(locals())
-
+if '/app' in os.environ['HOME']:	
+    django_heroku.settings(locals())
+    del DATABASES['default']['OPTIONS']['sslmode']
