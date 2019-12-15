@@ -5,16 +5,14 @@ import datetime
 from django.urls import reverse, reverse_lazy
 from django.core.management import call_command
 from django.contrib.auth import login
-from game import views
-from game.models import MediumQuestion
-
+from game.views import EasyPicture, MediumPicture, HardPicture
+from game.models import MediumQuestion, EasyQuestion, HardQuestion
 
 def create_user( email, days,current_e ,current_m ,current_h):
     time = timezone.now() + datetime.timedelta( days=days)
     return User.objects.create( email="test@gamil.com", date_joined =time, current_easy=current_e, current_medium=current_m, current_hard=current_h)
 
-
-class UserViewTests(TestCase):
+class GameViewTests(TestCase):
 
     def setUp(self):
         self.easy_url = reverse_lazy('game:e-picture',args=str(1))
@@ -31,19 +29,38 @@ class UserViewTests(TestCase):
         if self.user.is_authenticated:
             self.assertEqual(response.status_code, 200)
 
-    def test_view_easy(self):
+    def test_htp_and_scoreboard(self):
+        response1 = self.client.get(reverse('game:htp'))
+        self.assertEqual(response1.status_code, 200)
+        response2 = self.client.get(reverse('game:scoreboard'))
+        self.assertEqual(response2.status_code, 200)
+
+    def test_stage_pages(self):
+        self.client.force_login(self.user)
+        easy_stage = self.client.get(reverse('game:easy'))
+        self.assertEqual(easy_stage.status_code, 200)
+        medium_stage = self.client.get(reverse('game:medium'))
+        self.assertEqual(medium_stage.status_code, 200)
+        hard_stage = self.client.get(reverse('game:hard'))
+        self.assertEqual(hard_stage.status_code, 200)         
+
+    def test_easy_questions(self):
         response = self.client.get(self.easy_url)
         if self.user.is_authenticated:
             self.assertEqual(response.status_code, 200)
+        response_post = self.client.post("/easy/15")
+        self.assertEqual(response_post.status_code, 200)
 
-    def test_view_medium(self):
+    def test_medium_questions(self):
         response = self.client.get(self.medium_url)
         if self.user.is_authenticated:
             self.assertEqual(response.status_code, 200)
+        response_post = self.client.post("/medium/20")
+        self.assertEqual(response_post.status_code, 200)
 
-    
-    def test_view_hard(self):
+    def test_hard_questions(self):
         response = self.client.get(self.hard_url)
         if self.user.is_authenticated:
             self.assertEqual(response.status_code, 200)
-
+        response_post = self.client.post("/hard/15")
+        self.assertEqual(response_post.status_code, 200)
