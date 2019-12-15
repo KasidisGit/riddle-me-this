@@ -196,7 +196,8 @@ class TestGoogleAuth(TestCase):
         ele = self.driver.find_element_by_css_selector('#opennav.side_bar')
         ele.click()
         time.sleep(1)
-        self.assertEqual('Welcome, hijimmybug ',ele.get_attribute('innerText'))
+        ele = self.driver.find_element_by_css_selector('.sidetext')
+        self.assertEqual('Welcome, hijimmy ',ele.get_attribute('innerText'))
 
         #edit name
         ele = self.driver.find_element_by_id('edit-name')
@@ -218,8 +219,9 @@ class TestGoogleAuth(TestCase):
         time.sleep(3)
         self.driver.close()
 
-if User.objects.get(email='hijimmybug@gmail.com'):
-    User.objects.get(email='hijimmybug@gmail.com').delete()
+# #must delete user before the second test
+# if User.objects.get(email='hijimmybug@gmail.com'):
+#     User.objects.get(email='hijimmybug@gmail.com').delete()
     
 if __name__ == "__main__":
     unittest.main()
