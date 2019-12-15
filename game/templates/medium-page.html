@@ -78,11 +78,11 @@
                 <p id="hintKey" class="hintword" style="margin-left: 190px; " ></p>
             </form>
         </div>
-        {% if user.current_hard > question.id %}
+        {% if user.current_medium > question.id %}
         {% if question.id < last_question.id  %}
-            <span><button class="button-next"><a href="{% url 'game:h-picture' next_question.id %}">Next</a></button></span>
+            <span><button class="button-next"><a href="{% url 'game:m-picture' next_question.id %}">Next</a></button></span>
         {% else %}
-            <span><button class="button-next"><a href="{% url 'game:hard' %}">Next</a></button></span>
+            <span><button class="button-next"><a href="{% url 'game:medium' %}">Next</a></button></span>
         {% endif %}
         {% endif %}
     </body>

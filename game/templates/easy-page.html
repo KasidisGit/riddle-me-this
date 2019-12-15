@@ -79,12 +79,11 @@
         </form>
       </div>
       {% if user.current_easy > question.id %}
-        {% if question.id < last_question.id  %}
-        <span><button class="button-next"><a href="{% url 'game:e-picture' next_question.id %}">Next</a></button></span>
-        {% endif %}
-        {% else %}
+      {% if question.id < last_question.id  %}
+          <span><button class="button-next"><a href="{% url 'game:e-picture' next_question.id %}">Next</a></button></span>
+      {% else %}
           <span><button class="button-next"><a href="{% url 'game:easy' %}">Next</a></button></span>
-  
+      {% endif %}
       {% endif %}
   </body>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
