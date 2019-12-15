@@ -106,12 +106,30 @@ class TestMainMenu(unittest.TestCase):
         self.assertEqual('Picture',ele.get_attribute('innerHTML'))
 
 
+    def tearDown(self):
+        time.sleep(1)
+        self.driver.close()
 
 
+class TestStage(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        user = User.objects.create_superuser(name='ktmook',email='x@gmail.com',password='12345')
+        user.save()
+
+
+    def setUp(self):
+        self.driver = webdriver.Chrome(executable_path='tests/chromedriver')
+        self.driver.get("http://127.0.0.1:8000/")
+
+        # To do test.....
 
     def tearDown(self):
         time.sleep(1)
         self.driver.close()
+
+
 
 
 
