@@ -33,9 +33,19 @@ class TestMainMenu(unittest.TestCase):
         ele = self.driver.find_element_by_tag_name('h1')
         self.assertEqual('How to Play',ele.get_attribute('innerHTML'))
 
+    def test_not_login(self):
+        button_play = self.driver.find_element_by_name('do-not-login-btn-play')
+        time.sleep(1)
+        button_play.get_attribute('innerHTML')
+        button_play.click()
+        # time.sleep(1)
+
+        ele = self.driver.find_element_by_class_name('login-title')
+        self.assertIn('Excuse',ele.get_attribute('innerHTML'))
 
     def test_button_play(self):
 
+        """test if you login you can click button play"""
         btn_login = self.driver.find_element_by_id('btn-guest')
         btn_login.get_attribute('innerHTML')
         time.sleep(1)
@@ -45,13 +55,13 @@ class TestMainMenu(unittest.TestCase):
         time.sleep(1)
         button_play.get_attribute('innerHTML')
         button_play.click()
-        time.sleep(1)
+        # time.sleep(1)
 
         button_easy = self.driver.find_element_by_name('easy-stage')
         time.sleep(1)
         button_easy.get_attribute('innerHTML')
         button_easy.click()
-        time.sleep(1)
+        # time.sleep(1)
 
         ele = self.driver.find_element_by_tag_name('h1')
         self.assertEqual('EASY',ele.get_attribute('innerHTML'))
@@ -91,39 +101,20 @@ class TestMainMenu(unittest.TestCase):
 
         btn_login = self.driver.find_element_by_id('btn-guest')
         btn_login.get_attribute('innerHTML')
-        time.sleep(1)
+        # time.sleep(1)
         btn_login.click()
 
         button_scoreboard = self.driver.find_element_by_name('scb_button')
-        time.sleep(1)
+        # time.sleep(1)
         button_scoreboard.get_attribute('innerHTML')
         button_scoreboard.click()
-        time.sleep(1)
+        # time.sleep(1)
 
         ele = self.driver.find_element_by_class_name('tracking-in-expand')
         self.assertIn('SCOREBOARD',ele.get_attribute('innerHTML'))
         ele = self.driver.find_element_by_name('haed-table-1')
         self.assertEqual('Picture',ele.get_attribute('innerHTML'))
 
-
-    def tearDown(self):
-        time.sleep(1)
-        self.driver.close()
-
-
-class TestStage(unittest.TestCase):
-
-    @classmethod
-    def setUpClass(cls):
-        user = User.objects.create_superuser(name='ktmook',email='x@gmail.com',password='12345')
-        user.save()
-
-
-    def setUp(self):
-        self.driver = webdriver.Chrome(executable_path='tests/chromedriver')
-        self.driver.get("http://127.0.0.1:8000/")
-
-        # To do test.....
 
     def tearDown(self):
         time.sleep(1)
