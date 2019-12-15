@@ -27,7 +27,7 @@
         <div class="container-1">
             <div class="button-sub-level">
                 {% for question in range_available %}
-                    <button><a href="{% url 'game:e-picture' question.id%}"">{{question.id}}</a></button>
+                    <button id='gopage'><a href="{% url 'game:e-picture' question.id%}">{{question.id}}</a></button>
                     {% if question.id|divisibleby:"5" %}
                         <br>
                     {% endif %}

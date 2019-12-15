@@ -115,15 +115,33 @@ class TestStage(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        user = User.objects.create_superuser(name='ktmook',email='x@gmail.com',password='12345')
+        user = User.objects.create_superuser(name='hanoey',email='abc@gmail.com',password='12345')
         user.save()
 
 
     def setUp(self):
-        self.driver = webdriver.Chrome(executable_path='tests/chromedriver')
-        self.driver.get("http://127.0.0.1:8000/")
+        self.driver = webdriver.Chrome(executable_path='C:\\Users\Admin\Downloads\chromedriver.exe')
+        self.driver.get("http://127.0.0.1:8000/easy")
 
-        # To do test.....
+    def test_easy_stage(self):
+        #check title page
+        self.assertEqual('EASY', self.driver.title)
+  
+        #check innerHTML of easy-stage.html
+        ele = self.driver.find_element_by_tag_name('h1')
+        self.assertEqual("EASY", ele.get_attribute('innerHTML'))
+
+        #can go to game page or not
+        # ele  = self.driver.find_element_by_id('gopage')
+        
+        #from easy stage back to main menu
+        tag = self.driver.find_element_by_tag_name('a')
+        time.sleep(1)
+        tag.get_attribute('innerHTML')
+        tag.click()
+        ele = self.driver.find_element_by_tag_name('h1')
+        self.assertEqual('Riddle Me This',ele.get_attribute('innerHTML'))
+
 
     def tearDown(self):
         time.sleep(1)
