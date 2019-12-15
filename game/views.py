@@ -22,7 +22,6 @@ def IndexView(request):
             player.name = social_user.extra_data['given_name']
         else:
             player.name = social_user.extra_data['first_name']
-        player.save()
         return render(request,"main-menu.html",{"social_user":social_user,"form":form})
     return render(request,"main-menu.html",{"form":form})
 
