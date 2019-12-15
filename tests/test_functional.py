@@ -96,7 +96,7 @@ class TestMainMenu(unittest.TestCase):
         button_scoreboard.click()
         time.sleep(1)
 
-        
+
 
     def tearDown(self):
         time.sleep(1)
