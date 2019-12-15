@@ -43,6 +43,7 @@ class TestMainMenu(unittest.TestCase):
         ele = self.driver.find_element_by_class_name('login-title')
         self.assertIn('Excuse',ele.get_attribute('innerHTML'))
 
+
     def test_button_play(self):
 
         """test if you login you can click button play"""
@@ -119,8 +120,6 @@ class TestMainMenu(unittest.TestCase):
     def tearDown(self):
         time.sleep(1)
         self.driver.close()
-
-
 
 
 
