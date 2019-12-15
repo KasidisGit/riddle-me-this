@@ -19,7 +19,7 @@
             <div class="row-p">
                 <div class="col-12 col-lg-8">
                     <div class="text">
-                        <h2>Rules</h2>
+                        <h2 id="Rules">Rules</h2>
                         <p>There are 50 level of questions. The questions will come in form of pictures. You have to turn those pictures into only a single word. Each word is illustrated by pictures.</p>
                         <p>Riddle me this is designed as a mixture of guess the word games and pictures trivia quiz to improve your creativity but still fun and rewarding. The more level is increased, the more complicated pictures will be. To solve tricky quizzes, You need to think outside the box! You can see game statistics down here.</p>
                         <h2>Scoring</h2>
@@ -31,7 +31,7 @@
                     <table class="table table-center">
                         <thead class="thead-dark">
                             <tr>
-                                <th scope="col" class="tablepress">Stage</th>
+                                <th scope="col" class="tablepress" id="cell1-1">Stage</th>
                                 <th scope="col" class="tablepress">Pass</th>
                                 <th scope="col" class="tablepress">Hint</th>
                             </tr>
@@ -104,9 +104,9 @@
             <div class="row">
                 <div class="col-md-6 col-lg-6">
                     <div class="text2">
-                        <h3>Medium</h3>
+                        <h3 id="hpt-medium">Medium</h3>
                         <img src="static/introduction-img/2peacock.png">
-                        <h3 class="wow fadeInUp" data-wow-delay="0.5s">Pea + C(l)ock = Peacock</h3>
+                        <h3 class="wow fadeInUp" data-wow-delay="0.5s" id='ans-medium'>Pea + C(l)ock = Peacock</h3>
                     </div>
                 </div>
                 <div class="col-12 col-md-6 col-xl-5 ml-auto">
@@ -184,7 +184,7 @@
         </div>
         <div class="button-padding">
             <span class="dot" onclick="currentSlide(1)"></span> 
-            <span class="dot" onclick="currentSlide(2)"></span> 
+            <span class="dot" onclick="currentSlide(2)" id="dot-2"></span> 
             <span class="dot" onclick="currentSlide(3)"></span>
         </div>
     </section>

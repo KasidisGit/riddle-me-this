@@ -30,14 +30,14 @@
             <table>
                 <thead>
                     <th>Picture</th>
-                    <th>Email</th>
+                    <th>Name</th>
                     <th>Score</th>
                 </thead>
                 <tbody>
                     {% for user in score_order %}
                     <tr>
                         {% if user.id in socialaccount_id_list %}
-                        <td><img class="provider_pic" style='width: 80px; height: 80px;'
+                        <td><img class="provider_pic" style='width: 80px; height: 80px; border-radius: 50px;'
                                 src="{{user.socialaccount_set.all.0.get_avatar_url}}"></td>
                         {% else %}
                         <td><img style='width: 80px; height: 80px;' src="{{user.profile_image}}"></td>
