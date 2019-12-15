@@ -31,7 +31,7 @@
                                     <li class="nav-item"><a href="{% url 'game:hard' %}" class="nav-link">Hard</a>
                                 </ul>
                         {% else %}
-                            <a class="primary_btn" onclick="openPop()">Play</a>
+                            <a class="primary_btn" onclick="openPop() " name= "do-not-login-btn-play">Play</a>
                         {% endif %}
                     </li>
                 </div>
@@ -41,7 +41,7 @@
                 {% if user.is_authenticated %}
                     <li id="btn-scoreboard" class="nav-item" name='scb_button'><a href="{% url 'game:scoreboard' %}" class="primary_btn">Scoreboard</a></li>
                 {% else %}
-                    <li class="nav-item" onclick="openPop()"><a class="primary_btn" >Scoreboard</a></li>
+                    <li class="nav-item" onclick="openPop()" name = 'do-not-login-btn-scb'><a class="primary_btn" >Scoreboard</a></li>
                     <div class="popup_login" id="login_pop" style="display: none;">
                         <div class="wrap-login">
                             <span class="close_btn" onclick="closePop()">&times;</span>
