@@ -121,15 +121,19 @@ class TestStage(unittest.TestCase):
 
     def setUp(self):
         self.driver = webdriver.Chrome(executable_path='C:\\Users\Admin\Downloads\chromedriver.exe')
-        self.driver.get("http://127.0.0.1:8000/easy")
+        self.driver.get("http://127.0.0.1:8000/medium")
 
     def test_easy_stage(self):
+
+        #login game
+        self.driver.find_element_by_id('btn-guest').click()
+
         #check title page
-        self.assertEqual('EASY', self.driver.title)
+        self.assertEqual('MEDIUM', self.driver.title)
   
         #check innerHTML of easy-stage.html
         ele = self.driver.find_element_by_tag_name('h1')
-        self.assertEqual("EASY", ele.get_attribute('innerHTML'))
+        self.assertEqual("MEDIUM", ele.get_attribute('innerHTML'))
 
         #can go to game page or not
         # ele  = self.driver.find_element_by_id('gopage')
