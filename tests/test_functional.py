@@ -23,10 +23,38 @@ class TestMainMenu(unittest.TestCase):
 
         #check title page
         self.assertEqual('Main Menu',self.driver.title)
-
+  
         #check innerHTML of main-menu.html
         ele = self.driver.find_element_by_tag_name('h1')
         self.assertEqual('Riddle Me This',ele.get_attribute('innerHTML'))
+
+        self.driver.find_element_by_css_selector('#htp').click()
+
+        ele = self.driver.find_element_by_tag_name('h1')
+        self.assertEqual('How to Play',ele.get_attribute('innerHTML'))
+
+
+    def test_button_play(self):
+
+        btn_login = self.driver.find_element_by_id('btn-guest')
+        btn_login.get_attribute('innerHTML')
+        time.sleep(1)
+        btn_login.click()
+
+        button_play = self.driver.find_element_by_name('play_button')
+        time.sleep(1)
+        button_play.get_attribute('innerHTML')
+        button_play.click()
+        time.sleep(1)
+
+        button_easy = self.driver.find_element_by_name('easy-stage')
+        time.sleep(1)
+        button_easy.get_attribute('innerHTML')
+        button_easy.click()
+        time.sleep(1)
+
+        ele = self.driver.find_element_by_tag_name('h1')
+        self.assertEqual('EASY',ele.get_attribute('innerHTML'))
 
 
     def test_how_to_play(self):
@@ -43,19 +71,35 @@ class TestMainMenu(unittest.TestCase):
 
         dot_2 = self.driver.find_element_by_id('dot-2')
         dot_2.click()
+
         ele = self.driver.find_element_by_id('hpt-medium')
         self.assertEqual('Medium',ele.get_attribute('innerHTML'))
         ele = self.driver.find_element_by_id('ans-medium')
         self.assertEqual('Pea + C(l)ock = Peacock',ele.get_attribute('innerHTML'))
 
         button_main_menu = self.driver.find_element_by_tag_name('a')
+        time.sleep(1)
+        button_main_menu.get_attribute('innerHTML')
         button_main_menu.click()
         ele = self.driver.find_element_by_tag_name('h1')
         self.assertEqual('Riddle Me This',ele.get_attribute('innerHTML'))
 
+    def test_scoreboard(self):
+        btn_login = self.driver.find_element_by_id('btn-guest')
+        btn_login.get_attribute('innerHTML')
+        time.sleep(1)
+        btn_login.click()
+
+        button_scoreboard = self.driver.find_element_by_name('scb_button')
+        time.sleep(1)
+        button_scoreboard.get_attribute('innerHTML')
+        button_scoreboard.click()
+        time.sleep(1)
+
         
+
     def tearDown(self):
-        time.sleep(2)
+        time.sleep(1)
         self.driver.close()
 
 
