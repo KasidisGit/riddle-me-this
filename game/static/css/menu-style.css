@@ -38,6 +38,16 @@ a {
     text-decoration: none;
     outline: none; }
 
+button {
+  outline: none !important;
+  border: none;
+  background: transparent;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
 button:focus {
   outline: none;
   box-shadow: none; }
