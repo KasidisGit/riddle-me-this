@@ -93,12 +93,12 @@ WSGI_APPLICATION = 'riddle-me-this.wsgi.application'
 DATABASES = {}
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -162,14 +162,6 @@ SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 SQLALCHEMY_TRACK_MODIFICATIONS = False
 SOCIALACCOUNT_ADAPTER = 'riddle-me-this.adapter.MySocialAccountAdapter'
 
-options = webdriver.ChromeOptions()
-options.binary_location = '/usr/bin/chromium-browser'
-#All the arguments added for chromium to work on selenium
-options.add_argument("--no-sandbox") #This make Chromium reachable
-options.add_argument("--no-default-browser-check") #Overrides default choices
-options.add_argument("--no-first-run")
-options.add_argument("--disable-default-apps") 
-driver = webdriver.Chrome('/home/travis/virtualenv/python2.7.9   /chromedriver',chrome_options=options)
 
 # if '/app' in os.environ['HOME']:
 #     django_heroku.settings(locals())
