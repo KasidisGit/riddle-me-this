@@ -1,7 +1,8 @@
 from django.views.generic import TemplateView
 from django.shortcuts import render,redirect
 from .forms import UserForm
-from .models import User
+from .models import *
+from django.template import RequestContext
 
 class UserView(TemplateView):
     template_name = 'user.html'

@@ -59,10 +59,11 @@ def EasyStage(request):
         "range_lock": EasyQuestion.objects.filter(id__gte=user.current_easy+1),
     })
 
-def HardPicture(request,question_id):
+def HardPicture(request, question_id):
     question = HardQuestion.objects.get(pk=question_id)
     user = request.user
     status = None
+
     if request.method == 'POST':
         status = False
         if request.POST.get('textfield',None) == question.answer or request.POST.get('button') == question.answer:
@@ -75,11 +76,12 @@ def HardPicture(request,question_id):
             elif user.current_hard < question.id:
                 pass
             user.save()
+
     if question_id < 15:
         next_question = HardQuestion.objects.get(pk=question_id+1)
     else:
         next_question = HardQuestion.objects.get(pk=1)
-    return render(request,"hard-question.html",{
+    return render(request,"hard-page.html",{
         "question": question,
         "next_question": next_question,
         "last_question": HardQuestion.objects.last(),
@@ -91,6 +93,7 @@ def MediumPicture(request,question_id):
     question = MediumQuestion.objects.get(pk=question_id)
     user = request.user
     status = None
+
     if request.method == 'POST':
         status = False
         if request.POST.get('textfield',None) == question.answer or request.POST.get('button') == question.answer:
@@ -103,11 +106,15 @@ def MediumPicture(request,question_id):
             elif user.current_medium < question.id:
                 pass
             user.save()
+        if request.POST.get('hint-btn') == 'Hint':
+            user = request.user
+            user.all_score -= 2
+            user.save()
     if question_id < 20:
         next_question = MediumQuestion.objects.get(pk=question_id+1)
     else:
         next_question = MediumQuestion.objects.get(pk=1)
-    return render(request,"medium-question.html",{
+    return render(request,"medium-page.html",{
         "question": question,
         "next_question": next_question,
         "last_question": MediumQuestion.objects.last(),
@@ -119,6 +126,7 @@ def EasyPicture(request,question_id):
     question = EasyQuestion.objects.get(pk=question_id)
     user = request.user
     status = None
+
     if request.method == 'POST':
         status = False
         if request.POST.get('textfield',None) == question.answer or request.POST.get('button') == question.answer:
@@ -131,11 +139,15 @@ def EasyPicture(request,question_id):
             elif user.current_easy < question.id:
                 pass
             user.save()
+        if request.POST.get('hint-btn') == 'Hint':
+            user = request.user
+            user.all_score -= 2
+            user.save()
     if question_id < 15:
         next_question = EasyQuestion.objects.get(pk=question_id+1)
     else:
         next_question = EasyQuestion.objects.get(pk=1)
-    return render(request,"easy-question.html",{
+    return render(request,"easy-page.html",{
         "question": question,
         "next_question": next_question,
         "last_question": EasyQuestion.objects.last(),

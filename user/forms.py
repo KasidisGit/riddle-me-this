@@ -2,7 +2,6 @@
 from django import forms
 from .models import User
 
-
 class UserForm(forms.ModelForm):
 
     def __init__(self, *args, **kwargs):
@@ -14,4 +13,4 @@ class UserForm(forms.ModelForm):
         model = User
         fields = ['name']
 
-    
+
