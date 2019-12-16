@@ -67,7 +67,7 @@ Step 8: Load data from `.json` files
 
 Step 9: Runserver
 
-        (env)cmd> python3 manage.py runserver
+        (env)cmd> python3 manage.py runserver --insecure
 
 Step 10: Exit the virtualenv using deactivate. You can also exit by closing the shell window.
 
