@@ -128,36 +128,32 @@ class TestStage(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        user = User.objects.create_superuser(name='hanoey',email='abc@gmail.com',password='12345')
+        user = User.objects.create_superuser(name='ktmook',email='x@gmail.com',password='12345')
         user.save()
 
     def setUp(self):
-        self.driver = webdriver.Chrome(executable_path='C:\\Users\Admin\Downloads\chromedriver.exe')
-        self.driver.get("http://127.0.0.1:8000/medium")
+        self.driver = webdriver.Chrome(executable_path='tests/chromedriver')
+        self.driver.get("http://127.0.0.1:8000/")
 
     def test_easy_stage(self):
 
-        #login game
-        self.driver.find_element_by_id('btn-guest').click()
-
-        #check title page
-        self.assertEqual('MEDIUM', self.driver.title)
-  
-        #check innerHTML of easy-stage.html
-        ele = self.driver.find_element_by_tag_name('h1')
-        self.assertEqual("MEDIUM", ele.get_attribute('innerHTML'))
-
-        # can go to game page or not
-        ele  = self.driver.find_element_by_id('gopage')
-        
-        # from easy stage back to main menu
-        tag = self.driver.find_element_by_tag_name('a')
+        """test if you login you can click button play"""
+        btn_login = self.driver.find_element_by_id('btn-guest')
+        btn_login.get_attribute('innerHTML')
         time.sleep(1)
-        tag.get_attribute('innerHTML')
-        tag.click()
-        ele = self.driver.find_element_by_tag_name('h1')
-        self.assertEqual('Riddle Me This',ele.get_attribute('innerHTML'))
+        btn_login.click()
 
+        button_play = self.driver.find_element_by_name('play_button')
+        time.sleep(1)
+        button_play.get_attribute('innerHTML')
+        button_play.click()
+        # time.sleep(1)
+
+        button_easy = self.driver.find_element_by_name('easy-stage')
+        time.sleep(1)
+        button_easy.get_attribute('innerHTML')
+        button_easy.click()
+        # time.sleep(1)
 
     def tearDown(self):
         time.sleep(1)
