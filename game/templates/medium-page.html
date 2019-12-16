@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <title>MEDIUM LEVEL</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/medium.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/menu-style.css' %}">
+        <link rel="stylesheet" type="text/css" href='{% static "/css/question-style.css" %}'>
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="../static/js/question-js/active.js"></script>
+    </head>
+
+    <body>
+        <a href= "{% url 'game:index' %}" class="button-left">Main menu</a>
+        <h1>MEDIUM LEVEL {{question.id}}</h1>
+        <br>
+        <hr>
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
+            {% if user.name == 'guest' %}
+            <img style="border-radius: 50%; width: 100px; height: 100px; margin-top: -5px; margin-bottom: 2px" src="../profile_image/user.png">
+            <a class="sidetext">Welcome, Guest</a>
+            <a class="sidetext">Score {{user.all_score}} points</a>
+            <div class="log">
+                <div class="l_btn"><a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Login?</span></a></div>
+            </div>
+        {% else %}
+            <img style="border-radius: 50%; width: 100px; height: 100px; margin-top: -5px; margin-bottom: 2px" src="{{user.socialaccount_set.all.0.get_avatar_url}}">
+            <a class="sidetext">Welcome, {% if user.name == None %} {{user.socialaccount_set.all.0.extra_data.given_name}} {{user.socialaccount_set.all.0.extra_data.first_name}} {% else %} {{user.name}} {% endif %}
+            <button id="edit-name" class="change-name">
+            <i class="fa fa-pencil-square" onclick="editName()"></i>
+            </button>
+            </a>
+            <a class="sidetext" id="change-name" style="display: none;">
+                <form method="POST"> {% csrf_token %}
+                    {{ form.as_p }}
+                </form>
+            </a>
+            <a class="sidetext">Score {{user.all_score}} points</a>
+            <div class="log">
+                <div class="l_btn"><a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a></div>
+            </div>
+        {% endif %}
+        </div>
+        <span id="opennav" class="side_bar" onclick="openNav()"><i class="fa fa-chevron-circle-left"></i></span>
+        <img src="{{question.image.url}}" class="img" alt="mediumpic" height=350" width="410">
+        <div class="input-box">
+            <form method="POST">
+            {% csrf_token %}
+              <span><input type="text" name="textfield" id="input" maxlength="{{ans_length}}" placeholder="{{ans_length}} letters" size="12" autofocus /></span>
+              {% if is_pass %}
+              <p><i class="fa fa-check"></i>  You got it!!</p>
+              <p>The answer is "{{question.answer}}".</p>
+              {% elif is_pass == False%}
+              <p><i class="fa fa-close"></i>  Try again</p>
+              {% else %}
+              <p></p>
+              {% endif %}
+              <input type="submit" name="button" id="sub_btn" class="button-submit" value="Submit"/>
+              {% if user.all_score >= question.score %}
+              <span><input type="submit" class="button-hint" name="hint-btn" value="Hint"/></span>
+              {% else %}
+              <span></span>
+              {% endif %}
+            </form> 
+        </div>
+        {% if user.current_medium > question.id %}
+        {% if question.id < last_question.id  %}
+            <span><button class="button-next"><a href="{% url 'game:m-picture' next_question.id %}">Next</a></button></span>
+        {% else %}
+            <span><button class="button-next"><a href="{% url 'game:medium' %}">Next</a></button></span>
+        {% endif %}
+        {% endif %}
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../static/js/question-js/active.js"></script>
+</html>

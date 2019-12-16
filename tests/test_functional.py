@@ -132,6 +132,7 @@ class TestStage(unittest.TestCase):
         user.save()
 
     def setUp(self):
+        
         self.driver = webdriver.Chrome(executable_path='tests/chromedriver')
         self.driver.get("http://127.0.0.1:8000/")
 
@@ -176,6 +177,81 @@ class TestStage(unittest.TestCase):
         # time.sleep(1)
 
     def test_hard_stage(self):
+
+        """test if you login you can click button play"""
+        btn_login = self.driver.find_element_by_id('btn-guest')
+        btn_login.get_attribute('innerHTML')
+        time.sleep(1)
+        btn_login.click()
+
+        button_play = self.driver.find_element_by_name('play_button')
+        time.sleep(1)
+        button_play.get_attribute('innerHTML')
+        button_play.click()
+        # time.sleep(1)
+
+        button_easy = self.driver.find_element_by_name('easy-stage')
+        time.sleep(1)
+        button_easy.get_attribute('innerHTML')
+        button_easy.click()
+        # time.sleep(1)
+
+    def tearDown(self):
+        time.sleep(1)
+        self.driver.close()
+
+class TestGamePage(unittest.TestCase):
+
+    @classmethod
+    def setUpClass(cls):
+        user = User.objects.create_superuser(name='ktmook',email='x@gmail.com',password='12345')
+        user.save()
+
+    def setUp(self):
+        self.driver = webdriver.Chrome(executable_path='tests/chromedriver')
+        self.driver.get("http://127.0.0.1:8000/")
+
+    def test_easy_stage_level(self):
+
+        """test if you login you can click button play"""
+        btn_login = self.driver.find_element_by_id('btn-guest')
+        btn_login.get_attribute('innerHTML')
+        time.sleep(1)
+        btn_login.click()
+
+        button_play = self.driver.find_element_by_name('play_button')
+        time.sleep(1)
+        button_play.get_attribute('innerHTML')
+        button_play.click()
+        # time.sleep(1)
+
+        button_easy = self.driver.find_element_by_name('easy-stage')
+        time.sleep(1)
+        button_easy.get_attribute('innerHTML')
+        button_easy.click()
+        # time.sleep(1)
+
+    def test_medium_stage_level(self):
+
+        """test if you login you can click button play"""
+        btn_login = self.driver.find_element_by_id('btn-guest')
+        btn_login.get_attribute('innerHTML')
+        time.sleep(1)
+        btn_login.click()
+
+        button_play = self.driver.find_element_by_name('play_button')
+        time.sleep(1)
+        button_play.get_attribute('innerHTML')
+        button_play.click()
+        # time.sleep(1)
+
+        button_easy = self.driver.find_element_by_name('easy-stage')
+        time.sleep(1)
+        button_easy.get_attribute('innerHTML')
+        button_easy.click()
+        # time.sleep(1)
+
+    def test_hard_stage_level(self):
 
         """test if you login you can click button play"""
         btn_login = self.driver.find_element_by_id('btn-guest')
