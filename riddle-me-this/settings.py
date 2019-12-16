@@ -14,7 +14,6 @@ import os
 import django_heroku
 import dj_database_url
 import dotenv
-from selenium import webdriver
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -163,7 +162,8 @@ SQLALCHEMY_TRACK_MODIFICATIONS = False
 SOCIALACCOUNT_ADAPTER = 'riddle-me-this.adapter.MySocialAccountAdapter'
 
 
-# if '/app' in os.environ['HOME']:
-#     django_heroku.settings(locals())
-#     del DATABASES['default']['OPTIONS']['sslmode']
+if '/app' in os.environ['HOME']:
+    django_heroku.settings(locals())
+    del DATABASES['default']['OPTIONS']['sslmode']
+
 
