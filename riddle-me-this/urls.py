@@ -18,6 +18,9 @@ from django.urls import path,include
 from django.conf import settings
 from django.contrib.auth import views as auth_views
 from django.conf.urls.static import static
+from game import views
+from django.conf.urls import handler404,handler500,handler403,handler400
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,5 +30,8 @@ urlpatterns = [
     path('',include('game.urls')),
     path('user/',include('user.urls')),
 ]
-if settings.DEBUG:
+
+if not settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+handler404 = 'game.views.not_found'
