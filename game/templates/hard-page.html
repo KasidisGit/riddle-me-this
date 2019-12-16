@@ -1,7 +1,7 @@
 {% load static %}
 <html>
     <head>
-        <title>DAVINCI GAME - HARD LEVEL</title>
+        <title>HARD LEVEL</title>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -17,41 +17,37 @@
     <body>
         <a href= "{% url 'game:index' %}" class="button-left">Main menu</a>
         <h1>HARD LEVEL {{question.id}}</h1>
+        <br>
         <hr>
         <div id="mySidenav" class="sidenav">
           <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><i class="fa fa-window-close"></i></a>
-              {% if user.name == 'guest' %}
-                  <img class="provider_pic" src="../profile_image/user.png">
-                  <a class="sidetext">Welcome, Guest</a>
-                  <a class="sidetext">Score {{user.all_score}} points</a>
-                  <div class="log">
-                      <div class="l_btn"><a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Login?</span></a></div>
-                  </div>
-              {% else %}
-                  <img class="provider_pic" src="{{user.socialaccount_set.all.0.get_avatar_url}}">
-                  <a class="sidetext">Welcome, {% if user.name == None %} {{user.socialaccount_set.all.0.extra_data.given_name}} {{user.socialaccount_set.all.0.extra_data.first_name}} {% else %} {{user.name}} {% endif %}
-                  <button id="edit-name" class="change-name">
-                  <i class="fa fa-pencil-square" onclick="editName()"></i>
-                  </button>
-                  </a>
-                  <a class="sidetext" id="change-name" style="display: none;">
-                      <form method="POST"> {% csrf_token %}
-                          {{ form.as_p }}
-                      </form>
-                  </a>
-                  <a class="sidetext">Score {{user.all_score}} points</a>
-                  <div class="log">
-                      <div class="l_btn"><a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a></div>
-                  </div>
-              {% endif %}
+          {% if user.name == 'guest' %}
+              <img style="border-radius: 50%; width: 100px; height: 100px; margin-top: -5px; margin-bottom: 2px" src="../profile_image/user.png">
+              <a class="sidetext">Welcome, Guest</a>
+              <a class="sidetext">Score {{user.all_score}} points</a>
+              <div class="log">
+                  <div class="l_btn"><a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Login?</span></a></div>
+              </div>
+            {% else %}
+            <img style="border-radius: 50%; width: 100px; height: 100px; margin-top: -5px; margin-bottom: 2px" src="{{user.socialaccount_set.all.0.get_avatar_url}}">
+            <a class="sidetext">Welcome, {% if user.name == None %} {{user.socialaccount_set.all.0.extra_data.given_name}} {{user.socialaccount_set.all.0.extra_data.first_name}} {% else %} {{user.name}} {% endif %}
+            <button id="edit-name" class="change-name">
+            <i class="fa fa-pencil-square" onclick="editName()"></i>
+            </button>
+            </a>
+            <a class="sidetext" id="change-name" style="display: none;">
+                <form method="POST"> {% csrf_token %}
+                    {{ form.as_p }}
+                </form>
+            </a>
+            <a class="sidetext">Score {{user.all_score}} points</a>
+            <div class="log">
+                <div class="l_btn"><a id='logout-bth' class="log_btn" href="{% url 'logout' %}"><span>Logout</span></a></div>
+            </div>
+            {% endif %}
       </div>
       <span id="opennav" class="side_bar" onclick="openNav()"><i class="fa fa-chevron-circle-left"></i></span>
-        <div class="turntoright">
-            <span style="padding-right: 20px; font-size: 25px; font-family: Arial, Helvetica, sans-serif;">Score: </span>
-            <span id="num" class="score-box">{{user.all_score}}</span>
-        </div>
-        <br>
-        <img src="{{question.image.url}}" id='img' alt="hardpic" height="320" width="450">
+        <img src="{{question.image.url}}" id='img' alt="hardpic" height="350" width="450">
         {% if question.id == 14 %}
         <p>The answer has 2 spaces.</p>
         {% endif %}
@@ -68,15 +64,12 @@
             <p></p>
             {% endif %}
             <input type="submit" name="button" id="sub_btn" class="button-submit" value="Submit"/>
+            {% if user.all_score >= question.score %}
+            <span><input type="submit" class="button-hint" name="hint-btn" value="Hint"/></span>
+            {% else %}
+            <span></span>
+            {% endif %}
           </form> 
-
-          <br>
-            <form method="POST">
-              {% csrf_token %}
-              <span><input type="submit" class="button-hint" name="hint-btn" value="Hint"/></button></span>
-              <input type="hidden" id="keygive_list" style="visibility: hidden;" value="{{hint_list}}"/>
-              <p id="hintKey" class="hintword" style="margin-left: 190px; " ></p>
-            </form>
         </div>
         {% if user.current_hard > question.id %}
         {% if question.id < last_question.id  %}
@@ -89,36 +82,3 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="../static/js/question-js/active.js"></script>
 </html>
-
-<script>
-
-    function myFunction() { 
-      document.getElementById("correct").innerHTML = "You are correct!";
-      document.getElementById("correct").innerHTML = "Try again";
-      document.getElementById("correct").style.textAlign = "center";
-      document.getElementById("correct").style.color = "Brown";
-      document.getElementById("correct").style.fontFamily = "Arial Rounded MT";
-      document.getElementById("correct").style.fontSize = "larger";
-      }
-
-    var hintlist = '{{hint_list}}'
-    var sumhl= ''
-    var i = 0
-    $(document).ready(function(){
-      $(".button-hint").click(function(){
-        sumhl += hintlist[i]
-        console.log(sumhl)
-        i+=1
-        $("#hintKey").innerHTML = sumhl;
-
-      })
-    })
-  
-    function nexttoPage() {
-      document.getElementById("forsubmit").style.visibility = 'hidden';
-      submit_btn.style.display="none";
-      document.getElementById("next").style.visibility = 'visible';
-      next_btn.display="block";
-    }
-  
-  </script>

@@ -63,19 +63,6 @@ def HardPicture(request, question_id):
     question = HardQuestion.objects.get(pk=question_id)
     user = request.user
     status = None
-    key_list = [question.answer]
-    hint_list = []
-    listToStr = []
-    first_key = ' '
-    hintword = question.answer
-
-    if request.POST.get('hint-btn') == 'Hint':
-        if user.all_score >= 2:
-            user.all_score -= 2
-        else:
-            pass
-        user.save()
-
 
     if request.method == 'POST':
         status = False
@@ -106,18 +93,6 @@ def MediumPicture(request,question_id):
     question = MediumQuestion.objects.get(pk=question_id)
     user = request.user
     status = None
-    key_list = [question.answer]
-    hint_list = []
-    listToStr = []
-    first_key = ' '
-    hintword = question.answer
-
-    if request.POST.get('hint-btn') == 'Hint':
-        if user.all_score >= 2:
-            user.all_score -= 2
-        else:
-            pass
-        user.save()
 
     if request.method == 'POST':
         status = False
@@ -130,6 +105,10 @@ def MediumPicture(request,question_id):
                 user.all_score += question.score
             elif user.current_medium < question.id:
                 pass
+            user.save()
+        if request.POST.get('hint-btn') == 'Hint':
+            user = request.user
+            user.all_score -= 2
             user.save()
     if question_id < 20:
         next_question = MediumQuestion.objects.get(pk=question_id+1)
@@ -148,13 +127,6 @@ def EasyPicture(request,question_id):
     user = request.user
     status = None
 
-    if request.POST.get('hint-btn') == 'Hint':
-        if user.all_score >= 2:
-            user.all_score -= 2
-        else:
-            pass
-        user.save()
-        
     if request.method == 'POST':
         status = False
         if request.POST.get('textfield',None) == question.answer or request.POST.get('button') == question.answer:
@@ -166,6 +138,10 @@ def EasyPicture(request,question_id):
                 user.all_score += question.score
             elif user.current_easy < question.id:
                 pass
+            user.save()
+        if request.POST.get('hint-btn') == 'Hint':
+            user = request.user
+            user.all_score -= 2
             user.save()
     if question_id < 15:
         next_question = EasyQuestion.objects.get(pk=question_id+1)
