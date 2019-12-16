@@ -15,11 +15,9 @@ class TestMainMenu(unittest.TestCase):
         user = User.objects.create_superuser(name='ktmook',email='x@gmail.com',password='12345')
         user.save()
 
-
     def setUp(self):
-        options = webdriver.ChromeOptions()
-        self.driver = webdriver.Chrome(chrome_options=options)
-        super(TestMainMenu, self).setUp()
+        self.driver = webdriver.Chrome(executable_path='tests/chromedriver')
+        self.driver.get("http://127.0.0.1:8000/")
     
 
     def test_index_page(self):
@@ -134,9 +132,8 @@ class TestStage(unittest.TestCase):
         user.save()
 
     def setUp(self):
-        options = webdriver.ChromeOptions()
-        self.driver = webdriver.Chrome(chrome_options=options)
-        super(TestStage, self).setUp()
+        self.driver = webdriver.Chrome(executable_path='C:\\Users\Admin\Downloads\chromedriver.exe')
+        self.driver.get("http://127.0.0.1:8000/medium")
 
     def test_easy_stage(self):
 
@@ -169,10 +166,10 @@ class TestStage(unittest.TestCase):
 class TestGoogleAuth(TestCase):
 
     def setUp(self):
-        options = webdriver.ChromeOptions()
-        self.driver = webdriver.Chrome(chrome_options=options)
-        super(TestGoogleAuth, self).setUp()
+        self.driver = webdriver.Chrome(executable_path='tests/chromedriver')
+        self.driver.get("http://127.0.0.1:8000/")
         
+    
     def test_change_name(self):
 
         #select login google button
@@ -221,6 +218,7 @@ class TestGoogleAuth(TestCase):
         u = User.objects.get(email='"hijimmybug@gmail.com"')
         u.delete()
         self.driver.close()
+
 
 if __name__ == "__main__":
     unittest.main()
