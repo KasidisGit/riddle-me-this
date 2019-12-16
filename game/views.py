@@ -5,6 +5,9 @@ from user.models import User
 from allauth.socialaccount.models import SocialAccount
 from django.contrib.auth import login
 from .models import *
+ 
+def not_found(request,exception):
+    return render(request, 'errors/404.html')
 
 def IndexView(request):
     form = UserForm()
