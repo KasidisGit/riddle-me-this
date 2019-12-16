@@ -31,7 +31,7 @@ urlpatterns = [
     path('user/',include('user.urls')),
 ]
 
-if settings.DEBUG:
+if not settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 handler404 = 'game.views.not_found'
